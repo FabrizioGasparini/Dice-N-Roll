@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05207f4a6ca4099409d13f3241aa1952, type: 3}
+  m_Name: Power
+  m_EditorClassIdentifier: 
+  Name: Power
+  TileType: 4
+  Tile: {fileID: 6601962532776147618, guid: 07f4b0c9b1608d44eb6b176dc882d0ce, type: 3}
+  Preview: {fileID: 8507814760596245366, guid: 5d6aebba98947d44cbb768ccec5a3c5d, type: 3}
