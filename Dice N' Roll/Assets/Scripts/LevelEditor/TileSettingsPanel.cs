@@ -34,7 +34,7 @@ public class TileSettingsPanel : MonoBehaviour
         powerDropdown = powerSettings.GetComponentInChildren<TMPro.TMP_Dropdown>();
 
 
-        foreach (var powerType in System.Enum.GetNames(typeof(PowerTypeTest)))
+        foreach (var powerType in System.Enum.GetNames(typeof(PowerType)))
         {
             TMPro.TMP_Dropdown.OptionData newOption = new TMPro.TMP_Dropdown.OptionData();
             newOption.text = powerType;
@@ -154,23 +154,23 @@ public class TileSettingsPanel : MonoBehaviour
 
     public void UpdatePowerType(TMPro.TMP_Dropdown dropdown)
     {
-        PowerTypeTest powerType = (PowerTypeTest)System.Enum.Parse(typeof(PowerTypeTest), System.Enum.GetNames(typeof(PowerTypeTest))[dropdown.value]);
+        PowerType powerType = (PowerType)System.Enum.Parse(typeof(PowerType), System.Enum.GetNames(typeof(PowerType))[dropdown.value]);
 
         switch(powerType)
         {
-            case PowerTypeTest.Add:
+            case PowerType.Add:
                 powerSettings.transform.Find("PowerValue").gameObject.SetActive(true);
                 break;
 
-            case PowerTypeTest.Remove:
+            case PowerType.Remove:
                 powerSettings.transform.Find("PowerValue").gameObject.SetActive(true);
                 break;
 
-            case PowerTypeTest.Double:
+            case PowerType.Double:
                 powerSettings.transform.Find("PowerValue").gameObject.SetActive(false);
                 break;
 
-            case PowerTypeTest.Split:
+            case PowerType.Split:
                 powerSettings.transform.Find("PowerValue").gameObject.SetActive(false);
                 break;
         }

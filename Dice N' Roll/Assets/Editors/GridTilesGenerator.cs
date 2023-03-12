@@ -24,7 +24,7 @@ public class GridTilesGenerator : EditorWindow
 
     private int powerValue = -1;
 
-    private PowerTypeTest powerType;
+    private PowerType powerType;
 
     private bool teleportSelected = false;
     private int teleportX = -1;
@@ -121,19 +121,19 @@ public class GridTilesGenerator : EditorWindow
                     
                     switch(powerType)
                     {
-                        case PowerTypeTest.Add:
+                        case PowerType.Add:
                             textButton = "+" + GetPowerTile(a,b).Value.ToString();
                             break;
 
-                        case PowerTypeTest.Remove:
+                        case PowerType.Remove:
                             textButton = "-" + GetPowerTile(a,b).Value.ToString();
                             break;
 
-                        case PowerTypeTest.Double:
+                        case PowerType.Double:
                             textButton = "x2";
                             break;
 
-                        case PowerTypeTest.Split:
+                        case PowerType.Split:
                             textButton = "/2";
                             break;
                     }
@@ -245,7 +245,7 @@ public class GridTilesGenerator : EditorWindow
             GUILayout.Label("");
 
             powerValue = EditorGUILayout.IntSlider(" Power Value: ", powerValue, 0, 6);
-            powerType = (PowerTypeTest)EditorGUILayout.EnumPopup(" Power Type: ", powerType);
+            powerType = (PowerType)EditorGUILayout.EnumPopup(" Power Type: ", powerType);
         }
 
         if(selectedButton == 2)

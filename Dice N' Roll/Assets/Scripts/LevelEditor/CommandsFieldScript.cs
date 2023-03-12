@@ -26,7 +26,7 @@ public class CommandsFieldScript : MonoBehaviour
     public void OnWriting(string ciao)
     {
         var dice = GameObject.FindGameObjectWithTag("Dice");
-        if (dice) dice.GetComponent<Dice>().SetGameStatus(false);
+        if (dice) dice.GetComponent<DiceScript>().SetGameStatus(false);
     }
 
     public void OnEnteringCommand(string finalCommand)
@@ -36,7 +36,7 @@ public class CommandsFieldScript : MonoBehaviour
         string command = finalCommand.Split(" ")[0];
         
         var dice = GameObject.FindGameObjectWithTag("Dice");
-        if(dice) dice.GetComponent<Dice>().SetGameStatus(true);
+        if(dice) dice.GetComponent<DiceScript>().SetGameStatus(true);
         
         switch(command)
         {
@@ -49,7 +49,7 @@ public class CommandsFieldScript : MonoBehaviour
                 {
                     tilesPlacer.LevelData.DiceValue = value;
 
-                    if(dice) dice.GetComponent<Dice>().DiceValue = value;
+                    if(dice) dice.GetComponent<DiceScript>().DiceValue = value;
 
                     ErrorsPanelScript.SendError.Invoke("<color=green>Dice Value Setted To <color=red>" + commandParameters);
                 }
@@ -59,7 +59,7 @@ public class CommandsFieldScript : MonoBehaviour
 
             case "godmode" or "god":
                 tilesPlacer.godMode = !tilesPlacer.godMode;
-                if(dice) dice.GetComponent<Dice>().GodMode = tilesPlacer.godMode;
+                if(dice) dice.GetComponent<DiceScript>().GodMode = tilesPlacer.godMode;
 
                 if(tilesPlacer.godMode) ErrorsPanelScript.SendError.Invoke("<color=green>Godmode enabled");
                 else ErrorsPanelScript.SendError.Invoke("<color=red>Godmode disabled");

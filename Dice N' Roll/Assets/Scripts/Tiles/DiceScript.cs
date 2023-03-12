@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dice : MonoBehaviour
+public class DiceScript : MonoBehaviour
 {
     [Header("Variables")]
     public int Row;
@@ -163,19 +163,19 @@ public class Dice : MonoBehaviour
 
                             switch (powerTile.PowerType)
                             {
-                                case PowerTypeTest.Add:
+                                case PowerType.Add:
                                     DiceValue += powerTile.Value;
                                     break;
 
-                                case PowerTypeTest.Remove:
+                                case PowerType.Remove:
                                     DiceValue -= powerTile.Value;
                                     break;
 
-                                case PowerTypeTest.Double:
+                                case PowerType.Double:
                                     DiceValue *= 2;
                                     break;
 
-                                case PowerTypeTest.Split:
+                                case PowerType.Split:
                                     DiceValue = Mathf.RoundToInt(DiceValue / 2);
                                     break;
                             }

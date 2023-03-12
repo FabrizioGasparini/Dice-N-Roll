@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
-    private Dice dice;
+    private DiceScript dice;
 
     [SerializeField] private TMPro.TextMeshProUGUI rollsLabel;
     [SerializeField] private TMPro.TextMeshProUGUI levelLabel;
@@ -18,13 +18,13 @@ public class UIScript : MonoBehaviour
 
     void Start()
     {
-        dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<Dice>();
+        dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<DiceScript>();
         levelLabel.text = SceneManager.GetActiveScene().name;
     }
 
     void Update()
     {
-        if(dice == null) dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<Dice>();
+        if(dice == null) dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<DiceScript>();
 
         rollsLabel.text = ("ROLLS - " + dice.DiceValue);
 

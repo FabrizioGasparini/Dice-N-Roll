@@ -16,3 +16,7 @@ MonoBehaviour:
   TileType: 4
   Tile: {fileID: 6601962532776147618, guid: 07f4b0c9b1608d44eb6b176dc882d0ce, type: 3}
   Preview: {fileID: 8507814760596245366, guid: 5d6aebba98947d44cbb768ccec5a3c5d, type: 3}
+  GizmoSize: {x: 0.25, y: 0.25, z: 0.25}
+  GizmoColor:
+    serializedVersion: 2
+    rgba: 65280

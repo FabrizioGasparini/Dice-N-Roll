@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05207f4a6ca4099409d13f3241aa1952, type: 3}
-  m_Name: Block
+  m_Name: Button
   m_EditorClassIdentifier: 
-  Name: Block
-  TileType: 1
-  Tile: {fileID: 8507814760596245366, guid: f62a1c3a658f98b4e873ab1c044caed1, type: 3}
-  Preview: {fileID: 2629303908801638809, guid: cda217516f5b76040adcc369158d46a7, type: 3}
-  GizmoSize: {x: 1, y: 1, z: 1}
+  Name: Button
+  TileType: 6
+  Tile: {fileID: 8507814760596245366, guid: c141e4b0dddd2724e8390898db988f23, type: 3}
+  Preview: {fileID: 0}
+  GizmoSize: {x: 0.8, y: 0.25, z: 0.8}
   GizmoColor:
     serializedVersion: 2
-    rgba: 255
+    rgba: 16750080

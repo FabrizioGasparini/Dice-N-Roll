@@ -10,11 +10,7 @@ public class Grid : MonoBehaviour
     public LevelData LevelData;
 
     [Header("Tiles Data")]
-    [SerializeField] private TileData diceData;
-    [SerializeField] private TileData flagData;
-    [SerializeField] private TileData blockData;
-    [SerializeField] private TileData powerData;
-    [SerializeField] private TileData teleportData;
+    [SerializeField] private List<TileData> tiles = new List<TileData>();
 
     [Header("References")]
     [SerializeField] private Material flagMaterial;
@@ -57,38 +53,46 @@ public class Grid : MonoBehaviour
         {
             Vector3 position = startPosition + new Vector3(block.x, 1, block.y);
 
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(position, new Vector3(1, 1, 1));
+            Gizmos.color = GetTileData("Block").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Block").GizmoSize);
         }
 
         foreach (PowerTile power in LevelData.Powers)
         {
             Vector3 position = startPosition + new Vector3(power.Coordinates.x, 1, power.Coordinates.y);
 
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireCube(position, new Vector3(.5f, .5f, .5f));
+            Gizmos.color = GetTileData("Power").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Power").GizmoSize);
         }
 
         foreach (TeleportTile teleport in LevelData.Teleports)
         {
             Vector3 position = startPosition + new Vector3(teleport.Coordinates.x, .625f, teleport.Coordinates.y);
 
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireCube(position, new Vector3(1, .25f, 1f));
+            Gizmos.color = GetTileData("Teleport").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Teleport").GizmoSize);
+        }
+
+        foreach (ButtonTile button in LevelData.Buttons)
+        {
+            Vector3 position = startPosition + new Vector3(button.Coordinates.x, .625f, button.Coordinates.y);
+
+            Gizmos.color = GetTileData("Button").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Button").GizmoSize);
         }
 
         if (LevelData.FlagCoordinates != LevelData.DiceCoordinates)
         {
             Vector3 position = startPosition + new Vector3(LevelData.DiceCoordinates.x, 1, LevelData.DiceCoordinates.y);
 
-            Gizmos.color = Color.white;
-            Gizmos.DrawWireCube(position, new Vector3(.8f, .8f, .8f));
+            Gizmos.color = GetTileData("Dice").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Dice").GizmoSize);
 
 
             position = startPosition + new Vector3(LevelData.FlagCoordinates.x, 1, LevelData.FlagCoordinates.y);
 
-            Gizmos.color = Color.black;
-            Gizmos.DrawWireCube(position, new Vector3(.25f, .25f, .25f));
+            Gizmos.color = GetTileData("Flag").GizmoColor;
+            Gizmos.DrawWireCube(position, GetTileData("Flag").GizmoSize);
         }
     }
 
@@ -186,19 +190,19 @@ public class Grid : MonoBehaviour
         if (LevelData.FlagCoordinates != LevelData.DiceCoordinates)
         {
             Vector3 position = new Vector3(LevelData.DiceCoordinates.x, .46f, LevelData.DiceCoordinates.y);
-            GameObject newDice = Instantiate(diceData.Tile, position, Quaternion.identity, transform.parent);
+            GameObject newDice = Instantiate(GetTileData("Dice").Tile, position, Quaternion.identity, transform.parent);
             newDice.name = "Dice";
             dice = newDice;
 
-            dice.GetComponent<Dice>().DiceValue = LevelData.DiceValue;
-            dice.GetComponent<Dice>().Row = (int)LevelData.DiceCoordinates.x;
-            dice.GetComponent<Dice>().Column = (int)LevelData.DiceCoordinates.y;
-            dice.GetComponent<Dice>().GodMode = godMode;
+            dice.GetComponent<DiceScript>().DiceValue = LevelData.DiceValue;
+            dice.GetComponent<DiceScript>().Row = (int)LevelData.DiceCoordinates.x;
+            dice.GetComponent<DiceScript>().Column = (int)LevelData.DiceCoordinates.y;
+            dice.GetComponent<DiceScript>().GodMode = godMode;
             GetTile((int)LevelData.DiceCoordinates.x, (int)LevelData.DiceCoordinates.y).TileType = TileTypes.Dice;
 
 
             position = new Vector3(LevelData.FlagCoordinates.x, 1, LevelData.FlagCoordinates.y);
-            GameObject newFlag = Instantiate(flagData.Tile, position, Quaternion.identity, transform.parent);
+            GameObject newFlag = Instantiate(GetTileData("Flag").Tile, position, Quaternion.identity, transform.parent);
             newFlag.name = "Flag";
             flag = newFlag;
 
@@ -209,7 +213,7 @@ public class Grid : MonoBehaviour
         foreach (Vector2 blockCoord in LevelData.Blocks)
         {
             Vector3 position = new Vector3(blockCoord.x, .5f, blockCoord.y);
-            GameObject newBlock = Instantiate(blockData.Tile, position, Quaternion.identity, blocksParent);
+            GameObject newBlock = Instantiate(GetTileData("Block").Tile, position, Quaternion.identity, blocksParent);
             newBlock.name = "Block";
 
             GetTile((int)blockCoord.x, (int)blockCoord.y).TileType = TileTypes.Block;
@@ -218,25 +222,25 @@ public class Grid : MonoBehaviour
         foreach (PowerTile power in LevelData.Powers)
         {
             Vector3 position = new Vector3(power.Coordinates.x, .5f, power.Coordinates.y);
-            GameObject newPower = Instantiate(powerData.Tile, position, Quaternion.identity, powersParent);
+            GameObject newPower = Instantiate(GetTileData("Power").Tile, position, Quaternion.identity, powersParent);
             newPower.name = "Power";
             power.Object = newPower;
 
             switch (power.PowerType)
             {
-                case PowerTypeTest.Add:
+                case PowerType.Add:
                     power.Object.GetComponent<PowerScript>().SetValue("+" + power.Value.ToString());
                     break;
 
-                case PowerTypeTest.Remove:
+                case PowerType.Remove:
                     power.Object.GetComponent<PowerScript>().SetValue("-" + power.Value.ToString());
                     break;
 
-                case PowerTypeTest.Double:
+                case PowerType.Double:
                     power.Object.GetComponent<PowerScript>().SetValue("x2");
                     break;
 
-                case PowerTypeTest.Split:
+                case PowerType.Split:
                     power.Object.GetComponent<PowerScript>().SetValue("/2");
                     break;
             }
@@ -247,13 +251,26 @@ public class Grid : MonoBehaviour
         foreach (TeleportTile teleport in LevelData.Teleports)
         {
             Vector3 position = new Vector3(teleport.Coordinates.x, .125f, teleport.Coordinates.y);
-            GameObject newTeleport = Instantiate(teleportData.Tile, position, Quaternion.identity, teleportsParent);
+            GameObject newTeleport = Instantiate(GetTileData("Teleport").Tile, position, Quaternion.identity, teleportsParent);
             newTeleport.name = "Teleport";
             teleport.Object = newTeleport;
 
             GetTile((int)teleport.Coordinates.x, (int)teleport.Coordinates.y).TileType = TileTypes.Teleport;
         }
 
+    }
+
+    private TileData GetTileData(string tileName)
+    {        
+        foreach (var tile in tiles)
+        {
+            if(tile.Name == tileName)
+            {
+                return tile;
+            }
+        }
+
+        return null;
     }
 
     public TileTypes FindTileType(int x, int y)
@@ -361,36 +378,5 @@ public class Grid : MonoBehaviour
         LevelData.Blocks = new List<Vector2>();
         LevelData.Powers = new List<PowerTile>();
         LevelData.Teleports = new List<TeleportTile>();
-    }
-}
-
-[System.Serializable]
-public class TeleportTile
-{
-    public Vector2 Coordinates = new Vector2(-1, -1);
-    public Vector2 DestinationCoordinates = new Vector2(-1, -1);
-    [HideInInspector] public GameObject Object;
-    [HideInInspector] public GameObject PreviewObject;
-
-    public TeleportTile(int x, int y, int xD, int yD)
-    {
-        this.Coordinates = new Vector2(x, y);
-        this.DestinationCoordinates = new Vector2(xD, yD);
-    }
-}
-
-[System.Serializable]
-public class PowerTile
-{
-    public Vector2 Coordinates = new Vector2(-1, -1);
-    public PowerTypeTest PowerType;
-    [Range(0, 6)] public int Value;
-    [HideInInspector] public GameObject Object;
-
-    public PowerTile(int x, int y, PowerTypeTest powerType, int value)
-    {
-        this.Coordinates = new Vector2(x, y);
-        this.PowerType = powerType;
-        this.Value = value;
     }
 }

@@ -49,6 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelData: {fileID: 0}
+  tiles:
+  - {fileID: 11400000, guid: 4ec6d31594261034c8e6d6f56d3ae8f0, type: 2}
+  - {fileID: 11400000, guid: d440ddc274a9a8645af1fb6521cd56ac, type: 2}
+  - {fileID: 11400000, guid: d34c04671a69ee141afb15564e0c6eaa, type: 2}
+  - {fileID: 11400000, guid: e75dad8853270c1419f2926f3c9119a2, type: 2}
+  - {fileID: 11400000, guid: c31b93f5bab5dac4899102c464273dcc, type: 2}
+  - {fileID: 11400000, guid: 177da08410cd6cc4799398e651cce5a6, type: 2}
   diceData: {fileID: 11400000, guid: d440ddc274a9a8645af1fb6521cd56ac, type: 2}
   flagData: {fileID: 11400000, guid: d34c04671a69ee141afb15564e0c6eaa, type: 2}
   blockData: {fileID: 11400000, guid: 4ec6d31594261034c8e6d6f56d3ae8f0, type: 2}
@@ -56,6 +63,7 @@ MonoBehaviour:
   teleportData: {fileID: 11400000, guid: c31b93f5bab5dac4899102c464273dcc, type: 2}
   flagMaterial: {fileID: 2100000, guid: 7fa33c7bd72ff31418823fd701e7b12b, type: 2}
   InEditor: 0
+  InMenu: 0
   godMode: 0
   startPosition: {x: 0, y: -0.5, z: 0}
 --- !u!1 &5064059212630864627
@@ -217,8 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b28776a95db3543a3b420ba3cd0456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Row: 0
-  Column: 0
   TileType: 0
 --- !u!65 &6753996277896326863
 BoxCollider:

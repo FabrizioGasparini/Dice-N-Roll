@@ -42,7 +42,7 @@ public class EditorPlacementScript : MonoBehaviour
     private List<PowerTile> powerTiles = new List<PowerTile>();
 
     private int powerValue = 1;
-    private PowerTypeTest powerType = PowerTypeTest.Add;
+    private PowerType powerType = PowerType.Add;
 
     private List<TeleportTile> teleportTiles = new List<TeleportTile>();
     [HideInInspector] public bool firstTeleportPlaced;
@@ -472,7 +472,7 @@ public class EditorPlacementScript : MonoBehaviour
         powerValue = newValue;
     }
 
-    public void SetPowerType(PowerTypeTest newType) 
+    public void SetPowerType(PowerType newType) 
     {
         powerType = newType;
     }

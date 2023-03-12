@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum PowerTypeTest
+public enum PowerType
 {
     Add, 
     Remove,
@@ -11,43 +11,17 @@ public enum PowerTypeTest
     Split
 }
 
-public class PowerUpTest : MonoBehaviour
+public class PowerScript : MonoBehaviour
 {
-    
-    [Header("Values")]
     private float x;
     private float y;
-    [SerializeField] private float power;
-    [SerializeField] private float frequency;
-    [SerializeField] private float height;
-    public int value;
-    public PowerTypeTest powerType;
-    
-    [Header("Editor")]
-    private GameObject powerUpEditorPrefab;
-    private GameObject powerUpEditor;
-    [HideInInspector] public bool _editorOpen;
-    [SerializeField] private bool _inEditor;
+    [HideInInspector] public int value;
 
     private GameObject pickupLabel;
     private Transform dots;
-    private GameObject grid;
 
-    void Update(){
-        /*if(!grid.GetComponent<Grod>().inMenu){
-            pickupLabel.transform.parent.gameObject.transform.eulerAngles += new Vector3(0,0,.1f); 
-        } else {
-            pickupLabel.transform.parent.gameObject.transform.eulerAngles += new Vector3(0,.1f,0);
-        }
-
-        transform.position = new Vector3(y , height + Mathf.Sin(Time.time * frequency) * power, x);
-        transform.eulerAngles += new Vector3(0,.1f,0);
-
-        if (_inEditor && powerUpEditor)
-        {
-            powerUpEditor.transform.eulerAngles -= new Vector3(0,.1f,0);
-            powerUpEditor.transform.position = new Vector3(powerUpEditor.transform.position.x, transform.position. y - (height + Mathf.Sin(Time.time * frequency) * power) + height * 2, powerUpEditor.transform.position.z);
-        }*/
+    void Update()
+    {
         ChangeNumber();
     }
 
@@ -57,12 +31,8 @@ public class PowerUpTest : MonoBehaviour
         y = transform.position.x;
         pickupLabel = transform.Find("Canvas").transform.Find("PickupValue").gameObject;
         dots = transform.Find("DotsCanvas");
-        grid = transform.parent.parent.parent.Find("Grid").Find("TilePrefab").gameObject;
-        
-        if(_inEditor){
-            powerUpEditorPrefab = transform.parent.parent.parent.Find("UI").Find("Editors").Find("PowerUpEditor").gameObject;
-        }
     }
+    
     public void ChangeNumber(){
         List<GameObject> dots00 = new List<GameObject>();
         List<GameObject> dots10 = new List<GameObject>();
@@ -153,17 +123,8 @@ public class PowerUpTest : MonoBehaviour
         }
     }
 
-    /// EDITOR \\\
-
-    void OnMouseDown()
+    public void SetValue(string value)
     {
-        if(!_editorOpen){
-            _editorOpen = true;
-            GameObject editor = Instantiate(powerUpEditorPrefab, new Vector3(0 + y, 1.25f, 0 + x), Quaternion.Euler(-70,90,0), transform);
-            editor.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-            editor.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>().value = value;
-            editor.SetActive(true);
-            powerUpEditor = editor;
-        }
+        GetComponentInChildren<TMPro.TextMeshProUGUI>().text = value;
     }
 }

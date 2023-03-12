@@ -16,6 +16,7 @@ public class LevelData : ScriptableObject
     public List<Vector2> Blocks;
     public List<PowerTile> Powers;
     public List<TeleportTile> Teleports;
+    public List<ButtonTile> Buttons;
 
     public void Override(LevelData levelData)
     {
@@ -28,6 +29,7 @@ public class LevelData : ScriptableObject
         Blocks = levelData.Blocks;
         Powers = levelData.Powers;
         Teleports = levelData.Teleports;
+        Buttons = levelData.Buttons;
     }
 
     public void Reset()
