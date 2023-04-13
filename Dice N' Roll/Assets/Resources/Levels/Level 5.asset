@@ -148,4 +148,8 @@ MonoBehaviour:
     PowerType: 0
     Value: 2
     Object: {fileID: 0}
+  - Coordinates: {x: 6, y: 9}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
   Teleports: []

@@ -84,7 +84,7 @@ public class DiceScript : MonoBehaviour
 
                 if(Row == grid.LevelData.FlagCoordinates.x && Column == grid.LevelData.FlagCoordinates.y) 
                 {
-                    GetComponent<MeshRenderer>().material.color = Color.green;
+                    GetComponentInChildren<MeshRenderer>().material.color = Color.green;
                     
                     inGame = false;
                     DiceValue = 0;
@@ -105,7 +105,7 @@ public class DiceScript : MonoBehaviour
             {
                 if(inGame)
                 {
-                    GetComponent<MeshRenderer>().material.color = Color.red;
+                    GetComponentInChildren<MeshRenderer>().material.color = Color.red;
                     
                     inGame = false;
                     DiceValue = 0;
@@ -127,11 +127,11 @@ public class DiceScript : MonoBehaviour
         {
             if(grid.GetTile(x, y))
             {
-                TileTypes tileType = grid.GetTile(x, y).TileType;
+                TileType tileType = grid.GetTile(x, y).TileType;
 
                 switch (tileType)
                 {
-                    case TileTypes.Block:
+                    case TileType.Block:
                         if(GodMode)
                         {
                             ResetTile(Row, Column);
@@ -143,14 +143,14 @@ public class DiceScript : MonoBehaviour
                         
                         break;
 
-                    case TileTypes.Power:
+                    case TileType.Power:
                         PowerTile powerTile = grid.GetPowerTile(x, y);
 
                         if(powerTile != null)
                         {
                             if(!GodMode)
                             {
-                                grid.GetTile(x, y).TileType = TileTypes.Dice;
+                                grid.GetTile(x, y).TileType = TileType.Dice;
                                 DiceValue -= 1;
                             }
 
@@ -184,7 +184,7 @@ public class DiceScript : MonoBehaviour
                         }
                         break;
 
-                    case TileTypes.Flag:
+                    case TileType.Flag:
                         if(!GodMode) DiceValue -= 1;
 
                         ResetTile(Row, Column);
@@ -200,7 +200,7 @@ public class DiceScript : MonoBehaviour
 
                         break;
 
-                    case TileTypes.Teleport:
+                    case TileType.Teleport:
                         if(!GodMode) DiceValue -= 1;
                         
                         ResetTile(Row, Column);
@@ -215,18 +215,52 @@ public class DiceScript : MonoBehaviour
                         
                         break;
 
-                    case TileTypes.None:
+                    case TileType.None:
                         if(!GodMode) DiceValue -= 1;
 
                         ResetTile(Row, Column);
-                        grid.GetTile(x, y).TileType = TileTypes.Dice;
+                        grid.GetTile(x, y).TileType = TileType.Dice;
 
                         Row = x;
                         Column = y;
 
                         RollDice(direction);
                         break;
-                  
+
+                    case TileType.GhostBlock:
+                        if (GodMode)
+                        {
+                            ResetTile(Row, Column);
+                            RollDice(direction);
+
+                            Row = x;
+                            Column = y;
+                        }
+
+                        break;
+
+                    case TileType.Button:
+                        if (!GodMode) DiceValue -= 1;
+
+                        ResetTile(Row, Column);
+
+                        Row = x;
+                        Column = y;
+
+                        RollDice(direction);
+
+                        ButtonTile buttonTile = grid.GetButtonTile(x, y);
+                        if(buttonTile.ButtonType == ButtonType.Press)
+                        {
+                            GhostBlockTile ghostBlockTile = grid.GetGhostBlockTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.Coordinates.y);
+                            Destroy(buttonTile.Object);
+                            Destroy(ghostBlockTile.Object);
+
+                            grid.GetTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.Coordinates.y).TileType = TileType.None;
+                            grid.GetTile(x, y).TileType = TileType.None;
+                        }
+
+                        break;
                 }
             }
         }
@@ -234,12 +268,14 @@ public class DiceScript : MonoBehaviour
 
     private void ResetTile(int x, int y)
     {
-        if(grid.TileIsBlock(x, y)) return;
-        if(grid.TileIsFlag(x, y)) return;
-        if(grid.TileIsTeleport(x, y)) return;
-        if(grid.TileIsPower(x, y) && GodMode) return;
+        if(grid.GetType(x, y) == TileType.Block) return;
+        if(grid.GetType(x, y) == TileType.Flag) return;
+        if(grid.GetType(x, y) == TileType.Teleport) return;
+        if(grid.GetType(x, y) == TileType.GhostBlock) return;
+        if(grid.GetType(x, y) == TileType.Button) return;
+        if(grid.GetType(x, y) == TileType.Power && GodMode) return;
 
-        grid.GetTile(x, y).TileType = TileTypes.None;
+        grid.GetTile(x, y).TileType = TileType.None;
     }
 
 

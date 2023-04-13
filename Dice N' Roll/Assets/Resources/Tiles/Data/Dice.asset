@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dice
   m_EditorClassIdentifier: 
   Name: Dice
-  TileType: 2
   Tile: {fileID: 8740197555554027174, guid: 9254e23b8eb39f2418c29e8382f6305a, type: 3}
   Preview: {fileID: 2629303908801638809, guid: 9b993c3870570ef4fab54456f025d2dd, type: 3}
   GizmoSize: {x: 1, y: 1, z: 1}
-  GizmoColor:
-    serializedVersion: 2
-    rgba: 16777215
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  GizmoMesh: {fileID: -835688487210165693, guid: 24269720e095d6e4fb26be60942217b5,
+    type: 3}

@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Teleport
   m_EditorClassIdentifier: 
   Name: Teleport
-  TileType: 5
   Tile: {fileID: 8507814760596245366, guid: 652218b49e402c647aab59466ba3e730, type: 3}
   Preview: {fileID: 8507814760596245366, guid: 487e2b0a8df80e345ae92ae43d61e77b, type: 3}
   GizmoSize: {x: 1, y: 0.25, z: 1}
-  GizmoColor:
-    serializedVersion: 2
-    rgba: 16711730
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 0.39215687, g: 0, b: 1, a: 0.39215687}

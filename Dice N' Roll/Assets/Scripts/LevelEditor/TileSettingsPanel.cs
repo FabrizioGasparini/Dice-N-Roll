@@ -11,11 +11,12 @@ public class TileSettingsPanel : MonoBehaviour
     [SerializeField] private Slider gridColumnsSlider;
     
     private TMPro.TMP_Dropdown powerDropdown;
+    private TMPro.TMP_Dropdown buttonDropdown;
 
     [Header("SettingsPanels")]
     [SerializeField] private GameObject diceSettings;
     [SerializeField] private GameObject powerSettings;
-    [SerializeField] private GameObject teleportSettings;
+    [SerializeField] private GameObject buttonSettings;
     [SerializeField] private GameObject gridSettings;
 
     private string currentSettings;
@@ -32,13 +33,20 @@ public class TileSettingsPanel : MonoBehaviour
         editor = GameObject.FindGameObjectWithTag("Editor").GetComponent<EditorPlacementScript>();
 
         powerDropdown = powerSettings.GetComponentInChildren<TMPro.TMP_Dropdown>();
-
-
         foreach (var powerType in System.Enum.GetNames(typeof(PowerType)))
         {
             TMPro.TMP_Dropdown.OptionData newOption = new TMPro.TMP_Dropdown.OptionData();
             newOption.text = powerType;
             powerDropdown.options.Add(newOption);
+        }
+
+
+        buttonDropdown = buttonSettings.GetComponentInChildren<TMPro.TMP_Dropdown>();
+        foreach (var powerType in System.Enum.GetNames(typeof(ButtonType)))
+        {
+            TMPro.TMP_Dropdown.OptionData newOption = new TMPro.TMP_Dropdown.OptionData();
+            newOption.text = powerType;
+            buttonDropdown.options.Add(newOption);
         }
 
         gridRowsSlider.value = Resources.Load<LevelData>("Levels/CurrentEditorLevel").GridRows;
@@ -67,6 +75,12 @@ public class TileSettingsPanel : MonoBehaviour
                 EnableSettingPanel();
                 SetVisible(true);
                 break;
+
+            case "Button":
+                currentSettings = "Button";
+                EnableSettingPanel();
+                SetVisible(true);
+                break;
             
             case "Grid":
                 currentSettings = "Grid";
@@ -85,6 +99,7 @@ public class TileSettingsPanel : MonoBehaviour
     {
         diceSettings.SetActive(false);
         powerSettings.SetActive(false);
+        buttonSettings.SetActive(false);
         gridSettings.SetActive(false);
 
         switch(currentSettings)
@@ -100,8 +115,7 @@ public class TileSettingsPanel : MonoBehaviour
                 powerSettings.SetActive(true);
                 break;
 
-            case "Teleport":
-                teleportSettings.SetActive(true);
+            case "Button":buttonSettings.SetActive(true);
                 break;
             
             case "Grid":
@@ -123,9 +137,6 @@ public class TileSettingsPanel : MonoBehaviour
 
             case "Power":
                 editor.SetPowerValue((int)slider.value);
-                break;
-
-            case "Teleport":
                 break;
 
             case "Grid":
@@ -176,5 +187,12 @@ public class TileSettingsPanel : MonoBehaviour
         }
 
         editor.SetPowerType(powerType);
+    }
+
+    public void UpdateButtonType(TMPro.TMP_Dropdown dropdown)
+    {
+        ButtonType buttonType = (ButtonType)System.Enum.Parse(typeof(ButtonType), System.Enum.GetNames(typeof(ButtonType))[dropdown.value]);
+
+        editor.SetButtonType(buttonType);
     }
 }

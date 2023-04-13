@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Button
   m_EditorClassIdentifier: 
   Name: Button
-  TileType: 6
   Tile: {fileID: 8507814760596245366, guid: c141e4b0dddd2724e8390898db988f23, type: 3}
-  Preview: {fileID: 0}
+  Preview: {fileID: 2629303908801638809, guid: 924d3e2198d241f4597edef166c82a9c, type: 3}
   GizmoSize: {x: 0.8, y: 0.25, z: 0.8}
-  GizmoColor:
-    serializedVersion: 2
-    rgba: 16750080
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 0, g: 1, b: 1, a: 0.39215687}

@@ -14,10 +14,11 @@ public class TileData : ScriptableObject
 
     [Header("Gizmos Variables")]
     public Vector3 GizmoSize;
-    public Color32 GizmoColor;
+    public float GizmoVerticalPosition;
+    public Color GizmoColor;
 }
 
-public enum TileTypes
+public enum TileType
 {
     None,
     Block,
@@ -25,5 +26,6 @@ public enum TileTypes
     Flag,
     Power,
     Teleport,
-    Button
+    Button,
+    GhostBlock
 }

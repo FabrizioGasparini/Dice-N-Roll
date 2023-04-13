@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   Name: Block
-  TileType: 1
   Tile: {fileID: 8507814760596245366, guid: f62a1c3a658f98b4e873ab1c044caed1, type: 3}
   Preview: {fileID: 2629303908801638809, guid: cda217516f5b76040adcc369158d46a7, type: 3}
   GizmoSize: {x: 1, y: 1, z: 1}
-  GizmoColor:
-    serializedVersion: 2
-    rgba: 255
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 1, g: 0, b: 0, a: 0.39215687}

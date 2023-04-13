@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05207f4a6ca4099409d13f3241aa1952, type: 3}
+  m_Name: GhostBlock
+  m_EditorClassIdentifier: 
+  Name: Ghost Block
+  Tile: {fileID: 8507814760596245366, guid: 46692017398eb0445a979e5d6576acb4, type: 3}
+  Preview: {fileID: 2629303908801638809, guid: 8872cd833c649a6458d3609fe10d09b4, type: 3}
+  GizmoSize: {x: 1, y: 1, z: 1}
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.39215687}

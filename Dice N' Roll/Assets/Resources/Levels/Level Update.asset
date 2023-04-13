@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7bfe35701fa6746b2003f0412cf4a6, type: 3}
+  m_Name: Level Update
+  m_EditorClassIdentifier: 
+  GridRows: 13
+  GridColumns: 13
+  DiceCoordinates: {x: 0, y: 0}
+  DiceValue: 6
+  FlagCoordinates: {x: 12, y: 6}
+  Blocks:
+  - {x: 0, y: 1}
+  - {x: 1, y: 1}
+  - {x: 3, y: 0}
+  - {x: 3, y: 1}
+  - {x: 3, y: 2}
+  - {x: 3, y: 3}
+  - {x: 3, y: 4}
+  - {x: 3, y: 5}
+  - {x: 3, y: 6}
+  - {x: 3, y: 7}
+  - {x: 4, y: 3}
+  - {x: 5, y: 3}
+  - {x: 5, y: 1}
+  - {x: 6, y: 1}
+  - {x: 7, y: 1}
+  - {x: 7, y: 2}
+  - {x: 7, y: 3}
+  - {x: 8, y: 3}
+  - {x: 9, y: 3}
+  - {x: 10, y: 3}
+  - {x: 11, y: 3}
+  - {x: 3, y: 9}
+  - {x: 3, y: 10}
+  - {x: 3, y: 11}
+  - {x: 2, y: 9}
+  - {x: 1, y: 9}
+  - {x: 1, y: 3}
+  - {x: 1, y: 4}
+  - {x: 1, y: 5}
+  - {x: 1, y: 6}
+  - {x: 1, y: 7}
+  - {x: 1, y: 8}
+  - {x: 1, y: 11}
+  - {x: 1, y: 12}
+  - {x: 7, y: 11}
+  - {x: 6, y: 11}
+  - {x: 5, y: 11}
+  - {x: 5, y: 5}
+  - {x: 5, y: 6}
+  - {x: 5, y: 7}
+  - {x: 5, y: 8}
+  - {x: 5, y: 9}
+  - {x: 5, y: 10}
+  - {x: 9, y: 4}
+  - {x: 9, y: 5}
+  - {x: 8, y: 5}
+  - {x: 7, y: 5}
+  - {x: 7, y: 6}
+  - {x: 7, y: 7}
+  - {x: 8, y: 7}
+  - {x: 9, y: 7}
+  - {x: 9, y: 9}
+  - {x: 8, y: 9}
+  - {x: 7, y: 9}
+  - {x: 9, y: 11}
+  - {x: 9, y: 12}
+  - {x: 11, y: 11}
+  - {x: 11, y: 10}
+  - {x: 11, y: 9}
+  - {x: 11, y: 8}
+  - {x: 11, y: 7}
+  - {x: 11, y: 5}
+  - {x: 11, y: 1}
+  - {x: 10, y: 1}
+  - {x: 9, y: 1}
+  Powers:
+  - Coordinates: {x: 0, y: 3}
+    PowerType: 0
+    Value: 6
+    Object: {fileID: 0}
+  - Coordinates: {x: 4, y: 12}
+    PowerType: 0
+    Value: 6
+    Object: {fileID: 0}
+  - Coordinates: {x: 2, y: 8}
+    PowerType: 0
+    Value: 5
+    Object: {fileID: 0}
+  - Coordinates: {x: 2, y: 4}
+    PowerType: 0
+    Value: 5
+    Object: {fileID: 0}
+  - Coordinates: {x: 9, y: 10}
+    PowerType: 0
+    Value: 5
+    Object: {fileID: 0}
+  - Coordinates: {x: 7, y: 0}
+    PowerType: 0
+    Value: 5
+    Object: {fileID: 0}
+  - Coordinates: {x: 12, y: 0}
+    PowerType: 0
+    Value: 4
+    Object: {fileID: 0}
+  - Coordinates: {x: 9, y: 8}
+    PowerType: 0
+    Value: 4
+    Object: {fileID: 0}
+  - Coordinates: {x: 0, y: 8}
+    PowerType: 0
+    Value: 4
+    Object: {fileID: 0}
+  - Coordinates: {x: 4, y: 6}
+    PowerType: 0
+    Value: 4
+    Object: {fileID: 0}
+  - Coordinates: {x: 6, y: 6}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
+  - Coordinates: {x: 6, y: 2}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
+  - Coordinates: {x: 4, y: 2}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
+  - Coordinates: {x: 11, y: 2}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
+  - Coordinates: {x: 2, y: 11}
+    PowerType: 0
+    Value: 3
+    Object: {fileID: 0}
+  - Coordinates: {x: 7, y: 10}
+    PowerType: 0
+    Value: 2
+    Object: {fileID: 0}
+  Teleports: []

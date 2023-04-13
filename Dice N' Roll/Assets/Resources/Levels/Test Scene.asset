@@ -16,21 +16,40 @@ MonoBehaviour:
   GridColumns: 5
   DiceCoordinates: {x: 0, y: 0}
   DiceValue: 6
-  FlagCoordinates: {x: 4, y: 4}
-  Blocks:
-  - {x: 2, y: 2}
-  - {x: 2, y: 1}
-  Powers:
-  - Coordinates: {x: 3, y: 2}
-    PowerType: 0
-    Value: 0
-    Object: {fileID: 0}
-  Teleports:
-  - Coordinates: {x: 3, y: 4}
-    DestinationCoordinates: {x: 0, y: 0}
-    Object: {fileID: 0}
-    PreviewObject: {fileID: 0}
-  Buttons:
-  - Coordinates: {x: 1, y: 1}
-    Activated: 0
-    Object: {fileID: 0}
+  FlagCoordinates: {x: 0, y: 4}
+  TilesList:
+    BlockTiles:
+    - Coordinates: {x: 0, y: 2}
+    - Coordinates: {x: 1, y: 2}
+    - Coordinates: {x: 2, y: 3}
+    - Coordinates: {x: 3, y: 2}
+    - Coordinates: {x: 3, y: 3}
+    - Coordinates: {x: 4, y: 4}
+    - Coordinates: {x: 3, y: 4}
+    PowerTiles:
+    - Coordinates: {x: 2, y: 0}
+      PowerType: 0
+      Value: 2
+      Object: {fileID: 0}
+    - Coordinates: {x: 4, y: 1}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    TeleportTiles:
+    - Coordinates: {x: 0, y: 3}
+      DestinationCoordinates: {x: 4, y: 3}
+      Object: {fileID: 0}
+      PreviewObject: {fileID: 0}
+    - Coordinates: {x: 4, y: 3}
+      DestinationCoordinates: {x: 0, y: 3}
+      Object: {fileID: 0}
+      PreviewObject: {fileID: 0}
+    ButtonTiles:
+    - Coordinates: {x: 2, y: 2}
+      DestinationCoordinates: {x: 4, y: 2}
+      ButtonType: 0
+      Activated: 0
+      Object: {fileID: 0}
+    GhostBlockTiles:
+    - Coordinates: {x: 4, y: 2}
+      Object: {fileID: 0}

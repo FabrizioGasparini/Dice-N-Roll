@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Flag
   m_EditorClassIdentifier: 
   Name: Flag
-  TileType: 3
   Tile: {fileID: 5371302550880651189, guid: 1605d754199f1a14fa77de555bebe185, type: 3}
   Preview: {fileID: 2629303908801638809, guid: 2ad20195eff73834c9111db985490ab7, type: 3}
   GizmoSize: {x: 0.75, y: 0.75, z: 0.75}
-  GizmoColor:
-    serializedVersion: 2
-    rgba: 125
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 1, g: 1, b: 0, a: 0.39215687}
+  GizmoMesh: {fileID: 6532508685850981849, guid: ff6ae76dee6f53a46a96391a1ce23a2c,
+    type: 3}

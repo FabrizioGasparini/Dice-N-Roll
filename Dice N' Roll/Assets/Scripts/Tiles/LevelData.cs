@@ -13,10 +13,7 @@ public class LevelData : ScriptableObject
     public Vector2 DiceCoordinates;
     public int DiceValue;
     public Vector2 FlagCoordinates;
-    public List<Vector2> Blocks;
-    public List<PowerTile> Powers;
-    public List<TeleportTile> Teleports;
-    public List<ButtonTile> Buttons;
+    public TilesList TilesList;
 
     public void Override(LevelData levelData)
     {
@@ -26,13 +23,13 @@ public class LevelData : ScriptableObject
         DiceCoordinates = levelData.DiceCoordinates;
         DiceValue = levelData.DiceValue;
         FlagCoordinates = levelData.FlagCoordinates;
-        Blocks = levelData.Blocks;
-        Powers = levelData.Powers;
-        Teleports = levelData.Teleports;
-        Buttons = levelData.Buttons;
+        TilesList.BlockTiles = levelData.TilesList.BlockTiles;
+        TilesList.PowerTiles = levelData.TilesList.PowerTiles;
+        TilesList.TeleportTiles = levelData.TilesList.TeleportTiles;
+        TilesList.ButtonTiles = levelData.TilesList.ButtonTiles;
     }
 
-    public void Reset()
+    public void ResetData()
     {
         GridRows = 0;
         GridColumns = 0;
@@ -40,8 +37,19 @@ public class LevelData : ScriptableObject
         DiceCoordinates = new Vector2(0, 0);
         DiceValue = 0;
         FlagCoordinates = new Vector2(0, 0);
-        Blocks = new List<Vector2>();
-        Powers = new List<PowerTile>();
-        Teleports = new List<TeleportTile>();
+        TilesList.BlockTiles = new List<Tile>();
+        TilesList.PowerTiles = new List<PowerTile>();
+        TilesList.TeleportTiles = new List<TeleportTile>();
     }
+
+}
+
+[System.Serializable]
+public class TilesList
+{
+    public List<Tile> BlockTiles;
+    public List<PowerTile> PowerTiles;
+    public List<TeleportTile> TeleportTiles;
+    public List<ButtonTile> ButtonTiles;
+    public List<GhostBlockTile> GhostBlockTiles;
 }

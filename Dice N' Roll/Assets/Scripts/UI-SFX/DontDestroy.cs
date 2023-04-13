@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    void Awake(){        
+    /*void Awake(){        
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
 
         if (musicObj.Length > 1)
@@ -13,5 +13,5 @@ public class DontDestroy : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-    }
+    }*/
 }

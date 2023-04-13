@@ -30,7 +30,7 @@ public class SaveLoadScript : MonoBehaviour
     private Action<Texture2D> onScreenshotTaken;
 
 
-    void Awake()
+    void Start()
     {
         Instance = this;
         RenderPipelineManager.endFrameRendering += RenderPipelineManager_endFrameRendering;
@@ -166,6 +166,8 @@ public class SaveLoadScript : MonoBehaviour
 
     public void LoadEditorLevel()
     {
+        if(!File.Exists(Application.persistentDataPath + "/LevelEditor/CurrentEditorLevel.lvldata")) return;
+        
         FileDataWithImage.Load("CurrentEditorLevel.lvldata", out LevelData levelData, out Texture2D screenshot);
 
         Resources.Load<LevelData>("Levels/CurrentEditorLevel").Override(levelData);
@@ -181,9 +183,7 @@ public class FileDataWithImage
     [Serializable]
     public class Header
     {
-
         public int jsonByteSize;
-
     }
 
     public static void Save(string levelName, string json, Texture2D screenshot)
@@ -193,12 +193,11 @@ public class FileDataWithImage
         byte[] jsonByteArray = Encoding.Unicode.GetBytes(json);
         byte[] screenshotByteArray = screenshot.EncodeToPNG();
 
-
         Header header = new Header
         {
             jsonByteSize = jsonByteArray.Length
         };
-        string headerJson = JsonUtility.ToJson(header);
+        string headerJson = JsonUtility.ToJson(header, true);
         byte[] headerJsonByteArray = Encoding.Unicode.GetBytes(headerJson);
 
         ushort headerSize = (ushort)headerJsonByteArray.Length;

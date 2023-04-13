@@ -31,10 +31,8 @@ Transform:
   m_Children:
   - {fileID: 6964888038522594040}
   - {fileID: 668249475599137514}
-  - {fileID: 4854141684030306447}
-  - {fileID: 4808370030952420681}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6555608741892246386
 MonoBehaviour:
@@ -49,85 +47,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelData: {fileID: 0}
-  tiles:
-  - {fileID: 11400000, guid: 4ec6d31594261034c8e6d6f56d3ae8f0, type: 2}
-  - {fileID: 11400000, guid: d440ddc274a9a8645af1fb6521cd56ac, type: 2}
-  - {fileID: 11400000, guid: d34c04671a69ee141afb15564e0c6eaa, type: 2}
-  - {fileID: 11400000, guid: e75dad8853270c1419f2926f3c9119a2, type: 2}
-  - {fileID: 11400000, guid: c31b93f5bab5dac4899102c464273dcc, type: 2}
-  - {fileID: 11400000, guid: 177da08410cd6cc4799398e651cce5a6, type: 2}
-  diceData: {fileID: 11400000, guid: d440ddc274a9a8645af1fb6521cd56ac, type: 2}
-  flagData: {fileID: 11400000, guid: d34c04671a69ee141afb15564e0c6eaa, type: 2}
-  blockData: {fileID: 11400000, guid: 4ec6d31594261034c8e6d6f56d3ae8f0, type: 2}
-  powerData: {fileID: 11400000, guid: e75dad8853270c1419f2926f3c9119a2, type: 2}
-  teleportData: {fileID: 11400000, guid: c31b93f5bab5dac4899102c464273dcc, type: 2}
+  tilesList: {fileID: 11400000, guid: cbc98809dc9d0c048939ec23067439ae, type: 2}
   flagMaterial: {fileID: 2100000, guid: 7fa33c7bd72ff31418823fd701e7b12b, type: 2}
+  showGrid: 1
+  showTiles: 1
+  drawSolid: 1
   InEditor: 0
   InMenu: 0
   godMode: 0
   startPosition: {x: 0, y: -0.5, z: 0}
---- !u!1 &5064059212630864627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4854141684030306447}
-  m_Layer: 0
-  m_Name: Powers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4854141684030306447
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5064059212630864627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8071644693253159321}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5839652784006156860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4808370030952420681}
-  m_Layer: 0
-  m_Name: Teleports
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4808370030952420681
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5839652784006156860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8071644693253159321}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5977379732239568821
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668249475599137514}
   m_Layer: 0
-  m_Name: Blocks
+  m_Name: TilesParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

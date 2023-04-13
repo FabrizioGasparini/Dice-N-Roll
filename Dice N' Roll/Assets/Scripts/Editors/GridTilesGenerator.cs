@@ -14,11 +14,12 @@ public class GridTilesGenerator : EditorWindow
     private GUIStyle titleStyle = new GUIStyle();
 
 
+    private TileDataList tileDataList;
     private Grid grid;
 
 
-    private TileTypes selectedTile;
-    private string[] tilesTypes = System.Enum.GetNames(typeof(TileTypes));
+    private TileType selectedTile;
+    private string[] tilesTypes = System.Enum.GetNames(typeof(TileType));
 
     private string levelName;
 
@@ -30,6 +31,11 @@ public class GridTilesGenerator : EditorWindow
     private int teleportX = -1;
     private int teleportY = -1;
 
+    private bool buttonSelected = false;
+    private int buttonX = -1;
+    private int buttonY = -1;
+    private ButtonType buttonType;
+
     private int selectedButton = -1;
 
     private int gridRows = 5;
@@ -38,9 +44,11 @@ public class GridTilesGenerator : EditorWindow
     private Vector2 diceCoordinates;
     private int diceValue = 6;
     private Vector2 flagCoordinates;
-    private List<Vector2> blockTiles = new List<Vector2>();
+    private List<Tile> blockTiles = new List<Tile>();
     private List<PowerTile> powerTiles = new List<PowerTile>();
     private List<TeleportTile> teleportTiles = new List<TeleportTile>();
+    private List<ButtonTile> buttonTiles = new List<ButtonTile>();
+    private List<GhostBlockTile> ghostBlockTiles = new List<GhostBlockTile>();
 
 
     [MenuItem("Dice N' Roll/Grid Tiles Generator")]
@@ -60,11 +68,11 @@ public class GridTilesGenerator : EditorWindow
         titleStyle.normal.textColor = Color.white;
 
         if(grid == null) grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
+        if(tileDataList == null) tileDataList = Resources.Load<TileDataList>("Tiles/Data/TileDataList");
 
         scrollPos =
             GUILayout.BeginScrollView(scrollPos);
         
-        GUILayout.Label("");
         GUILayout.Label(" GRID TILES GENERATOR", titleStyle);
         GUILayout.Label("");
 
@@ -104,20 +112,30 @@ public class GridTilesGenerator : EditorWindow
 
             for (int b = 0; b < gridColumns; b++)
             {   
+
                 string textButton = "";
 
-                if(TileIsDice(a,b)) GUI.backgroundColor = Color.white;
-                if(TileIsFlag(a,b)) GUI.backgroundColor = Color.black;
-                if(TileIsBlock(a,b)) GUI.backgroundColor = Color.red;
-                if(TileIsTeleport(a,b))
-                {
-                    GUI.backgroundColor = Color.magenta;
-                    textButton = GetTeleportTile(a,b).DestinationCoordinates.x.ToString() + ", " + GetTeleportTile(a,b).DestinationCoordinates.y.ToString();
-                } 
+                if(GetType(a, b) == TileType.Dice) GUI.backgroundColor = GetTileData("Dice").GizmoColor;
+                if(GetType(a, b) == TileType.Flag) GUI.backgroundColor = GetTileData("Flag").GizmoColor;
+                if(GetType(a, b) == TileType.Block) GUI.backgroundColor = GetTileData("Block").GizmoColor;
+                if(GetType(a, b) == TileType.Button) GUI.backgroundColor = GetTileData("Button").GizmoColor;
+                if(GetType(a, b) == TileType.GhostBlock) GUI.backgroundColor = GetTileData("Ghost Block").GizmoColor;
 
-                if(TileIsPower(a,b))
+                if(GetType(a, b) == TileType.Teleport)
                 {
-                    GUI.backgroundColor = Color.blue;
+                    GUI.backgroundColor = GetTileData("Teleport").GizmoColor;
+                    textButton = GetTeleportTile(a,b).DestinationCoordinates.x.ToString() + ", " + GetTeleportTile(a,b).DestinationCoordinates.y.ToString();
+                }
+
+                if(GetType(a, b) == TileType.Button)
+                {
+                    GUI.backgroundColor = GetTileData("Button").GizmoColor;
+                    textButton = GetButtonTile(a,b).DestinationCoordinates.x.ToString() + ", " + GetButtonTile(a, b).DestinationCoordinates.y.ToString();
+                }
+
+                if (GetType(a, b) == TileType.Power)
+                {
+                    GUI.backgroundColor = GetTileData("Power").GizmoColor;
                     
                     switch(powerType)
                     {
@@ -143,53 +161,69 @@ public class GridTilesGenerator : EditorWindow
                 {
                     switch (selectedTile)
                     {
-                        case TileTypes.None:
-                            if(TileIsDice(a, b)) diceCoordinates = new Vector2(-1, -1);
-                            if(TileIsFlag(a, b)) flagCoordinates = new Vector2(-1, -1);
-                            if(TileIsBlock(a, b)) blockTiles.Remove(new Vector2(a, b));
-                            
-                            if(TileIsPower(a, b))
+                        case TileType.None:
+                            if (GetType(a, b) == TileType.Dice) diceCoordinates = new Vector2(-1, -1);
+                            if (GetType(a, b) == TileType.Flag) flagCoordinates = new Vector2(-1, -1);
+
+                            if (GetType(a, b) == TileType.Block) blockTiles.Remove(GetBlockTile(a, b));
+
+                            if (GetType(a, b) == TileType.GhostBlock)
+                            {
+                                ghostBlockTiles.Remove(GetGhostBlockTile(a, b));
+                                buttonTiles.Remove(GetButtonTileByDestination(a, b));
+                            } 
+
+                            if (GetType(a, b) == TileType.Power)
                             {
                                 powerTiles.Remove(GetPowerTile(a, b));
                             } 
 
-                            if(TileIsTeleport(a, b))
+                            if(GetType(a, b) == TileType.Teleport)
                             {
                                 int destX = (int)GetTeleportTile(a, b).DestinationCoordinates.x;
                                 int destY = (int)GetTeleportTile(a, b).DestinationCoordinates.y;
 
                                 teleportTiles.Remove(GetTeleportTile(a, b));
                                 teleportTiles.Remove(GetTeleportTile(destX, destY));
+                            }
+                            
+                            if(GetType(a, b) == TileType.Button)
+                            {
+                                int destX = (int)GetButtonTile(a, b).DestinationCoordinates.x;
+                                int destY = (int)GetButtonTile(a, b).DestinationCoordinates.y;
+
+                                buttonTiles.Remove(GetButtonTile(a, b));
+                                ghostBlockTiles.Remove(GetGhostBlockTile(destX, destY));
                             } 
                             
                             break;
 
-                        case TileTypes.Block:
-                            if(TileIsDice(a, b) || TileIsFlag(a, b) || TileIsBlock(a, b) || TileIsPower(a, b) || TileIsTeleport(a, b)) break;
-                            blockTiles.Add(new Vector2(a, b));
+                        case TileType.Block:
+                            if (GetType(a, b) != TileType.None) break;
+                            blockTiles.Add(new Tile(a, b));
                     
                             break;
 
-                        case TileTypes.Dice:
-                            if(TileIsDice(a, b) || TileIsFlag(a, b) || TileIsBlock(a, b) || TileIsPower(a, b) || TileIsTeleport(a, b)) break;
+                        case TileType.Dice:
+                            if (GetType(a, b) != TileType.None) break;
                             diceCoordinates = (new Vector2(a, b));
                             
                             break;
                             
-                        case TileTypes.Flag:
-                            if(TileIsDice(a, b) || TileIsFlag(a, b) || TileIsBlock(a, b) || TileIsPower(a, b) || TileIsTeleport(a, b)) break;
+                        case TileType.Flag:
+                            if (GetType(a, b) != TileType.None) break;
                             flagCoordinates = (new Vector2(a, b));
                     
                             break;
 
-                        case TileTypes.Power:
-                            if(TileIsDice(a, b) || TileIsFlag(a, b) || TileIsBlock(a, b) || TileIsPower(a, b) || TileIsTeleport(a, b)) break;
+                        case TileType.Power:
+                            if (GetType(a, b) != TileType.None) break;
                             powerTiles.Add(new PowerTile(a, b, powerType, powerValue));
 
                             break;
 
-                        case TileTypes.Teleport:
-                            if(TileIsDice(a, b) || TileIsFlag(a, b) || TileIsBlock(a, b) || TileIsPower(a, b) || TileIsTeleport(a, b)) break;
+                        case TileType.Teleport:
+                            if (GetType(a, b) != TileType.None) break;
 
                             if(teleportSelected)
                             {
@@ -210,6 +244,27 @@ public class GridTilesGenerator : EditorWindow
 
                             break;
 
+                        case TileType.Button:
+                            if(GetType(a, b) != TileType.None) break;
+
+                            if (buttonSelected)
+                            {
+                                buttonSelected = false;
+
+                                buttonTiles.Add(new ButtonTile(buttonX, buttonY, a, b, buttonType));
+                                ghostBlockTiles.Add(new GhostBlockTile(a, b));
+
+                                buttonX = -1;
+                                buttonY = -1;
+                            }
+                            else
+                            {
+                                buttonSelected = true;
+                                buttonX = a;
+                                buttonY = b;
+                            }
+
+                            break;
                     }
                 }
                 GUI.backgroundColor = Color.HSVToRGB(0, 0, .45f);
@@ -224,20 +279,30 @@ public class GridTilesGenerator : EditorWindow
     
         for(int i = 0; i < tilesTypes.Length; i++)
         {
+            if(tilesTypes[i] == "GhostBlock") break;
             if(selectedButton == i) GUI.backgroundColor = Color.HSVToRGB(0, 0, .65f);
             if (GUILayout.Button(tilesTypes[i], GUILayout.Height(30)))
             {
-                if(!teleportSelected)
+                if(!teleportSelected && !buttonSelected)
                 {
-                    selectedTile = (TileTypes)System.Enum.Parse(typeof(TileTypes), tilesTypes[i]);
+                    selectedTile = (TileType)System.Enum.Parse(typeof(TileType), tilesTypes[i]);
                     selectedButton = i;
                 }
             }
-            GUI.backgroundColor =Color.HSVToRGB(0, 0, .45f);
+            GUI.backgroundColor = Color.HSVToRGB(0, 0, .45f);
         }
 
         GUILayout.EndHorizontal();
         
+        if(selectedButton == 2)
+        {
+            GUILayout.Label("");
+            GUILayout.Label(" Dice Variables", guiStyle);
+            GUILayout.Label("");
+
+            diceValue = EditorGUILayout.IntSlider(" Power Value: ", diceValue, 1, 6);
+        }
+
         if(selectedButton == 4)
         {
             GUILayout.Label("");
@@ -248,15 +313,14 @@ public class GridTilesGenerator : EditorWindow
             powerType = (PowerType)EditorGUILayout.EnumPopup(" Power Type: ", powerType);
         }
 
-        if(selectedButton == 2)
+        if(selectedButton == 6)
         {
             GUILayout.Label("");
-            GUILayout.Label(" Dice Variables", guiStyle);
+            GUILayout.Label(" Button Variables", guiStyle);
             GUILayout.Label("");
 
-            diceValue = EditorGUILayout.IntSlider(" Power Value: ", diceValue, 1, 6);
+            buttonType = (ButtonType)EditorGUILayout.EnumPopup(" Button Type: ", buttonType);
         }
-
 
         GUILayout.Label("");
         GUILayout.Label("");
@@ -264,9 +328,11 @@ public class GridTilesGenerator : EditorWindow
         {
             diceCoordinates = new Vector2(-1, -1);
             flagCoordinates = new Vector2(-1, -1);
-            blockTiles = new List<Vector2>();
+            blockTiles = new List<Tile>();
             powerTiles = new List<PowerTile>();
             teleportTiles = new List<TeleportTile>();
+            buttonTiles = new List<ButtonTile>();
+            ghostBlockTiles = new List<GhostBlockTile>();
         }
         GUILayout.Label("");
         if (GUILayout.Button("GENERATE LEVEL DATA", GUILayout.Height(50)))
@@ -279,42 +345,38 @@ public class GridTilesGenerator : EditorWindow
     }
 
 
-
-    public bool TileIsBlock(int x, int y)
+    private TileData GetTileData(string tileName)
     {
-        foreach (Vector2 tile in blockTiles) if (tile == new Vector2(x, y)) return true;
+        foreach (var tile in tileDataList.TilesList) if (tile.Name == tileName) return tile;
 
-        return false;
+        return null;
     }
 
-    public bool TileIsDice(int x, int y)
+    public TileType GetType(int x, int y)
     {
-        if (diceCoordinates == new Vector2(x, y)) return true;
+        foreach (Tile tile in blockTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Block;
 
-        return false;
+        if (diceCoordinates == new Vector2(x, y)) return TileType.Dice;
+
+        if (flagCoordinates == new Vector2(x, y)) return TileType.Flag;
+
+        foreach (PowerTile tile in powerTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Power;
+
+        foreach (TeleportTile tile in teleportTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Teleport;
+
+        foreach (ButtonTile tile in buttonTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Button;
+
+        foreach (GhostBlockTile tile in ghostBlockTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.GhostBlock;
+
+        return TileType.None;
     }
 
-    public bool TileIsFlag(int x, int y)
+    public Tile GetBlockTile(int x, int y)
     {
-        if (flagCoordinates == new Vector2(x, y)) return true;
+        foreach (Tile tile in blockTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
 
-        return false;
+        return null;
     }
-    
-    public bool TileIsPower(int x, int y)
-    {
-        foreach (PowerTile tile in powerTiles) if (tile.Coordinates == new Vector2(x, y)) return true;
-
-        return false;
-    }
-
-    public bool TileIsTeleport(int x, int y)
-    {
-        foreach (TeleportTile tile in teleportTiles) if (tile.Coordinates == new Vector2(x, y)) return true;
-
-        return false;
-    }
-
     public PowerTile GetPowerTile(int x, int y)
     {
         foreach (PowerTile tile in powerTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
@@ -325,6 +387,27 @@ public class GridTilesGenerator : EditorWindow
     public TeleportTile GetTeleportTile(int x, int y)
     {
         foreach (TeleportTile tile in teleportTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+
+    public ButtonTile GetButtonTile(int x, int y)
+    {
+        foreach (ButtonTile tile in buttonTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+
+    public ButtonTile GetButtonTileByDestination(int x, int y)
+    {
+        foreach (ButtonTile tile in buttonTiles) if (tile.DestinationCoordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+
+    public GhostBlockTile GetGhostBlockTile(int x, int y)
+    {
+        foreach (GhostBlockTile tile in ghostBlockTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
 
         return null;
     }
@@ -342,9 +425,11 @@ public class GridTilesGenerator : EditorWindow
             data.DiceCoordinates = diceCoordinates;
             data.DiceValue = diceValue;
             data.FlagCoordinates = flagCoordinates;
-            data.Blocks = blockTiles;
-            data.Powers = powerTiles;
-            data.Teleports = teleportTiles;
+            data.TilesList.BlockTiles = blockTiles;
+            data.TilesList.PowerTiles = powerTiles;
+            data.TilesList.TeleportTiles = teleportTiles;
+            data.TilesList.ButtonTiles = buttonTiles;
+            data.TilesList.GhostBlockTiles = ghostBlockTiles;
             data.GridRows = gridRows;
             data.GridColumns = gridColumns;
         }
@@ -355,9 +440,11 @@ public class GridTilesGenerator : EditorWindow
             levelData.DiceCoordinates = diceCoordinates;
             levelData.DiceValue = diceValue;
             levelData.FlagCoordinates = flagCoordinates;
-            levelData.Blocks = blockTiles;
-            levelData.Powers = powerTiles;
-            levelData.Teleports = teleportTiles;
+            levelData.TilesList.BlockTiles = blockTiles;
+            levelData.TilesList.PowerTiles = powerTiles;
+            levelData.TilesList.TeleportTiles = teleportTiles;
+            levelData.TilesList.ButtonTiles = buttonTiles;
+            levelData.TilesList.GhostBlockTiles = ghostBlockTiles;
             levelData.GridRows = gridRows;
             levelData.GridColumns = gridColumns;
 

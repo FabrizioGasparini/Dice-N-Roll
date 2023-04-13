@@ -17,13 +17,12 @@ MonoBehaviour:
   DiceCoordinates: {x: 0, y: 0}
   DiceValue: 6
   FlagCoordinates: {x: 2, y: 3}
-  Blocks:
-  - {x: 0, y: 2}
-  - {x: 1, y: 2}
-  - {x: 2, y: 2}
-  Powers:
-  - Coordinates: {x: 4, y: 1}
-    PowerType: 0
-    Value: 4
-    Object: {fileID: 0}
-  Teleports: []
+  TilesList:
+    BlockTiles:
+    - Coordinates: {x: 2, y: 0}
+    - Coordinates: {x: 2, y: 2}
+    - Coordinates: {x: 2, y: 2}
+    PowerTiles: []
+    TeleportTiles: []
+    ButtonTiles: []
+    GhostBlockTiles: []

@@ -9,7 +9,7 @@ public class TileSelectorPanel : MonoBehaviour
     [SerializeField] private TileSettingsPanel tileSettingsPanel;
 
     private Transform content;
-    private string[] tilesTypes = System.Enum.GetNames(typeof(TileTypes));
+    private string[] tilesTypes = System.Enum.GetNames(typeof(TileType));
 
     private EditorPlacementScript editor;
 
@@ -31,7 +31,7 @@ public class TileSelectorPanel : MonoBehaviour
             var newButton = CreateButton(tilesTypes[i]);
             
             newButton.onClick.AddListener(() => {
-                editor.SelectTileType((TileTypes)System.Enum.Parse(typeof(TileTypes), newButton.name));
+                editor.SelectTileType((TileType)System.Enum.Parse(typeof(TileType), newButton.name));
                 if (!editor.firstTeleportPlaced) tileSettingsPanel.ShowSettings(newButton.name);
             });
         }

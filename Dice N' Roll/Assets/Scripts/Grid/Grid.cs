@@ -10,13 +10,16 @@ public class Grid : MonoBehaviour
     public LevelData LevelData;
 
     [Header("Tiles Data")]
-    [SerializeField] private List<TileData> tiles = new List<TileData>();
+    [SerializeField] private TileDataList tilesList;
 
     [Header("References")]
     [SerializeField] private Material flagMaterial;
-    private Transform blocksParent;
-    private Transform powersParent;
-    private Transform teleportsParent;
+    private Transform tilesParent;
+
+    [Header("Gizmos Settings")]
+    [SerializeField] private bool showGrid;
+    [SerializeField] private bool showTiles;
+    [SerializeField] private bool drawSolid;
 
     [Header("Editor")]
     public bool InEditor;
@@ -25,7 +28,6 @@ public class Grid : MonoBehaviour
 
     private GameObject dice;
     private GameObject flag;
-
 
     [HideInInspector] public Vector3 startPosition = new Vector3(0,-0.5f,0);
     private int currentRows;
@@ -39,61 +41,102 @@ public class Grid : MonoBehaviour
     {
         if(!LevelData || InEditor) return;
 
-        for(int a = 0; a < LevelData.GridColumns; a++)
+        if(showGrid)
         {
-            for(int b = 0; b < LevelData.GridRows; b++)
+            for(int a = 0; a < LevelData.GridColumns; a++)
             {
-                Gizmos.DrawWireCube(new Vector3(startPosition.x + b, 0, startPosition.z + a), new Vector3(1, 0.01f, 1));
+                for(int b = 0; b < LevelData.GridRows; b++)
+                {
+                    Gizmos.DrawWireCube(new Vector3(startPosition.x + b, 0, startPosition.z + a), new Vector3(1, 0.01f, 1));
+                }
             }
         }
 
         if (LevelData == null) return;
 
-        foreach (Vector2 block in LevelData.Blocks)
+        if(showTiles)
         {
-            Vector3 position = startPosition + new Vector3(block.x, 1, block.y);
+            if (LevelData.FlagCoordinates != LevelData.DiceCoordinates)
+            {
+                var tile = GetTileData("Dice");
 
-            Gizmos.color = GetTileData("Block").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Block").GizmoSize);
+                Vector3 position = startPosition + new Vector3(LevelData.DiceCoordinates.x, 1, LevelData.DiceCoordinates.y);
+
+                DrawGizmo(position, GetTileData("Dice").GizmoSize, GetTileData("Dice").GizmoColor);
+
+
+                tile = GetTileData("Flag");
+                position = startPosition + new Vector3(LevelData.FlagCoordinates.x, 1, LevelData.FlagCoordinates.y);
+
+                DrawGizmo(position, GetTileData("Flag").GizmoSize, GetTileData("Flag").GizmoColor);
+            }
+
+            foreach (Tile block in LevelData.TilesList.BlockTiles)
+            {
+                var tile = GetTileData("Block");
+
+                Vector3 position = startPosition + new Vector3(block.Coordinates.x, 1, block.Coordinates.y);
+
+                DrawGizmo(position, GetTileData("Block").GizmoSize, GetTileData("Block").GizmoColor);
+            }
+
+            foreach (PowerTile power in LevelData.TilesList.PowerTiles)
+            {
+                var tile = GetTileData("Power");
+                
+                Vector3 position = startPosition + new Vector3(power.Coordinates.x, 1, power.Coordinates.y);
+
+                DrawGizmo(position, GetTileData("Power").GizmoSize, GetTileData("Power").GizmoColor);
+            }
+
+            foreach (TeleportTile teleport in LevelData.TilesList.TeleportTiles)
+            {
+                var tile = GetTileData("Teleport");
+
+                Vector3 position = startPosition + new Vector3(teleport.Coordinates.x, .625f, teleport.Coordinates.y);
+
+                DrawGizmo(position, GetTileData("Teleport").GizmoSize, GetTileData("Teleport").GizmoColor);
+            }
+
+            foreach (ButtonTile button in LevelData.TilesList.ButtonTiles)
+            {
+                var tile = GetTileData("Button");
+
+                Vector3 position = startPosition + new Vector3(button.Coordinates.x, .625f, button.Coordinates.y);
+
+                DrawGizmo(position, GetTileData("Button").GizmoSize, GetTileData("Button").GizmoColor);
+            }
+
+            foreach (GhostBlockTile ghostBlock in LevelData.TilesList.GhostBlockTiles)
+            {
+                var tile = GetTileData("Ghost Block");
+
+                Vector3 position = startPosition + new Vector3(ghostBlock.Coordinates.x, 1, ghostBlock.Coordinates.y);
+
+                DrawGizmo(position, GetTileData("Ghost Block").GizmoSize, GetTileData("Ghost Block").GizmoColor);
+            }
+        }
+    }
+
+    private void DrawGizmo(Vector3 position, Vector3 size, Color color)
+    {
+        Gizmos.color = color;
+        if(drawSolid) Gizmos.DrawCube(position, size);
+        Gizmos.DrawWireCube(position, size);
+    
+    }
+
+    private TileData GetTileData(string tileName)
+    {
+        foreach (var tile in tilesList.TilesList)
+        {
+            if (tile.Name == tileName)
+            {
+                return tile;
+            }
         }
 
-        foreach (PowerTile power in LevelData.Powers)
-        {
-            Vector3 position = startPosition + new Vector3(power.Coordinates.x, 1, power.Coordinates.y);
-
-            Gizmos.color = GetTileData("Power").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Power").GizmoSize);
-        }
-
-        foreach (TeleportTile teleport in LevelData.Teleports)
-        {
-            Vector3 position = startPosition + new Vector3(teleport.Coordinates.x, .625f, teleport.Coordinates.y);
-
-            Gizmos.color = GetTileData("Teleport").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Teleport").GizmoSize);
-        }
-
-        foreach (ButtonTile button in LevelData.Buttons)
-        {
-            Vector3 position = startPosition + new Vector3(button.Coordinates.x, .625f, button.Coordinates.y);
-
-            Gizmos.color = GetTileData("Button").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Button").GizmoSize);
-        }
-
-        if (LevelData.FlagCoordinates != LevelData.DiceCoordinates)
-        {
-            Vector3 position = startPosition + new Vector3(LevelData.DiceCoordinates.x, 1, LevelData.DiceCoordinates.y);
-
-            Gizmos.color = GetTileData("Dice").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Dice").GizmoSize);
-
-
-            position = startPosition + new Vector3(LevelData.FlagCoordinates.x, 1, LevelData.FlagCoordinates.y);
-
-            Gizmos.color = GetTileData("Flag").GizmoColor;
-            Gizmos.DrawWireCube(position, GetTileData("Flag").GizmoSize);
-        }
+        return null;
     }
 
     void Awake()
@@ -103,9 +146,7 @@ public class Grid : MonoBehaviour
         currentColumns = LevelData.GridColumns;
         currentRows = LevelData.GridRows;
 
-        blocksParent = transform.Find("Blocks");
-        powersParent = transform.Find("Powers");
-        teleportsParent = transform.Find("Teleports");
+        tilesParent = transform.Find("TilesParent");
 
         if(tilePrefab) GenerateGrid();
         
@@ -163,10 +204,10 @@ public class Grid : MonoBehaviour
 
         grid.Clear();
         GenerateGrid();
-        Camera.main.GetComponent<CameraScript>().ResetCamera();
+        if(GameObject.FindObjectOfType<CameraScript>()) GameObject.FindObjectOfType<CameraScript>().ResetCamera();
     }
 
-    public bool TileHasFlag(int x, int y, TileTypes flag)
+    public bool TileHasFlag(int x, int y, TileType flag)
     {
         return grid[x][y].TileType.HasFlag(flag);
     }
@@ -181,6 +222,10 @@ public class Grid : MonoBehaviour
         {
             return null;
         }
+    }
+    public TileType GetType(int x, int y)
+    {
+        return GetTile(x, y).TileType;
     }
 
     // TILES PLACER
@@ -198,7 +243,7 @@ public class Grid : MonoBehaviour
             dice.GetComponent<DiceScript>().Row = (int)LevelData.DiceCoordinates.x;
             dice.GetComponent<DiceScript>().Column = (int)LevelData.DiceCoordinates.y;
             dice.GetComponent<DiceScript>().GodMode = godMode;
-            GetTile((int)LevelData.DiceCoordinates.x, (int)LevelData.DiceCoordinates.y).TileType = TileTypes.Dice;
+            GetTile((int)LevelData.DiceCoordinates.x, (int)LevelData.DiceCoordinates.y).TileType = TileType.Dice;
 
 
             position = new Vector3(LevelData.FlagCoordinates.x, 1, LevelData.FlagCoordinates.y);
@@ -206,23 +251,23 @@ public class Grid : MonoBehaviour
             newFlag.name = "Flag";
             flag = newFlag;
 
-            GetTile((int)LevelData.FlagCoordinates.x, (int)LevelData.FlagCoordinates.y).TileType = TileTypes.Flag;
+            GetTile((int)LevelData.FlagCoordinates.x, (int)LevelData.FlagCoordinates.y).TileType = TileType.Flag;
             GetTile((int)LevelData.FlagCoordinates.x, (int)LevelData.FlagCoordinates.y).GetComponent<MeshRenderer>().material = flagMaterial;
         }
 
-        foreach (Vector2 blockCoord in LevelData.Blocks)
+        foreach (Tile block in LevelData.TilesList.BlockTiles)
         {
-            Vector3 position = new Vector3(blockCoord.x, .5f, blockCoord.y);
-            GameObject newBlock = Instantiate(GetTileData("Block").Tile, position, Quaternion.identity, blocksParent);
+            Vector3 position = new Vector3(block.Coordinates.x, .5f, block.Coordinates.y);
+            GameObject newBlock = Instantiate(GetTileData("Block").Tile, position, Quaternion.identity, tilesParent);
             newBlock.name = "Block";
 
-            GetTile((int)blockCoord.x, (int)blockCoord.y).TileType = TileTypes.Block;
+            GetTile((int)block.Coordinates.x, (int)block.Coordinates.y).TileType = TileType.Block;
         }
 
-        foreach (PowerTile power in LevelData.Powers)
+        foreach (PowerTile power in LevelData.TilesList.PowerTiles)
         {
             Vector3 position = new Vector3(power.Coordinates.x, .5f, power.Coordinates.y);
-            GameObject newPower = Instantiate(GetTileData("Power").Tile, position, Quaternion.identity, powersParent);
+            GameObject newPower = Instantiate(GetTileData("Power").Tile, position, Quaternion.identity, tilesParent);
             newPower.name = "Power";
             power.Object = newPower;
 
@@ -245,90 +290,62 @@ public class Grid : MonoBehaviour
                     break;
             }
 
-            GetTile((int)power.Coordinates.x, (int)power.Coordinates.y).TileType = TileTypes.Power;
+            GetTile((int)power.Coordinates.x, (int)power.Coordinates.y).TileType = TileType.Power;
         }
 
-        foreach (TeleportTile teleport in LevelData.Teleports)
+        foreach (TeleportTile teleport in LevelData.TilesList.TeleportTiles)
         {
             Vector3 position = new Vector3(teleport.Coordinates.x, .125f, teleport.Coordinates.y);
-            GameObject newTeleport = Instantiate(GetTileData("Teleport").Tile, position, Quaternion.identity, teleportsParent);
+            GameObject newTeleport = Instantiate(GetTileData("Teleport").Tile, position, Quaternion.identity, tilesParent);
             newTeleport.name = "Teleport";
             teleport.Object = newTeleport;
 
-            GetTile((int)teleport.Coordinates.x, (int)teleport.Coordinates.y).TileType = TileTypes.Teleport;
+            GetTile((int)teleport.Coordinates.x, (int)teleport.Coordinates.y).TileType = TileType.Teleport;
         }
 
-    }
-
-    private TileData GetTileData(string tileName)
-    {        
-        foreach (var tile in tiles)
+        foreach (ButtonTile button in LevelData.TilesList.ButtonTiles)
         {
-            if(tile.Name == tileName)
-            {
-                return tile;
-            }
+            Vector3 position = new Vector3(button.Coordinates.x, .125f, button.Coordinates.y);
+            GameObject newButton = Instantiate(GetTileData("Button").Tile, position, Quaternion.identity, tilesParent);
+            newButton.name = "Button";
+            button.Object = newButton;
+
+            GetTile((int)button.Coordinates.x, (int)button.Coordinates.y).TileType = TileType.Button;
         }
 
-        return null;
-    }
+        foreach (GhostBlockTile ghostBlock in LevelData.TilesList.GhostBlockTiles)
+        {
+            Vector3 position = new Vector3(ghostBlock.Coordinates.x, .5f, ghostBlock.Coordinates.y);
+            GameObject newBlock = Instantiate(GetTileData("Ghost Block").Tile, position, Quaternion.identity, tilesParent);
+            newBlock.name = "Ghost Block";
+            ghostBlock.Object = newBlock;
 
-    public TileTypes FindTileType(int x, int y)
-    {
-        foreach (Vector2 tile in LevelData.Blocks) if (tile == new Vector2(x, y)) return TileTypes.Block;
-
-        if (LevelData.DiceCoordinates == new Vector2(x, y)) return TileTypes.Dice;
-
-        if (LevelData.FlagCoordinates == new Vector2(x, y)) return TileTypes.Flag;
-
-        foreach (PowerTile tile in LevelData.Powers) if (tile.Coordinates == new Vector2(x, y)) return TileTypes.Power;
-
-        foreach (TeleportTile tile in LevelData.Teleports) if (tile.Coordinates == new Vector2(x, y)) return TileTypes.Teleport;
-
-        return TileTypes.None;
-    }
-
-    public bool TileIsBlock(int x, int y)
-    {
-        foreach (Vector2 tile in LevelData.Blocks) if (tile == new Vector2(x, y)) return true;
-
-        return false;
-    }
-    public bool TileIsDice(int x, int y)
-    {
-        if (LevelData.DiceCoordinates == new Vector2(x, y)) return true;
-
-        return false;
-    }
-    public bool TileIsFlag(int x, int y)
-    {
-        if (LevelData.FlagCoordinates == new Vector2(x, y)) return true;
-
-        return false;
-    }
-    public bool TileIsPower(int x, int y)
-    {
-        foreach (PowerTile tile in LevelData.Powers) if (tile.Coordinates == new Vector2(x, y)) return true;
-
-        return false;
-    }
-    public bool TileIsTeleport(int x, int y)
-    {
-        foreach (TeleportTile tile in LevelData.Teleports) if (tile.Coordinates == new Vector2(x, y)) return true;
-
-        return false;
+            GetTile((int)ghostBlock.Coordinates.x, (int)ghostBlock.Coordinates.y).TileType = TileType.GhostBlock;
+        }
     }
 
     public PowerTile GetPowerTile(int x, int y)
     {
-        foreach (PowerTile tile in LevelData.Powers) if (tile.Coordinates == new Vector2(x, y)) return tile;
+        foreach (PowerTile tile in LevelData.TilesList.PowerTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
 
         return null;
     }
 
     public TeleportTile GetTeleportTile(int x, int y)
     {
-        foreach (TeleportTile tile in LevelData.Teleports) if (tile.Coordinates == new Vector2(x, y)) return tile;
+        foreach (TeleportTile tile in LevelData.TilesList.TeleportTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+    public ButtonTile GetButtonTile(int x, int y)
+    {
+        foreach (ButtonTile tile in LevelData.TilesList.ButtonTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+    public GhostBlockTile GetGhostBlockTile(int x, int y)
+    {
+        foreach (GhostBlockTile tile in LevelData.TilesList.GhostBlockTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
 
         return null;
     }
@@ -340,9 +357,9 @@ public class Grid : MonoBehaviour
         if((int)LevelData.DiceCoordinates.x > lastTileRow) lastTileRow = (int)LevelData.DiceCoordinates.x;
         if((int)LevelData.FlagCoordinates.x > lastTileRow) lastTileRow = (int)LevelData.FlagCoordinates.x;
 
-        foreach (Vector2 block in LevelData.Blocks) if ((int)block.x > lastTileRow) lastTileRow = (int)block.x;
-        foreach (PowerTile powerTile in LevelData.Powers) if ((int)powerTile.Coordinates.x > lastTileRow) lastTileRow = (int)powerTile.Coordinates.x;
-        foreach (TeleportTile teleportTile in LevelData.Teleports) if ((int)teleportTile.Coordinates.x > lastTileRow) lastTileRow = (int)teleportTile.Coordinates.x;
+        foreach (Tile block in LevelData.TilesList.BlockTiles) if ((int)block.Coordinates.x > lastTileRow) lastTileRow = (int)block.Coordinates.x;
+        foreach (PowerTile powerTile in LevelData.TilesList.PowerTiles) if ((int)powerTile.Coordinates.x > lastTileRow) lastTileRow = (int)powerTile.Coordinates.x;
+        foreach (TeleportTile teleportTile in LevelData.TilesList.TeleportTiles) if ((int)teleportTile.Coordinates.x > lastTileRow) lastTileRow = (int)teleportTile.Coordinates.x;
     
         return lastTileRow;
     }
@@ -353,9 +370,9 @@ public class Grid : MonoBehaviour
         if((int)LevelData.DiceCoordinates.y > lastTileColumn) lastTileColumn = (int)LevelData.DiceCoordinates.y;
         if((int)LevelData.FlagCoordinates.y > lastTileColumn) lastTileColumn = (int)LevelData.FlagCoordinates.y;
 
-        foreach (Vector2 block in LevelData.Blocks) if ((int)block.y > lastTileColumn) lastTileColumn = (int)block.y;
-        foreach (PowerTile powerTile in LevelData.Powers) if ((int)powerTile.Coordinates.y > lastTileColumn) lastTileColumn = (int)powerTile.Coordinates.y;
-        foreach (TeleportTile teleportTile in LevelData.Teleports) if ((int)teleportTile.Coordinates.y > lastTileColumn) lastTileColumn = (int)teleportTile.Coordinates.y;
+        foreach (Tile block in LevelData.TilesList.BlockTiles) if ((int)block.Coordinates.y > lastTileColumn) lastTileColumn = (int)block.Coordinates.y;
+        foreach (PowerTile powerTile in LevelData.TilesList.PowerTiles) if ((int)powerTile.Coordinates.y > lastTileColumn) lastTileColumn = (int)powerTile.Coordinates.y;
+        foreach (TeleportTile teleportTile in LevelData.TilesList.TeleportTiles) if ((int)teleportTile.Coordinates.y > lastTileColumn) lastTileColumn = (int)teleportTile.Coordinates.y;
     
         return lastTileColumn;
     }
@@ -375,8 +392,8 @@ public class Grid : MonoBehaviour
     {
         LevelData.DiceCoordinates = new Vector2(-1, -1);
         LevelData.FlagCoordinates = new Vector2(-1, -1);
-        LevelData.Blocks = new List<Vector2>();
-        LevelData.Powers = new List<PowerTile>();
-        LevelData.Teleports = new List<TeleportTile>();
+        LevelData.TilesList.BlockTiles = new List<Tile>();
+        LevelData.TilesList.PowerTiles = new List<PowerTile>();
+        LevelData.TilesList.TeleportTiles = new List<TeleportTile>();
     }
 }
