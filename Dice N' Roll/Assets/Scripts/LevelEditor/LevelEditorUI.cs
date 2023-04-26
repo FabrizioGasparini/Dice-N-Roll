@@ -40,7 +40,7 @@ public class LevelEditorUI : MonoBehaviour
         {
             string json = JsonUtility.ToJson(Resources.Load<LevelData>("Levels/CurrentEditorLevel"));
 
-            FileDataWithImage.Save("CurrentEditorLevel", json, Resources.Load<Texture2D>("Levels/Textures/Level Editor"));
+            FileDataWithImage.SaveCurrentEditor(json);
 
             GameObject.FindGameObjectWithTag("EditorUI").SetActive(false);
             LoadingScreen.LoadLevel.Invoke("Main Menu");

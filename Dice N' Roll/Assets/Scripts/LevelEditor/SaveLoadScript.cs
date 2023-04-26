@@ -74,7 +74,7 @@ public class SaveLoadScript : MonoBehaviour
             return;
         }
         
-        var EditorUI = GameObject.FindGameObjectWithTag("EditorUI").GetComponent<LevelEditorUI>();
+        var EditorUI = GameObject.FindObjectOfType<LevelEditorUI>();
 
         EditorUI.EnableScreenshotMode();
         ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to save '<b><color=lightblue>" + newLevelName + "<color=white>' with this screenshot</b>?", "Cancel", "SAVE", () => EditorUI.DisableScreenshotMode(), () =>
@@ -83,9 +83,8 @@ public class SaveLoadScript : MonoBehaviour
 
             if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
-            LevelData data = Resources.Load<LevelData>("Levels/CurrentLevelEditor");
+            LevelData data = GameObject.FindObjectOfType<Grid>().LevelData;
             string json = JsonUtility.ToJson(data, false);
-
 
             TakeScreenshot(1920, 1080, (Texture2D screenshotTexture) =>
             {
@@ -168,11 +167,11 @@ public class SaveLoadScript : MonoBehaviour
     {
         if(!File.Exists(Application.persistentDataPath + "/LevelEditor/CurrentEditorLevel.lvldata")) return;
         
-        FileDataWithImage.Load("CurrentEditorLevel.lvldata", out LevelData levelData, out Texture2D screenshot);
+        FileDataWithImage.LoadCurrentEditor(out LevelData levelData);
 
         Resources.Load<LevelData>("Levels/CurrentEditorLevel").Override(levelData);
 
-        EditorPlacementScript editorPlacementScript = GameObject.FindGameObjectWithTag("Editor").GetComponent<EditorPlacementScript>();
+        EditorPlacementScript editorPlacementScript = GameObject.FindObjectOfType<EditorPlacementScript>();
         editorPlacementScript.Init();
     }
 }
@@ -197,7 +196,7 @@ public class FileDataWithImage
         {
             jsonByteSize = jsonByteArray.Length
         };
-        string headerJson = JsonUtility.ToJson(header, true);
+        string headerJson = JsonUtility.ToJson(header, false);
         byte[] headerJsonByteArray = Encoding.Unicode.GetBytes(headerJson);
 
         ushort headerSize = (ushort)headerJsonByteArray.Length;
@@ -234,5 +233,22 @@ public class FileDataWithImage
         List<byte> screenshotByteList = byteList.GetRange(startIndex, endIndex);
         screenshotTexture2D = new Texture2D(1, 1, TextureFormat.ARGB32, false);
         screenshotTexture2D.LoadImage(screenshotByteList.ToArray());
+    }
+
+    public static void SaveCurrentEditor(string json)
+    {
+        string dir = Application.persistentDataPath + "/LevelEditor/";
+
+        File.WriteAllText(dir + "CurrentEditorLevel.lvldata", json);
+    }
+
+    public static void LoadCurrentEditor(out LevelData saveData)
+    {
+        saveData = ScriptableObject.CreateInstance<LevelData>();
+
+        string dir = Application.persistentDataPath + "/LevelEditor/";
+
+        string json = File.ReadAllText(dir + "CurrentEditorLevel.lvldata");
+        JsonUtility.FromJsonOverwrite(json, saveData);
     }
 }

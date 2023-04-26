@@ -28,6 +28,8 @@ public class TileSelectorPanel : MonoBehaviour
 
         for(int i = 0; i < tilesTypes.Length; i++)
         {
+            if(tilesTypes[i] == "GhostBlock") return;
+            
             var newButton = CreateButton(tilesTypes[i]);
             
             newButton.onClick.AddListener(() => {

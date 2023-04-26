@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class LevelTemplateScript : MonoBehaviour
 {
-    private string LevelName;
+    public string LevelName;
     private SaveLoadScript saveLoadScript;
 
     private string saveDirectory = "/LevelEditor/";
@@ -28,39 +28,64 @@ public class LevelTemplateScript : MonoBehaviour
 
     public void OverrideLevel()
     {
-        FileDataWithImage.Load(LevelName, out LevelData saveData, out Texture2D screenshot);
-        ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to ovverride '<b><color=lightblue>" + LevelName.Split(".")[0] + "</b><color=white>' with the current level?", "Cancel", "Override", () => { }, () =>
+        if (LevelName != "CurrentEditorLevel.lvldata")
         {
-            var EditorUI = GameObject.FindGameObjectWithTag("EditorUI").GetComponent<LevelEditorUI>();
-
-            EditorUI.EnableScreenshotMode();
-            ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to save '<b><color=lightblue>" + LevelName.Split(".")[0] + "<color=white>' with this screenshot</b>?", "Cancel", "SAVE", () => EditorUI.DisableScreenshotMode(), () =>
+            FileDataWithImage.Load(LevelName, out LevelData saveData, out Texture2D screenshot);
+            ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to ovverride '<b><color=lightblue>" + LevelName.Split(".")[0] + "</b><color=white>' with the current level?", "Cancel", "Override", () => { }, () =>
             {
-                EditorUI.DisableScreenshotMode();
+                var EditorUI = GameObject.FindObjectOfType<LevelEditorUI>();
 
-                string json = JsonUtility.ToJson(levelEditorData, true);
-
-                saveLoadScript.TakeScreenshot(1920, 1080, (Texture2D screenshotTexture) =>
+                EditorUI.EnableScreenshotMode();
+                ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to save '<b><color=lightblue>" + LevelName.Split(".")[0] + "<color=white>' with this screenshot</b>?", "Cancel", "SAVE", () => EditorUI.DisableScreenshotMode(), () =>
                 {
-                    FileDataWithImage.Save(LevelName.Split(".")[0], json, screenshotTexture);
+                    EditorUI.DisableScreenshotMode();
+
+                    string json = JsonUtility.ToJson(levelEditorData, true);
+                
+                    saveLoadScript.TakeScreenshot(1920, 1080, (Texture2D screenshotTexture) =>
+                    {
+                        FileDataWithImage.Save(LevelName.Split(".")[0], json, screenshotTexture);
+                    });
                 });
+            }, false, screenshot);
+        }
+        else
+        {
+            FileDataWithImage.LoadCurrentEditor(out LevelData saveData);
+            ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to ovverride '<b><color=lightblue>LAST SAVE</b><color=white>' with the current level?", "Cancel", "Override", () => { }, () =>
+            {
+                string json = JsonUtility.ToJson(levelEditorData, true);
+                FileDataWithImage.SaveCurrentEditor(json);
             });
-        }, false, screenshot);
+        }
     }
 
     public void LoadLevel()
     {
-        Debug.Log(LevelName);
-        FileDataWithImage.Load(LevelName, out LevelData levelData, out Texture2D screenshot);
-        
-        ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to load '<b><color=lightblue>" + LevelName.Split(".")[0] + "</b><color=white>', overriding the current level?", "Cancel", "Load", () => { }, () =>
+        if (LevelName != "CurrentEditorLevel.lvldata")
         {
-            levelEditorData.Override(levelData);
-            
-            EditorPlacementScript editorPlacementScript = GameObject.FindGameObjectWithTag("Editor").GetComponent<EditorPlacementScript>();
-            editorPlacementScript.ResetTiles();
-            editorPlacementScript.Init();
-        }, false, screenshot);
+            FileDataWithImage.Load(LevelName, out LevelData levelData, out Texture2D screenshot);
+            ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to load '<b><color=lightblue>" + LevelName.Split(".")[0] + "</b><color=white>', overriding the current level?", "Cancel", "Load", () => { }, () =>
+            {
+                levelEditorData.Override(levelData);
+                
+                EditorPlacementScript editorPlacementScript = GameObject.FindGameObjectWithTag("Editor").GetComponent<EditorPlacementScript>();
+                editorPlacementScript.ResetTiles();
+                editorPlacementScript.Init();
+            }, false, screenshot);
+        }
+        else
+        {
+            FileDataWithImage.LoadCurrentEditor(out LevelData levelData);
+            ConfirmActionUI.Instance.ConfirmAction("Are you sure you want to load '<b><color=lightblue>LAST SAVE</b><color=white>', overriding the current level?", "Cancel", "Load", () => { }, () =>
+            {
+                levelEditorData.Override(levelData);
+
+                EditorPlacementScript editorPlacementScript = GameObject.FindGameObjectWithTag("Editor").GetComponent<EditorPlacementScript>();
+                editorPlacementScript.ResetTiles();
+                editorPlacementScript.Init();
+            });
+        }
     }
 
     public void DeleteLevel()

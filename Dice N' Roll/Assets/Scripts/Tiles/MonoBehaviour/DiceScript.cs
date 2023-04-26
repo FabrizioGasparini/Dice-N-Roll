@@ -95,7 +95,7 @@ public class DiceScript : MonoBehaviour
                         return;
                     }
                     
-                    GameObject.FindGameObjectWithTag("LevelUI").GetComponent<UIScript>().CompleteLevel();
+                    GameObject.FindObjectOfType<UIScript>().CompleteLevel();
                 }
             }
         }
@@ -116,7 +116,7 @@ public class DiceScript : MonoBehaviour
                         return;
                     }
 
-                    GameObject.FindGameObjectWithTag("LevelUI").GetComponent<UIScript>().FailLevel();
+                    GameObject.FindObjectOfType<UIScript>().FailLevel();
                 }
             } 
         } 
@@ -196,7 +196,7 @@ public class DiceScript : MonoBehaviour
 
                         if(grid.InMenu || grid.InEditor) break; 
 
-                        GameObject.FindGameObjectWithTag("LevelUI").GetComponent<UIScript>().CompleteLevel();
+                        GameObject.FindObjectOfType<UIScript>().CompleteLevel();
 
                         break;
 

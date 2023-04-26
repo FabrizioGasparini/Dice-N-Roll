@@ -27,21 +27,23 @@ public class LevelData : ScriptableObject
         TilesList.PowerTiles = levelData.TilesList.PowerTiles;
         TilesList.TeleportTiles = levelData.TilesList.TeleportTiles;
         TilesList.ButtonTiles = levelData.TilesList.ButtonTiles;
+        TilesList.GhostBlockTiles = levelData.TilesList.GhostBlockTiles;
     }
 
-    public void ResetData()
+    public void Override(int gridRows, int gridColumns, Vector2 diceCoordinates, int diceValue, Vector2 flagCoordinates, List<Tile> blockTiles, List<PowerTile> powerTiles, List<TeleportTile> teleportTiles, List<ButtonTile> buttonTiles, List<GhostBlockTile> ghostBlockTiles)
     {
-        GridRows = 0;
-        GridColumns = 0;
+        GridRows = gridRows;
+        GridColumns = gridColumns;
 
-        DiceCoordinates = new Vector2(0, 0);
-        DiceValue = 0;
-        FlagCoordinates = new Vector2(0, 0);
-        TilesList.BlockTiles = new List<Tile>();
-        TilesList.PowerTiles = new List<PowerTile>();
-        TilesList.TeleportTiles = new List<TeleportTile>();
+        DiceCoordinates = diceCoordinates;
+        DiceValue = diceValue;
+        FlagCoordinates = flagCoordinates;
+        TilesList.BlockTiles = blockTiles;
+        TilesList.PowerTiles = powerTiles;
+        TilesList.TeleportTiles = teleportTiles;
+        TilesList.ButtonTiles = buttonTiles;
+        TilesList.GhostBlockTiles = ghostBlockTiles;
     }
-
 }
 
 [System.Serializable]

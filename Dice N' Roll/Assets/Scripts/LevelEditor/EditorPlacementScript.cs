@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class EditorPlacementScript : MonoBehaviour
@@ -24,7 +25,6 @@ public class EditorPlacementScript : MonoBehaviour
 
     // Grid Scripts
     private Grid grid;
-    private Grid tilesPlacer;
 
     // Tiles Settings
     private TileType currentTileType;
@@ -53,8 +53,7 @@ public class EditorPlacementScript : MonoBehaviour
     void Awake() 
     {
         mainCam = Camera.main;
-        grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
-        tilesPlacer = grid.GetComponent<Grid>();
+        grid = GameObject.FindObjectOfType<Grid>();
         previewsHolder = transform.GetChild(0);
     }
 
@@ -136,10 +135,14 @@ public class EditorPlacementScript : MonoBehaviour
     {
         if(!firstTeleportPlaced)
         {
-            if(deleteModeEnabled) SetDeletingMode();
-            selectedTileType = tileType;
+            if(!buttonPlaced)
+            {
+                if(deleteModeEnabled) SwitchDeletingMode();
+                selectedTileType = tileType;
+            }
+            else ErrorsPanelScript.SendError.Invoke("You have to place the <color=#969696>GHOST BLOCK<color=red> tile first!");
         }
-        else ErrorsPanelScript.SendError.Invoke("Place the destination tile of the <color=purple>TELEPORT<color=red> tile");
+        else ErrorsPanelScript.SendError.Invoke("You have to place the destination <color=purple>TELEPORT<color=red> tile first!");
     }
 
     private void SelectTile(TileType tileType)
@@ -184,7 +187,7 @@ public class EditorPlacementScript : MonoBehaviour
                     break;
 
                 case TileType.GhostBlock:
-                    newTile = Instantiate(GetTileData("Ghost").Preview);
+                    newTile = Instantiate(GetTileData("Ghost Block").Preview);
                     break;
 
             } 
@@ -198,7 +201,7 @@ public class EditorPlacementScript : MonoBehaviour
     private bool IsRayHittingSomething(LayerMask layerMask, out RaycastHit hitInfo)
     {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
-        return Physics.Raycast(ray, out hitInfo, maxDistance: 30, layerMask);
+        return Physics.Raycast(ray, out hitInfo, maxDistance: 30f, layerMask);
     }
 
 
@@ -219,11 +222,10 @@ public class EditorPlacementScript : MonoBehaviour
 
         PositionTilePreview();
 
-        if(!deleteModeEnabled && currentTileType != selectedTileType && !firstTeleportPlaced)
-        {
-            currentTileType = selectedTileType;
-            SelectTile(selectedTileType);
-        }
+        if(deleteModeEnabled || currentTileType == selectedTileType || firstTeleportPlaced || buttonPlaced) return;
+        
+        currentTileType = selectedTileType;
+        SelectTile(selectedTileType);
     }
     
     private void PositionTilePreview()
@@ -238,7 +240,7 @@ public class EditorPlacementScript : MonoBehaviour
             if(x < 0 || z < 0 || x >= grid.LevelData.GridRows || z >= grid.LevelData.GridColumns) canPlace = false;
 
         
-            if(tilesPlacer.GetType(x, z) != TileType.None) canPlace = false;
+            if(grid.GetType(x, z) != TileType.None) canPlace = false;
 
             spawnedTile.transform.position = new Vector3(x, 0.5f, z);
 
@@ -247,6 +249,7 @@ public class EditorPlacementScript : MonoBehaviour
                 PlaceTile();
 
                 DeleteObjectPreview();
+
                 SelectTile(selectedTileType);
             }
         } 
@@ -260,7 +263,7 @@ public class EditorPlacementScript : MonoBehaviour
                 GameObject block = Instantiate(GetTileData("Block").Preview, spawnedTile.transform.position, Quaternion.identity, previewsHolder);
                 block.name = "Block";
 
-                tilesPlacer.LevelData.TilesList.BlockTiles.Add(new Tile((int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z));
+                grid.LevelData.TilesList.BlockTiles.Add(new Tile((int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z));
                 break;
 
             case TileType.Dice:
@@ -277,7 +280,7 @@ public class EditorPlacementScript : MonoBehaviour
                     dice.transform.position = spawnedTile.transform.position;
                 }
 
-                tilesPlacer.LevelData.DiceCoordinates = new Vector2(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
+                grid.LevelData.DiceCoordinates = new Vector2(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
                 break;
 
             case TileType.Flag:
@@ -294,7 +297,7 @@ public class EditorPlacementScript : MonoBehaviour
                     flag.transform.position = spawnedTile.transform.position;
                 }
 
-                tilesPlacer.LevelData.FlagCoordinates = new Vector2(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
+                grid.LevelData.FlagCoordinates = new Vector2(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
                 break;
 
             case TileType.Power:
@@ -303,13 +306,13 @@ public class EditorPlacementScript : MonoBehaviour
 
                 PowerTile newPowerTile = new PowerTile((int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z, powerType, powerValue);
 
-                tilesPlacer.LevelData.TilesList.PowerTiles.Add(newPowerTile);
+                grid.LevelData.TilesList.PowerTiles.Add(newPowerTile);
                 powerTiles.Add(newPowerTile);
                 break;
 
             case TileType.Teleport:
 
-                if(firstTeleportPlaced)
+                if(!firstTeleportPlaced)
                 {
                     GameObject teleport = Instantiate(GetTileData("Teleport").Preview, spawnedTile.transform.position, Quaternion.identity, previewsHolder);
                     teleport.name = "Teleport";
@@ -320,8 +323,8 @@ public class EditorPlacementScript : MonoBehaviour
                     firstTeleport.PreviewObject = firstTeleportObject;
                     secondTeleport.PreviewObject = teleport;
 
-                    tilesPlacer.LevelData.TilesList.TeleportTiles.Add(firstTeleport);
-                    tilesPlacer.LevelData.TilesList.TeleportTiles.Add(secondTeleport);
+                    grid.LevelData.TilesList.TeleportTiles.Add(firstTeleport);
+                    grid.LevelData.TilesList.TeleportTiles.Add(secondTeleport);
 
                     teleportTiles.Add(firstTeleport);
                     teleportTiles.Add(secondTeleport);
@@ -342,23 +345,7 @@ public class EditorPlacementScript : MonoBehaviour
 
             case TileType.Button:
 
-                if(buttonPlaced)
-                {
-                    GameObject ghostBlock = Instantiate(GetTileData("Ghost Block").Preview, spawnedTile.transform.position, Quaternion.identity, previewsHolder);
-                    ghostBlock.name = "Ghost Block";
-
-                    ButtonTile buttonTile = new ButtonTile((int)buttonCoordinates.x, (int)buttonCoordinates.y, (int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z, buttonType);
-                    GhostBlockTile ghostBlockTile = new GhostBlockTile((int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z);
-                    
-                    buttonTile.Object = buttonObject;
-                    ghostBlockTile.Object = ghostBlock;
-
-                    tilesPlacer.LevelData.TilesList.ButtonTiles.Add(buttonTile);
-                    tilesPlacer.LevelData.TilesList.GhostBlockTiles.Add(ghostBlockTile);
-
-                    buttonPlaced = false;
-                }
-                else
+                if(!buttonPlaced)
                 {
                     GameObject button = Instantiate(GetTileData("Button").Preview, spawnedTile.transform.position, Quaternion.identity, previewsHolder);
                     button.name = "Button";
@@ -366,6 +353,30 @@ public class EditorPlacementScript : MonoBehaviour
                     buttonObject = button;
                     buttonCoordinates = new Vector2(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
                     buttonPlaced = true;
+
+                    selectedTileType = TileType.GhostBlock;
+                }
+
+                break;
+
+            case TileType.GhostBlock:
+                if (buttonPlaced)
+                {
+                    GameObject ghostBlock = Instantiate(GetTileData("Ghost Block").Preview, spawnedTile.transform.position, Quaternion.identity, previewsHolder);
+                    ghostBlock.name = "Ghost Block";
+
+                    ButtonTile buttonTile = new ButtonTile((int)buttonCoordinates.x, (int)buttonCoordinates.y, (int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z, buttonType);
+                    GhostBlockTile ghostBlockTile = new GhostBlockTile((int)spawnedTile.transform.position.x, (int)spawnedTile.transform.position.z);
+
+                    buttonTile.Object = buttonObject;
+                    ghostBlockTile.Object = ghostBlock;
+
+                    grid.LevelData.TilesList.ButtonTiles.Add(buttonTile);
+                    grid.LevelData.TilesList.GhostBlockTiles.Add(ghostBlockTile);
+
+                    buttonPlaced = false;
+
+                    selectedTileType = TileType.Button;
                 }
 
                 break;
@@ -378,15 +389,13 @@ public class EditorPlacementScript : MonoBehaviour
     {
         if(testModeEnabled) return;
         if(IsPointerOverUI()) return;
-        if(firstTeleportPlaced) return;
+        if(firstTeleportPlaced || buttonPlaced) return;
 
         if (spawnedTile != null) Destroy(spawnedTile.gameObject);
         
         if(IsRayHittingSomething(tilesLayer, out RaycastHit hitInfo))
         {
-            if(hitInfo.collider.gameObject == null || hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("GridTile")) return;
-            
-            TileType tileTypeToDestroy = tilesPlacer.GetType((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+            TileType tileTypeToDestroy = grid.GetType((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
 
             if(Input.GetMouseButtonDown(0)) 
             {
@@ -394,14 +403,14 @@ public class EditorPlacementScript : MonoBehaviour
                 switch (tileTypeToDestroy)
                 {
                     case TileType.Block:
-                        tilesPlacer.LevelData.TilesList.BlockTiles.Remove(new Tile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z));
+                        grid.LevelData.TilesList.BlockTiles.Remove(new Tile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z));
                         
                         canDestroy = true;
 
                         break;
 
                     case TileType.Dice:
-                        tilesPlacer.LevelData.DiceCoordinates = new Vector2(-1, -1);
+                        grid.LevelData.DiceCoordinates = new Vector2(-1, -1);
                         hasDice = false;
 
                         canDestroy = true;
@@ -409,7 +418,7 @@ public class EditorPlacementScript : MonoBehaviour
                         break;
 
                     case TileType.Flag:
-                        tilesPlacer.LevelData.FlagCoordinates = new Vector2(-1, -1);
+                        grid.LevelData.FlagCoordinates = new Vector2(-1, -1);
                         hasFlag = false;
 
                         canDestroy = true;
@@ -417,9 +426,9 @@ public class EditorPlacementScript : MonoBehaviour
                         break;
 
                     case TileType.Power:
-                        PowerTile powerTile = tilesPlacer.GetPowerTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+                        PowerTile powerTile = grid.GetPowerTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
                         
-                        tilesPlacer.LevelData.TilesList.PowerTiles.Remove(powerTile);
+                        grid.LevelData.TilesList.PowerTiles.Remove(powerTile);
                         
                         powerTiles.Remove(powerTile);
 
@@ -428,19 +437,40 @@ public class EditorPlacementScript : MonoBehaviour
                         break;
 
                     case TileType.Teleport:
-                        TeleportTile thisTile = tilesPlacer.GetTeleportTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
-                        TeleportTile otherTile = tilesPlacer.GetTeleportTile((int)thisTile.DestinationCoordinates.x, (int)thisTile.DestinationCoordinates.y);
+                        TeleportTile thisTeleport = grid.GetTeleportTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+                        TeleportTile otherTeleport = grid.GetTeleportTile((int)thisTeleport.DestinationCoordinates.x, (int)thisTeleport.DestinationCoordinates.y);
                         
-                        Destroy(otherTile.PreviewObject);
+                        Destroy(otherTeleport.PreviewObject);
 
-                        tilesPlacer.LevelData.TilesList.TeleportTiles.Remove(thisTile);
-                        tilesPlacer.LevelData.TilesList.TeleportTiles.Remove(otherTile);
+                        grid.LevelData.TilesList.TeleportTiles.Remove(thisTeleport);
+                        grid.LevelData.TilesList.TeleportTiles.Remove(otherTeleport);
 
-                        teleportTiles.Remove(thisTile);
-                        teleportTiles.Remove(otherTile);
+                        teleportTiles.Remove(thisTeleport);
+                        teleportTiles.Remove(otherTeleport);
 
                         canDestroy = true;
 
+                        break;
+                    case TileType.Button:
+                        ButtonTile button = grid.GetButtonTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+                        GhostBlockTile connectedGhostBlock = grid.GetGhostBlockTile((int)button.DestinationCoordinates.x, (int)button.DestinationCoordinates.y);
+
+                        Destroy(connectedGhostBlock.Object);
+                        grid.LevelData.TilesList.ButtonTiles.Remove(button);
+                        grid.LevelData.TilesList.GhostBlockTiles.Remove(connectedGhostBlock);
+
+                        canDestroy = true;
+                        break;
+
+                    case TileType.GhostBlock:
+                        GhostBlockTile ghostBlock = grid.GetGhostBlockTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+                        ButtonTile connectedButton = grid.GetButtonTileByGhostBlockTile((int)hitInfo.transform.position.x, (int)hitInfo.transform.position.z);
+
+                        Destroy(connectedButton.Object);
+                        grid.LevelData.TilesList.GhostBlockTiles.Remove(ghostBlock);
+                        grid.LevelData.TilesList.ButtonTiles.Remove(connectedButton);
+
+                        canDestroy = true;
                         break;
 
                     case TileType.None:
@@ -460,18 +490,22 @@ public class EditorPlacementScript : MonoBehaviour
         }
     }
 
-    public void SetDeletingMode()
+    public void SwitchDeletingMode()
     {
         if(!firstTeleportPlaced)
         {
-            deleteModeEnabled = !deleteModeEnabled;
+            if (!buttonPlaced)
+            {
+                deleteModeEnabled = !deleteModeEnabled;
 
-            UnityEngine.UI.Image image = GameObject.FindGameObjectWithTag("EditorUI").GetComponent<LevelEditorUI>().deleteTileButton.GetComponent<UnityEngine.UI.Image>();
+                Image image = GameObject.FindObjectOfType<LevelEditorUI>().deleteTileButton.GetComponent<Image>();
 
-            if(deleteModeEnabled) image.color = new Color32(32, 32, 32, 150);
-            else image.color = new Color32(32, 32, 32, 75);
+                if(deleteModeEnabled) image.color = new Color32(32, 32, 32, 150);
+                else image.color = new Color32(32, 32, 32, 75);
+            }
+            else ErrorsPanelScript.SendError.Invoke("You have to place the <color=#969696>GHOST BLOCK<color=red> tile first!");
         }
-        else ErrorsPanelScript.SendError.Invoke("Place the destination tile of the <color=purple>TELEPORT<color=red> tile");
+        else ErrorsPanelScript.SendError.Invoke("You have to place the destination <color=purple>TELEPORT<color=red> tile first");
     }
 
     private TileData GetTileData(string tileName)
@@ -512,12 +546,12 @@ public class EditorPlacementScript : MonoBehaviour
                 
                 previewsHolder.gameObject.SetActive(false);
                 
-                tilesPlacer.Init();
+                grid.Init();
             }
         }
         else
         {
-            tilesPlacer.DeleteTiles();
+            grid.DeleteTiles();
             //tilesPlacer.LevelData.Powers = powerTiles;
             //tilesPlacer.LevelData.Teleports = teleportTiles;
 

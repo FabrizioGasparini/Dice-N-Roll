@@ -39,7 +39,7 @@ public class Grid : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if(!LevelData || InEditor) return;
+        if(!LevelData) return;
 
         if(showGrid)
         {
@@ -51,8 +51,6 @@ public class Grid : MonoBehaviour
                 }
             }
         }
-
-        if (LevelData == null) return;
 
         if(showTiles)
         {
@@ -71,49 +69,64 @@ public class Grid : MonoBehaviour
                 DrawGizmo(position, GetTileData("Flag").GizmoSize, GetTileData("Flag").GizmoColor);
             }
 
-            foreach (Tile block in LevelData.TilesList.BlockTiles)
+            if(LevelData.TilesList.BlockTiles.Count > 0)
             {
-                var tile = GetTileData("Block");
+                foreach (Tile block in LevelData.TilesList.BlockTiles)
+                {
+                    var tile = GetTileData("Block");
 
-                Vector3 position = startPosition + new Vector3(block.Coordinates.x, 1, block.Coordinates.y);
+                    Vector3 position = startPosition + new Vector3(block.Coordinates.x, 1, block.Coordinates.y);
 
-                DrawGizmo(position, GetTileData("Block").GizmoSize, GetTileData("Block").GizmoColor);
+                    DrawGizmo(position, GetTileData("Block").GizmoSize, GetTileData("Block").GizmoColor);
+                }
             }
 
-            foreach (PowerTile power in LevelData.TilesList.PowerTiles)
+            if (LevelData.TilesList.PowerTiles.Count > 0)
             {
-                var tile = GetTileData("Power");
-                
-                Vector3 position = startPosition + new Vector3(power.Coordinates.x, 1, power.Coordinates.y);
+                foreach (PowerTile power in LevelData.TilesList.PowerTiles)
+                {
+                    var tile = GetTileData("Power");
+                    
+                    Vector3 position = startPosition + new Vector3(power.Coordinates.x, 1, power.Coordinates.y);
 
-                DrawGizmo(position, GetTileData("Power").GizmoSize, GetTileData("Power").GizmoColor);
+                    DrawGizmo(position, GetTileData("Power").GizmoSize, GetTileData("Power").GizmoColor);
+                }
             }
 
-            foreach (TeleportTile teleport in LevelData.TilesList.TeleportTiles)
+            if (LevelData.TilesList.TeleportTiles.Count > 0)
             {
-                var tile = GetTileData("Teleport");
+                foreach (TeleportTile teleport in LevelData.TilesList.TeleportTiles)
+                {
+                    var tile = GetTileData("Teleport");
 
-                Vector3 position = startPosition + new Vector3(teleport.Coordinates.x, .625f, teleport.Coordinates.y);
+                    Vector3 position = startPosition + new Vector3(teleport.Coordinates.x, .625f, teleport.Coordinates.y);
 
-                DrawGizmo(position, GetTileData("Teleport").GizmoSize, GetTileData("Teleport").GizmoColor);
+                    DrawGizmo(position, GetTileData("Teleport").GizmoSize, GetTileData("Teleport").GizmoColor);
+                }
             }
 
-            foreach (ButtonTile button in LevelData.TilesList.ButtonTiles)
+            if (LevelData.TilesList.ButtonTiles.Count > 0)
             {
-                var tile = GetTileData("Button");
+                foreach (ButtonTile button in LevelData.TilesList.ButtonTiles)
+                {
+                    var tile = GetTileData("Button");
 
-                Vector3 position = startPosition + new Vector3(button.Coordinates.x, .625f, button.Coordinates.y);
+                    Vector3 position = startPosition + new Vector3(button.Coordinates.x, .625f, button.Coordinates.y);
 
-                DrawGizmo(position, GetTileData("Button").GizmoSize, GetTileData("Button").GizmoColor);
+                    DrawGizmo(position, GetTileData("Button").GizmoSize, GetTileData("Button").GizmoColor);
+                }
             }
 
-            foreach (GhostBlockTile ghostBlock in LevelData.TilesList.GhostBlockTiles)
+            if (LevelData.TilesList.GhostBlockTiles.Count > 0)
             {
-                var tile = GetTileData("Ghost Block");
+                foreach (GhostBlockTile ghostBlock in LevelData.TilesList.GhostBlockTiles)
+                {
+                    var tile = GetTileData("Ghost Block");
 
-                Vector3 position = startPosition + new Vector3(ghostBlock.Coordinates.x, 1, ghostBlock.Coordinates.y);
+                    Vector3 position = startPosition + new Vector3(ghostBlock.Coordinates.x, 1, ghostBlock.Coordinates.y);
 
-                DrawGizmo(position, GetTileData("Ghost Block").GizmoSize, GetTileData("Ghost Block").GizmoColor);
+                    DrawGizmo(position, GetTileData("Ghost Block").GizmoSize, GetTileData("Ghost Block").GizmoColor);
+                }
             }
         }
     }
@@ -223,10 +236,30 @@ public class Grid : MonoBehaviour
             return null;
         }
     }
-    public TileType GetType(int x, int y)
+    public TileType GetTileType(int x, int y)
     {
         return GetTile(x, y).TileType;
     }
+
+    public TileType GetType(int x, int y)
+    {
+        foreach (Tile tile in LevelData.TilesList.BlockTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Block;
+
+        if (LevelData.DiceCoordinates == new Vector2(x, y)) return TileType.Dice;
+
+        if (LevelData.FlagCoordinates == new Vector2(x, y)) return TileType.Flag;
+
+        foreach (PowerTile tile in LevelData.TilesList.PowerTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Power;
+
+        foreach (TeleportTile tile in LevelData.TilesList.TeleportTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Teleport;
+
+        foreach (ButtonTile tile in LevelData.TilesList.ButtonTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.Button;
+
+        foreach (GhostBlockTile tile in LevelData.TilesList.GhostBlockTiles) if (tile.Coordinates == new Vector2(x, y)) return TileType.GhostBlock;
+
+        return TileType.None;
+    }
+
 
     // TILES PLACER
 
@@ -346,6 +379,13 @@ public class Grid : MonoBehaviour
     public GhostBlockTile GetGhostBlockTile(int x, int y)
     {
         foreach (GhostBlockTile tile in LevelData.TilesList.GhostBlockTiles) if (tile.Coordinates == new Vector2(x, y)) return tile;
+
+        return null;
+    }
+
+    public ButtonTile GetButtonTileByGhostBlockTile(int x, int y)
+    {
+        foreach (ButtonTile tile in LevelData.TilesList.ButtonTiles) if (tile.DestinationCoordinates == new Vector2(x, y)) return tile;
 
         return null;
     }

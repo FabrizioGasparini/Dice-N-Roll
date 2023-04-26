@@ -17,139 +17,142 @@ MonoBehaviour:
   DiceCoordinates: {x: 0, y: 0}
   DiceValue: 6
   FlagCoordinates: {x: 12, y: 6}
-  Blocks:
-  - {x: 0, y: 1}
-  - {x: 1, y: 1}
-  - {x: 3, y: 0}
-  - {x: 3, y: 1}
-  - {x: 3, y: 2}
-  - {x: 3, y: 3}
-  - {x: 3, y: 4}
-  - {x: 3, y: 5}
-  - {x: 3, y: 6}
-  - {x: 3, y: 7}
-  - {x: 4, y: 3}
-  - {x: 5, y: 3}
-  - {x: 5, y: 1}
-  - {x: 6, y: 1}
-  - {x: 7, y: 1}
-  - {x: 7, y: 2}
-  - {x: 7, y: 3}
-  - {x: 8, y: 3}
-  - {x: 9, y: 3}
-  - {x: 10, y: 3}
-  - {x: 11, y: 3}
-  - {x: 3, y: 9}
-  - {x: 3, y: 10}
-  - {x: 3, y: 11}
-  - {x: 2, y: 9}
-  - {x: 1, y: 9}
-  - {x: 1, y: 3}
-  - {x: 1, y: 4}
-  - {x: 1, y: 5}
-  - {x: 1, y: 6}
-  - {x: 1, y: 7}
-  - {x: 1, y: 8}
-  - {x: 1, y: 11}
-  - {x: 1, y: 12}
-  - {x: 7, y: 11}
-  - {x: 6, y: 11}
-  - {x: 5, y: 11}
-  - {x: 5, y: 5}
-  - {x: 5, y: 6}
-  - {x: 5, y: 7}
-  - {x: 5, y: 8}
-  - {x: 5, y: 9}
-  - {x: 5, y: 10}
-  - {x: 9, y: 4}
-  - {x: 9, y: 5}
-  - {x: 8, y: 5}
-  - {x: 7, y: 5}
-  - {x: 7, y: 6}
-  - {x: 7, y: 7}
-  - {x: 8, y: 7}
-  - {x: 9, y: 7}
-  - {x: 9, y: 9}
-  - {x: 8, y: 9}
-  - {x: 7, y: 9}
-  - {x: 9, y: 11}
-  - {x: 9, y: 12}
-  - {x: 11, y: 11}
-  - {x: 11, y: 10}
-  - {x: 11, y: 9}
-  - {x: 11, y: 8}
-  - {x: 11, y: 7}
-  - {x: 11, y: 5}
-  - {x: 11, y: 1}
-  - {x: 10, y: 1}
-  - {x: 9, y: 1}
-  Powers:
-  - Coordinates: {x: 0, y: 3}
-    PowerType: 0
-    Value: 6
-    Object: {fileID: 0}
-  - Coordinates: {x: 4, y: 12}
-    PowerType: 0
-    Value: 6
-    Object: {fileID: 0}
-  - Coordinates: {x: 2, y: 8}
-    PowerType: 0
-    Value: 5
-    Object: {fileID: 0}
-  - Coordinates: {x: 2, y: 4}
-    PowerType: 0
-    Value: 5
-    Object: {fileID: 0}
-  - Coordinates: {x: 9, y: 10}
-    PowerType: 0
-    Value: 5
-    Object: {fileID: 0}
-  - Coordinates: {x: 7, y: 0}
-    PowerType: 0
-    Value: 5
-    Object: {fileID: 0}
-  - Coordinates: {x: 12, y: 0}
-    PowerType: 0
-    Value: 4
-    Object: {fileID: 0}
-  - Coordinates: {x: 9, y: 8}
-    PowerType: 0
-    Value: 4
-    Object: {fileID: 0}
-  - Coordinates: {x: 0, y: 8}
-    PowerType: 0
-    Value: 4
-    Object: {fileID: 0}
-  - Coordinates: {x: 4, y: 6}
-    PowerType: 0
-    Value: 4
-    Object: {fileID: 0}
-  - Coordinates: {x: 6, y: 6}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  - Coordinates: {x: 6, y: 2}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  - Coordinates: {x: 4, y: 2}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  - Coordinates: {x: 11, y: 2}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  - Coordinates: {x: 2, y: 11}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  - Coordinates: {x: 7, y: 10}
-    PowerType: 0
-    Value: 2
-    Object: {fileID: 0}
-  - Coordinates: {x: 6, y: 9}
-    PowerType: 0
-    Value: 3
-    Object: {fileID: 0}
-  Teleports: []
+  TilesList:
+    BlockTiles:
+    - Coordinates: {x: 0, y: 1}
+    - Coordinates: {x: 1, y: 1}
+    - Coordinates: {x: 1, y: 3}
+    - Coordinates: {x: 1, y: 4}
+    - Coordinates: {x: 1, y: 5}
+    - Coordinates: {x: 1, y: 6}
+    - Coordinates: {x: 1, y: 12}
+    - Coordinates: {x: 1, y: 11}
+    - Coordinates: {x: 1, y: 7}
+    - Coordinates: {x: 1, y: 8}
+    - Coordinates: {x: 3, y: 9}
+    - Coordinates: {x: 3, y: 10}
+    - Coordinates: {x: 5, y: 10}
+    - Coordinates: {x: 5, y: 9}
+    - Coordinates: {x: 5, y: 8}
+    - Coordinates: {x: 5, y: 7}
+    - Coordinates: {x: 5, y: 6}
+    - Coordinates: {x: 5, y: 5}
+    - Coordinates: {x: 3, y: 0}
+    - Coordinates: {x: 3, y: 1}
+    - Coordinates: {x: 3, y: 2}
+    - Coordinates: {x: 3, y: 3}
+    - Coordinates: {x: 3, y: 4}
+    - Coordinates: {x: 3, y: 5}
+    - Coordinates: {x: 3, y: 6}
+    - Coordinates: {x: 9, y: 11}
+    - Coordinates: {x: 9, y: 12}
+    - Coordinates: {x: 1, y: 9}
+    - Coordinates: {x: 2, y: 9}
+    - Coordinates: {x: 3, y: 11}
+    - Coordinates: {x: 5, y: 11}
+    - Coordinates: {x: 6, y: 11}
+    - Coordinates: {x: 7, y: 11}
+    - Coordinates: {x: 7, y: 9}
+    - Coordinates: {x: 8, y: 9}
+    - Coordinates: {x: 9, y: 9}
+    - Coordinates: {x: 9, y: 7}
+    - Coordinates: {x: 8, y: 7}
+    - Coordinates: {x: 7, y: 7}
+    - Coordinates: {x: 7, y: 6}
+    - Coordinates: {x: 7, y: 5}
+    - Coordinates: {x: 8, y: 5}
+    - Coordinates: {x: 9, y: 5}
+    - Coordinates: {x: 9, y: 4}
+    - Coordinates: {x: 9, y: 3}
+    - Coordinates: {x: 8, y: 3}
+    - Coordinates: {x: 7, y: 3}
+    - Coordinates: {x: 7, y: 2}
+    - Coordinates: {x: 7, y: 1}
+    - Coordinates: {x: 6, y: 1}
+    - Coordinates: {x: 5, y: 1}
+    - Coordinates: {x: 4, y: 3}
+    - Coordinates: {x: 5, y: 3}
+    - Coordinates: {x: 11, y: 1}
+    - Coordinates: {x: 10, y: 1}
+    - Coordinates: {x: 9, y: 1}
+    - Coordinates: {x: 11, y: 3}
+    - Coordinates: {x: 10, y: 3}
+    - Coordinates: {x: 11, y: 5}
+    - Coordinates: {x: 11, y: 7}
+    - Coordinates: {x: 11, y: 8}
+    - Coordinates: {x: 11, y: 9}
+    - Coordinates: {x: 11, y: 10}
+    - Coordinates: {x: 11, y: 11}
+    - Coordinates: {x: 3, y: 7}
+    PowerTiles:
+    - Coordinates: {x: 4, y: 12}
+      PowerType: 0
+      Value: 6
+      Object: {fileID: 0}
+    - Coordinates: {x: 0, y: 3}
+      PowerType: 0
+      Value: 6
+      Object: {fileID: 0}
+    - Coordinates: {x: 9, y: 10}
+      PowerType: 0
+      Value: 5
+      Object: {fileID: 0}
+    - Coordinates: {x: 7, y: 0}
+      PowerType: 0
+      Value: 5
+      Object: {fileID: 0}
+    - Coordinates: {x: 2, y: 4}
+      PowerType: 0
+      Value: 5
+      Object: {fileID: 0}
+    - Coordinates: {x: 2, y: 8}
+      PowerType: 0
+      Value: 5
+      Object: {fileID: 0}
+    - Coordinates: {x: 0, y: 8}
+      PowerType: 0
+      Value: 4
+      Object: {fileID: 0}
+    - Coordinates: {x: 4, y: 6}
+      PowerType: 0
+      Value: 4
+      Object: {fileID: 0}
+    - Coordinates: {x: 9, y: 8}
+      PowerType: 0
+      Value: 4
+      Object: {fileID: 0}
+    - Coordinates: {x: 12, y: 0}
+      PowerType: 0
+      Value: 4
+      Object: {fileID: 0}
+    - Coordinates: {x: 11, y: 2}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 6, y: 2}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 4, y: 2}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 6, y: 6}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 6, y: 9}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 2, y: 11}
+      PowerType: 0
+      Value: 3
+      Object: {fileID: 0}
+    - Coordinates: {x: 7, y: 10}
+      PowerType: 0
+      Value: 2
+      Object: {fileID: 0}
+    TeleportTiles: []
+    ButtonTiles: []
+    GhostBlockTiles: []

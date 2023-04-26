@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [Range(10, 200)] private float speed = 25;
+    public int speed;
     private float minFOV = 20;
     private float maxFOV = 50;
 
@@ -54,7 +54,7 @@ public class CameraScript : MonoBehaviour
                 float xMovement = mouseCurrentPos.y - mouseStartingPos.y;
                 float zMovement = mouseCurrentPos.x - mouseStartingPos.x;
 
-                transform.position = new Vector3(transform.position.x + xMovement / (201 - speed), transform.position.y, transform.position.z - zMovement / (201 - speed));
+                transform.position = new Vector3(transform.position.x + xMovement / speed * grid.LevelData.GridColumns, transform.position.y, transform.position.z - zMovement / speed * grid.LevelData.GridColumns);
 
                 mouseStartingPos = mouseCurrentPos;
             }

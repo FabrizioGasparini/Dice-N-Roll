@@ -17,11 +17,10 @@ public class GridTilesGenerator : EditorWindow
     private TileDataList tileDataList;
     private Grid grid;
 
-
+    private Object level;
+    
     private TileType selectedTile;
     private string[] tilesTypes = System.Enum.GetNames(typeof(TileType));
-
-    private string levelName;
 
     private int powerValue = -1;
 
@@ -77,9 +76,6 @@ public class GridTilesGenerator : EditorWindow
         GUILayout.Label("");
 
         GUILayout.BeginVertical();
-        levelName = EditorGUILayout.TextField(" Level Name", levelName);
-        GUILayout.Label("");
-
         gridRows = EditorGUILayout.IntSlider(" Grid Rows: ", gridRows, 3, 15);
         GUILayout.Label("");
 
@@ -335,9 +331,15 @@ public class GridTilesGenerator : EditorWindow
             ghostBlockTiles = new List<GhostBlockTile>();
         }
         GUILayout.Label("");
+
+        level = EditorGUILayout.ObjectField(" Level To Override: ", level, typeof(LevelData), true);
+        
+        GUILayout.Label("");
         if (GUILayout.Button("GENERATE LEVEL DATA", GUILayout.Height(50)))
         {
-            grid.LevelData = GenerateLevelData();
+            var newLevel = GenerateLevelData();
+
+            if(newLevel.name == SceneManager.GetActiveScene().name) grid.LevelData = newLevel;
         }
 
         GUILayout.EndVertical();
@@ -415,47 +417,10 @@ public class GridTilesGenerator : EditorWindow
 
     public LevelData GenerateLevelData()
     {
-        if(levelName == "") levelName = SceneManager.GetActiveScene().name;
-        string path = "Levels/" + levelName;
-
-        if (Resources.Load<LevelData>(path) != null)
-        {
-            LevelData data = Resources.Load<LevelData>(path);
-
-            data.DiceCoordinates = diceCoordinates;
-            data.DiceValue = diceValue;
-            data.FlagCoordinates = flagCoordinates;
-            data.TilesList.BlockTiles = blockTiles;
-            data.TilesList.PowerTiles = powerTiles;
-            data.TilesList.TeleportTiles = teleportTiles;
-            data.TilesList.ButtonTiles = buttonTiles;
-            data.TilesList.GhostBlockTiles = ghostBlockTiles;
-            data.GridRows = gridRows;
-            data.GridColumns = gridColumns;
-        }
-        else
-        {
-            LevelData levelData = ScriptableObject.CreateInstance<LevelData>();
-
-            levelData.DiceCoordinates = diceCoordinates;
-            levelData.DiceValue = diceValue;
-            levelData.FlagCoordinates = flagCoordinates;
-            levelData.TilesList.BlockTiles = blockTiles;
-            levelData.TilesList.PowerTiles = powerTiles;
-            levelData.TilesList.TeleportTiles = teleportTiles;
-            levelData.TilesList.ButtonTiles = buttonTiles;
-            levelData.TilesList.GhostBlockTiles = ghostBlockTiles;
-            levelData.GridRows = gridRows;
-            levelData.GridColumns = gridColumns;
-
-            AssetDatabase.CreateAsset(levelData, "Assets/Resources/" + path + ".asset");
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-        }
-
-        var level = Resources.Load<LevelData>(path);
+        var levelData = (LevelData)level;
+        levelData.Override(gridRows, gridColumns, diceCoordinates, diceValue, flagCoordinates, blockTiles, powerTiles, teleportTiles, buttonTiles, ghostBlockTiles);
         
-        return level;
+        return levelData;
     }
 }
 #endif
