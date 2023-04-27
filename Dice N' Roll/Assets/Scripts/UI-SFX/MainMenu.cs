@@ -13,9 +13,11 @@ public class MainMenu : MonoBehaviour
     private GameObject closeMenusButton;
 
     private GameObject mainMenu;
+    private GameObject playMenu;
     private GameObject settingsMenu;
     private GameObject levelMenu;
     private GameObject controlsMenu;
+    private GameObject connectMenu;
 
     private GameObject volumeSlider;
     private GameObject volumeValue;
@@ -24,27 +26,25 @@ public class MainMenu : MonoBehaviour
 
     void Start() 
     {
-        menusPanel = transform.Find("Menus").gameObject;
+        menusPanel = GameObject.Find("Menus");
         openMenusButton = menusPanel.transform.Find("OpenMain").gameObject;
 
         mainMenu = menusPanel.transform.Find("Main").gameObject;
         closeMenusButton = mainMenu.transform.Find("CloseMenu").gameObject;
 
+        playMenu = menusPanel.transform.Find("PlayMenu").gameObject;
         settingsMenu = menusPanel.transform.Find("SettingsMenu").gameObject;
         levelMenu = menusPanel.transform.Find("LevelSelectorMenu").gameObject;
         controlsMenu = menusPanel.transform.Find("ControlsMenu").gameObject;
+        connectMenu = menusPanel.transform.Find("ConnectMenu").gameObject;
 
         volumeSlider = settingsMenu.transform.Find("Volume").Find("VolumeSlider").gameObject;
         volumeValue = settingsMenu.transform.Find("Volume").Find("VolumeValue").gameObject;
 
         LoadVolume();
 
-        mainMenu.SetActive(true);
-        settingsMenu.SetActive(false);
-        levelMenu.SetActive(false);
-        controlsMenu.SetActive(false);
-        
-        OpenMenus(true);
+        Open("Main");
+        //OpenMenus(true);
     }
 
     public void Open(string menu){
@@ -52,25 +52,32 @@ public class MainMenu : MonoBehaviour
         audio.PlayOneShot((AudioClip)Resources.Load("Sounds/ButtonSound"));
         DestroyImmediate(audio, true);
 
-        if (menu == "Main")
+        ResetMenus();
+        switch(menu)
         {
-            ResetButtons();
-            mainMenu.SetActive(true);
-        } 
-        else if(menu == "Settings") 
-        {
-            ResetButtons();
-            settingsMenu.SetActive(true);
-        } 
-        else if(menu == "Levels")
-        {
-            ResetButtons();
-            levelMenu.SetActive(true);
-        }  
-        else 
-        {
-            ResetButtons();
-            controlsMenu.SetActive(true);
+            case "Main":
+                mainMenu.SetActive(true);
+                break;
+
+            case "Play":
+                playMenu.SetActive(true);
+                break;
+
+            case "Settings":
+                settingsMenu.SetActive(true);
+                break;
+
+            case "Levels":
+                levelMenu.SetActive(true);
+                break;
+
+            case "Controls":
+                controlsMenu.SetActive(true);
+                break;
+
+            case "Connect":
+                connectMenu.SetActive(true);
+                break;
         }
     }
 
@@ -109,12 +116,14 @@ public class MainMenu : MonoBehaviour
         AudioListener.volume = gameVolume;
     }
 
-    private void ResetButtons()
+    private void ResetMenus()
     {
         mainMenu.SetActive(false);
+        playMenu.SetActive(false);
         settingsMenu.SetActive(false);
         levelMenu.SetActive(false);
         controlsMenu.SetActive(false);
+        connectMenu.SetActive(false);
     }
 
     public void OpenMenus(bool value)

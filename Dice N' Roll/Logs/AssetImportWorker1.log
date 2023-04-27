@@ -3701,3 +3701,1420 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007803 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.379 seconds
+Refreshing native plugins compatible for Editor in 16.61 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.286 seconds
+Domain Reload Profiling: 3665ms
+	BeginReloadAssembly (342ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (150ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (946ms)
+		LoadAssemblies (216ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (838ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (688ms)
+			ResolveRequiredComponents (144ms)
+	FinalizeReload (2287ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (509ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (332ms)
+			ProcessInitializeOnLoadMethodAttributes (75ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 2.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6772.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 7.415100 ms (FindLiveObjects: 0.591500 ms CreateObjectMapping: 0.584200 ms MarkObjects: 5.810000 ms  DeleteObjects: 0.427800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002082 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.474 seconds
+Refreshing native plugins compatible for Editor in 2.14 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.899 seconds
+Domain Reload Profiling: 1373ms
+	BeginReloadAssembly (128ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (284ms)
+		LoadAssemblies (80ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (254ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (243ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (900ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (437ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (287ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 2.41 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6774.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.720000 ms (FindLiveObjects: 0.398500 ms CreateObjectMapping: 0.279500 ms MarkObjects: 2.818600 ms  DeleteObjects: 0.222300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001998 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.434 seconds
+Refreshing native plugins compatible for Editor in 3.46 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.861 seconds
+Domain Reload Profiling: 1294ms
+	BeginReloadAssembly (99ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (270ms)
+		LoadAssemblies (58ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (250ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (230ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (861ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (390ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (256ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 4.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6776.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.871400 ms (FindLiveObjects: 0.470100 ms CreateObjectMapping: 0.335000 ms MarkObjects: 2.847000 ms  DeleteObjects: 0.218200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002003 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.396 seconds
+Refreshing native plugins compatible for Editor in 2.97 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.781 seconds
+Domain Reload Profiling: 1176ms
+	BeginReloadAssembly (100ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (59ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (218ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (204ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (781ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (378ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (58ms)
+			ProcessInitializeOnLoadAttributes (245ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6778.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.569400 ms (FindLiveObjects: 0.423500 ms CreateObjectMapping: 0.258500 ms MarkObjects: 2.684600 ms  DeleteObjects: 0.201700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001882 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.411 seconds
+Refreshing native plugins compatible for Editor in 1.97 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.787 seconds
+Domain Reload Profiling: 1197ms
+	BeginReloadAssembly (102ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (57ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (232ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (222ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (787ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (392ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (258ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 2.50 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6780.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 4.711600 ms (FindLiveObjects: 0.636100 ms CreateObjectMapping: 0.424200 ms MarkObjects: 3.327800 ms  DeleteObjects: 0.322300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002566 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.413 seconds
+Refreshing native plugins compatible for Editor in 1.92 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.825 seconds
+Domain Reload Profiling: 1237ms
+	BeginReloadAssembly (104ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (254ms)
+		LoadAssemblies (66ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (223ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (212ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (825ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (414ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (282ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 2.24 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6782.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.557700 ms (FindLiveObjects: 0.389600 ms CreateObjectMapping: 0.243300 ms MarkObjects: 2.630600 ms  DeleteObjects: 0.293100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002528 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.412 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.790 seconds
+Domain Reload Profiling: 1201ms
+	BeginReloadAssembly (109ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (61ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (221ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (211ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (790ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (368ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (53ms)
+			ProcessInitializeOnLoadAttributes (242ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.20 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6784.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 4.034600 ms (FindLiveObjects: 0.478500 ms CreateObjectMapping: 0.291000 ms MarkObjects: 3.070100 ms  DeleteObjects: 0.193500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001886 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.395 seconds
+Refreshing native plugins compatible for Editor in 2.05 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.771 seconds
+Domain Reload Profiling: 1166ms
+	BeginReloadAssembly (102ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (240ms)
+		LoadAssemblies (58ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (219ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (210ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (771ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (376ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (53ms)
+			ProcessInitializeOnLoadAttributes (244ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 3.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6786.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.842200 ms (FindLiveObjects: 0.421700 ms CreateObjectMapping: 0.274800 ms MarkObjects: 2.903200 ms  DeleteObjects: 0.241200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002325 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.398 seconds
+Refreshing native plugins compatible for Editor in 2.85 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.812 seconds
+Domain Reload Profiling: 1210ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (57ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (222ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (211ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (812ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (402ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (273ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 2.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6788.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.504900 ms (FindLiveObjects: 0.370000 ms CreateObjectMapping: 0.207900 ms MarkObjects: 2.679500 ms  DeleteObjects: 0.246800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002100 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.414 seconds
+Refreshing native plugins compatible for Editor in 2.03 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.752 seconds
+Domain Reload Profiling: 1166ms
+	BeginReloadAssembly (108ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (250ms)
+		LoadAssemblies (63ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (223ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (214ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (753ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (367ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (60ms)
+			ProcessInitializeOnLoadAttributes (228ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6790.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.862600 ms (FindLiveObjects: 0.639000 ms CreateObjectMapping: 0.439200 ms MarkObjects: 2.585100 ms  DeleteObjects: 0.198400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001773 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.418 seconds
+Refreshing native plugins compatible for Editor in 2.20 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.743 seconds
+Domain Reload Profiling: 1161ms
+	BeginReloadAssembly (99ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (260ms)
+		LoadAssemblies (58ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (237ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (227ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (743ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (355ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (233ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.21 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6792.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.713800 ms (FindLiveObjects: 0.533500 ms CreateObjectMapping: 0.445900 ms MarkObjects: 2.514800 ms  DeleteObjects: 0.218600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001937 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.390 seconds
+Refreshing native plugins compatible for Editor in 1.93 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.774 seconds
+Domain Reload Profiling: 1164ms
+	BeginReloadAssembly (103ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (235ms)
+		LoadAssemblies (60ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (214ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (204ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (774ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (375ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (248ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 2.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6794.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.239000 ms (FindLiveObjects: 0.366100 ms CreateObjectMapping: 0.236100 ms MarkObjects: 2.432400 ms  DeleteObjects: 0.203400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002578 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.399 seconds
+Refreshing native plugins compatible for Editor in 1.88 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.746 seconds
+Domain Reload Profiling: 1144ms
+	BeginReloadAssembly (105ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (233ms)
+		LoadAssemblies (61ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (207ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (198ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (746ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (357ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (232ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 2.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5973 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.5 MB). Loaded Objects now: 6796.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 3.593500 ms (FindLiveObjects: 0.459000 ms CreateObjectMapping: 0.336600 ms MarkObjects: 2.590500 ms  DeleteObjects: 0.206700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003940 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.779 seconds
+Refreshing native plugins compatible for Editor in 2.25 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.142 seconds
+Domain Reload Profiling: 1921ms
+	BeginReloadAssembly (131ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (583ms)
+		LoadAssemblies (80ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (548ms)
+			TypeCache.Refresh (340ms)
+				TypeCache.ScanAssembly (302ms)
+			ScanForSourceGeneratedMonoScriptInfo (196ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1143ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (505ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (322ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 2.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6195 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.6 MB). Loaded Objects now: 7019.
+Memory consumption went from 0.96 GB to 0.96 GB.
+Total: 14.131700 ms (FindLiveObjects: 0.417800 ms CreateObjectMapping: 0.299900 ms MarkObjects: 12.163200 ms  DeleteObjects: 1.249000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/WebRpcImplementationExample.cs: 7bff59c7defddf73a4ceae1090065bd1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/ButtonInsideScrollList.cs: 663db374c5f487d95198d2dce6dd1ce7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListCell.cs: f6a1e00ce33d3dec4b7e2cfe425726c7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsOpenToggle.cs: 229c6038772c64902eb501df39020417 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PhotonTeamsManager.cs: ed14ceec94e7d1247f794ca4f7f3aa2e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/AppSettings.cs: d20c247df910115cd4c5ae83482475ef -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/CullAreaEditor.cs: ac85e81dd9fb835b90f15d14c78d253a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TabViewManager.cs: c81ca007819349d449e274d4aee48331 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/DocLinkButton.cs: 551275f4066ad419ab79864501010643 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/TurnBased/PunTurnManager.cs: c24499e0acfb9782133d39c092b0366b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Cluster.cs: 5ff22076c2cc06a01d1cc1c38d08f712 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyTopPanel.cs: 830e03b228bff7a95bbb092a2d6b29d2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs: 14a4a0ef5a0cd03510e15ba3f76fc05a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs: 6b192d91218207b95c2b171719310343 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/LineInspector.cs: b46fbdbe979ee95575b26620e8af2791 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs: 7182be285ca897b882f7b04a97b5001a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs: 2267adb7e9f60414ecc2e4d9d62bc418 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatChannel.cs: 052e931f7bf91536d9bda80d682b6368 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/OnlineDocButton.cs: e8bceb35def1f2c21aeb107b10e7c020 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerNameInputField.cs: 27839abf4289ab34aa2cc2967033966d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Noise.cs: dc35aa19dae9f4b9d9d351205aaba1c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/PlayerControl.cs: 6df8b26511518ec75eac4160d12ac3bc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PointedAtGameObjectInfo.cs: 0f220a9d7e421f59db30fb04c90d6c0e -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChannelWellKnownProperties.cs: 7e2dabda8907dc60fb63ae9c28cb0b10 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs: ea668b9d3ca2e512312f4d0840810b14 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ScoreHelper.cs: 7e2091fcb90bdab85f4be0c18d586eba -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities.Culling.Editor: efb3149e1c8aa7490c016b61a2bfa17d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonAnimatorViewEditor.cs: fd89a9c520118567d7b47e39070bcd39 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunPlayerScores.cs: eee61e21995464ded106b44bf2f6edd4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/ServerSettings.cs: 8fa55e8857e3ebd201455fd70a9f157d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/SetRoomCustomPropertyUIForm.cs: 0374bd76cb4dfec0e35e6dd53ea11537 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierCurve.cs: 6855a37c0f6b23766e2a15354899a784 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatClient.cs: d3eb880194f03abd869e259e1e9fd5f0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierSpline.cs: fdb9ccdef0d3985b914118aec7c411f2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Bezier.cs: b8534c761c3f32134ac0822189e167cc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PingProperty.cs: 9f24d087d77c62d9ddcbab43ed4cd5fe -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers/PlayerDetailsController.cs: 4a8b583bcd181f124e040cd407eab3b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomNameProperty.cs: 72010acf97fe1f3e9ff0b8c322c93e83 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersInRoomProperty.cs: 22a26994633102695250e14533d8bd88 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOfflineProperty.cs: a3b570f54686008ce7d1ddf281dfdde2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnStartDelete.cs: 020107d689eae9ab4a37b46ac589b3dd -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs: 81caf01d84a9fa08671565d87776010b -> 
+  custom:scripting/precompiled-assembly-types:PhotonRealtime: 5ff83d3cd0dd8b12f3024f1b0a7ee67f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs: 5b0494b39b9a262c0ad29b1931262023 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PropertyCell.cs: caa15b0e3299de64e13d6f1d4cf295aa -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PunTeamsInspector.cs: 4df913dbc11ac67364301ce3915ea909 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/RegionHandler.cs: 0a3dea041d0831d59d52725568de5bb2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/SupportLogger.cs: 6226925e792eee84b718aee3baaa82a7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/BestRegionInPrefsProperty.cs: f81195994c87654890233836f627cd69 -> 
+  custom:scripting/precompiled-assembly-types:PunDemos.DemoSlotcarEditor: a473daaa92cc9a5058aa0dd79581e61b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewClassicEditor.cs: 174be401c238aa6e741f961399731929 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs: d6a17dc119cdc0b4a5b92f4135a56268 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbody2DViewEditor.cs: 1bbd8586933ea3b91d286e3a03ef0b15 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickInstantiate.cs: 3929e8581c0458b4fa6c3ecec790414e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/ConnectToRegionUIForm.cs: a6e8642f85fd743ce727d84bdc0a0df9 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatAppSettings.cs: db433ce9dc535a56c6c28a3183328622 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs: 6d0f0651107e8b978d50eb5d8ca63cd3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonStatsGui.cs: d8361e63c4cf02d1cc41570adb7e9d85 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/EventSystemSpawner.cs: f408a55e814f245f8bc8085441fbe94b -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Room.cs: f509531380bf8f44be3c84421df8f27b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/WorldGenerator.cs: dca0ae82b72e05480b823fc7043006c0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatPeer.cs: ab4cb6a09b2bd7026434274768d75701 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomEmptyRoomTtlProperty.cs: ba459c40e550063227b6dbef6f2e12d7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/GameVersionField.cs: e1aaf98c257ad1044f09a430176c1d25 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedAndReadyProperty.cs: af06b6e7ee3f25798787bf32cafcb247 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs: a7d34eb870b3ee44c83d5db31316a095 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs: 70e641dd7ce55eb351f633fc29fb5f7f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/OfflineModeProperty.cs: 142619a08af07c654a2536f2386c9c6c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/DemoHubManager.cs: c700a23ba5ca557dc5d026557a0fe195 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/AppVersionProperty.cs: a4b4daafa219f35ecce40e74ac804003 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/LayoutElementMatchSize.cs: 325cd6d9cb44d01cc8cfa43a5413de8f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs: cfabe07ff5658dc80bf23a32c3f3d3ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/GameVersionProperty.cs: 212cdb5858947bda9a55c4e8f58ef2c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonUserControl.cs: 1e36b4529ca7c2f8667ed6449c3722b9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PlayerNumberingInspector.cs: e277bf463a09eaa6bcf2868a0f243e5c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/NickNameField.cs: 4566439151a528588c6e77fbea15ef25 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonCharacter.cs: d37a384ef7557636dd0499ecb4e48640 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/RoomListEntry.cs: c7ba9dd428a6b8b410fe51075bfba1e1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/IChatClientListener.cs: e6ec1b8d09bf11f3791c0bd18ae45880 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs: 924b35bf318a963fcd6174beadd0d792 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewInspector.cs: da72c707197b3a14a9e4fc031131a7bc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs: 98e5143501c303d7d5973c718d302233 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Unity/Editor/AccountService.cs: 80b748556379aab9364d8ef00499f1a9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/MonoBehaviourPunEditor.cs: a420633076e18e6ded9ee7ff41e5161d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedProperty.cs: 981ecf71603e1baa6ce21b0fd1acc020 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewEditor.cs: d59344a8429d1e1c91f78e42f728790a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CloudRegionProperty.cs: a98a80d4740fc4627fa07cd0d1b937f1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs: 515bb293728f907f134591646985b9ce -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullArea.cs: 75f7e0f84478d7778555f1e1e66d50b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOpenProperty.cs: 401af34d1219dc5c3b2d226ce3b12b08 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomAutoCleanupProperty.cs: a92fec09d98c752e495341af83135d64 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsInspector.cs: da5c9fdcd684cd1c669e2f5c5f40d373 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs: 64d312faa4ce8272425b85e56f7f3f74 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PropertyListenerBase.cs: f9338b1da94c09d1d4dc5b01f854e0e3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs: 3e45da2cb510baa5765664ee499455b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Extensions.cs: 3f8618856b92f72822431fd67127e289 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs: 95da0bc9ecca5735a6f497f524ce7e54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/AutoSyncSceneToggle.cs: f5a0c8cb6428054959052eda2623401a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateOnSerializeField.cs: 8559ed016d3004cf7fa75b6b51babcf0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/PhotonPing.cs: 3f140d1df899c474f22230f66cc59a41 -> 
+  custom:scripting/precompiled-assembly-types:PunDemos.DemoHubEditor: 2b3285c443bc7902bd67df97d06dfa1e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs: 8f5df586ee2f27c138a2408c8f0f182a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit.cs: 534cb157a89724d3ca07a36bb2005880 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs: 77d86dcddcb47a6cc18163eb292fa20b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Unity/PhotonAppSettings.cs: 8b612295ab1bfb5d19f8bf60b0a9cae5 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs: bee85956556c66d6096a3300e7923c77 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickRpc.cs: a4c1c482691ed3f8764f3736c0d692ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunTeams.cs: 97cdf6951e96c2643337cf5fb8f69c0b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfRoomsProperty.cs: c0688910145f665105cec6c6eaf4f03c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersProperty.cs: 92593170cc4984fa211f8cfbd69ac9a3 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/OnPointerOverTooltip.cs: b9abe1fce28033712ba423247874af86 -> 
+  custom:scripting/precompiled-assembly-types:PhotonChat: 887ee0d65baee12e99fc2bae3059281d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs: 9beee3a7ca2bc764b51880f31127a0ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotLanes.cs: 97949fb7cbc49a87a0e9a949a270c39f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomExpectedUsersProperty.cs: 15c7823a1b55465c741092cad452b5e4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ThirdParty/PunCockpitEmbed.cs: 2240c92b97535c6672465e83f1e36036 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplinePosition.cs: b39b2fa35faaacaf63f8929368e2e5de -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListView.cs: d1509ce3c1dcf26ebb758f8eb59e1c54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Region.cs: a0331a07d2a132f6cd24585218741838 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs: 033fd91b849b48295ab920beaf62446d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Room/CountdownTimer.cs: 29151b8b1909dcb5f8770e606e1b626a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/AsteroidsGameManager.cs: 12a51843b5b71df994a62f28231ff7ef -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListView.cs: c29d6d4888a48c4f1582d9884301955b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/InfosPanelPlaceholder.cs: fef54b122412d96995fae2ad440bb18b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/ToggleExpand.cs: 8df2d7619ad2c56cf93b2f0cedc9c9a4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMaxPlayersProperty.cs: f8d2a9d7157be1b82e5db9695b63da90 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatOperationCode.cs: dac444e0d5bbc5c837c33663c8b2cefb -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs: 595ad01ed190d0e43c1c35f8849e02bf -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CrcCheckToggle.cs: a236d00910b93ad4ae792080fb07508e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerCountProperty.cs: 2e3a71196f608331c351de9edf7166b4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonTeamsManagerInspector.cs: 55bea48a55e757c56d53ded3ae32c48e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs: 72621123551f8416d26a631e33786da7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/WebRpc.cs: ee2bfdfdd166ac7a426061037e23ee8f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/UserIdUiForm.cs: 6825637a96b48acfc8eb9a62be50d82f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotRacerSplashScreen.cs: 76e2c64393d61c31f26e20612278ec67 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Demos: d47b35652980a96f2ea98e1222e71fbd -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierCurveInspector.cs: cd033eb785ec71c240751fc164fcbff1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/IngameControlPanel.cs: e8e78297d18e08fd0d6ef99a75e376c2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersOnMasterProperty.cs: aa74237d4beb81bd33ceee77917bae47 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPropertiesListedInLobbyProperty.cs: c8880d240fca5295b2028661629631dc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsVisibleToggle.cs: 47a99e70dc7fd5d059dfbf899c22bbdb -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/PlayerListEntry.cs: 3811c0a731ead3815771e470aaca8954 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs: ce6d1f08b3d2d23009596a69c08b221d -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking: deca45e466396fbccdd58cee586a1a3a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerAddressProperty.cs: 284ddbe40a77584c9c8835a0d4d63859 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/ConnectionHandler.cs: 33c1e29051dc60b1fb7e8675cafa9a54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerProperty.cs: d53bc3d40dee4679a13aa7a9ff58706e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatEventCode.cs: 764a52cdc3a575d4587f1a0939ee2b6d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettings.cs: 91ded15e638c075e189911af7f870d60 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/PropertyFields/UserIdField.cs: 889d45ebefa87613726b801d1e5e80c8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs: a21528a46272f1d315f76aa8c009d10e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Unity/Editor/PhotonEditorUtils.cs: 4456563b945cca498f5f71d9eb2059b9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs: d9dd9ca955de7f0a553b219d39f29621 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListCell.cs: 8dfedb1e000853780b714ad0651f22a9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/RoomInfo.cs: 86776ad49e4deb535029b369c45e7f36 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Player.cs: b6aef835b43cb69bef999bd5136f7c21 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities: 3a89df88b12f815371ee4e040341ac4c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Line.cs: 5e23c11e3450a3cc94ccc16c37b15685 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Block.cs: 4912a9664024ee7276656eb28373609a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/ProceduralController.cs: 294ae00e975ca4fe85822d6f85fe658a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/BoolInputField.cs: 0a674c3f564a1751cf8868030bbe1a97 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/FriendInfo.cs: be836ba41ecfa4c9dca4b510bdfea5c8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs: b0631ad5c9d567edbfc4fb2b742f00d0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs: 5be65352f0f07fbe7665dfb31e99644d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateField.cs: 5786bd6806651c5e23c7d4a511e3dfaa -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerTtlProperty.cs: 5737d382a26e8898e597b19ab06904c5 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/CustomTypes.cs: 32fb10f0e1ae6f1f4c5b8deb3c8e83c3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatUserStatus.cs: 70a3ef1ac77c9464b5af9f3f7bba93e1 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities.PhotonPlayer.Editor: f5d7993a1365a8a1029785117284eb96 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/StringInputField.cs: 2050e81c4bb867aa716494cd04d5af4a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMasterClientIdProperty.cs: 8a7f2b18c7369cf86e69820d5f0602fe -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListCell.cs: 76799f985e8a3951e5d132618c3350d8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/CustomTypesUnity.cs: 013c37589fb09e7f77b2d495dfa13043 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/LoadLevelUIForm.cs: e7fdb0a9185f3aba43c9dbfded999dae -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs: 3e6f5222485426413e0ef0889782359b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunStartup.cs: 961ddc858b2c0426ca5019c7e78c4fbf -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnEscapeQuit.cs: be21f25ae17e13db5ee6619d0c4d06e1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/CreateRoomUiForm.cs: 6124ee0d28eb38de6cc89591d60054c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListView.cs: 60e6f2e41401ae176dea7b70bab3c390 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChannelCreationOptions.cs: 4231621e658bee43f79b42f64c894f83 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/ToDemoHubButton.cs: 76a2afa2c645f73081ead15c9512dae8 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewHandler.cs: 7c6c7799f7e9296388067c605d1dc27c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/LoaderAnime.cs: 95ab941fc8d4427c4fa6c07cf9af1057 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListCell.cs: 8d1543bdc9816b8a578d6cd2eebe48be -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickDestroy.cs: 84deb4bc685f090f86133752922a945d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/IntInputField.cs: 423bd3fa49d91a3528e54cbe9d1ba776 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs: 5d5e55e8eb60f78e116626969ed0311e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsVisibleProperty.cs: be95d33e9289a548289bfd3ab9507d59 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/BackgroundTimeOutField.cs: 301f4bb8d6480b188021ecf99ba8be6c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbodyViewEditor.cs: ab7e34153fa9a3c646e0316fa6fc5600 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs: e6fcd481d2d6dd67f5b18fb26017d8ba -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonLagSimulationGui.cs: de60acfca25c9c245519382776ad2f82 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs: b13582f7122692c3dc0b0b58565603b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/AsteroidsGame.cs: 39019f3fa92643372bcb4670a7434593 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs: 4d64fa5e9e8828968d6cc191a132718d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonView/SmoothSyncMovement.cs: 31ee6a992a574c4e665f73e48482d3fc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Bullet.cs: 77c411c50d821352e611a16c30f40226 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Editor: 6db8fa5c46a3e2c43da7a35b73e8fe26 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatParameterCode.cs: a0fd6a090c21b2fc7ca69a867e9c27c2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/MoveByKeys.cs: 0be06a6581575752c58847799d9932e6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullingHandler.cs: ff4506351c41ac4ce471635b6b12ceb3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/ConnectAndJoinRandom.cs: 00d6f17fa442bd592f9dfb4622a40a5d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs: f6b453c3dd57cf47fa35b8156daece9a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Asteroid.cs: 8382d1ead570177214081c1ec12affef -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonGUI.cs: a5571c3104cbd100c9135419869f9e73 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/DocLinks.cs: 22fc6e62d47c65fdd35bd32f57891e69 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/GraphicToggleIsOnTransition.cs: 7e3768d2f1167a9a7dc7f801820c67a5 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003251 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\GitHub\dice-n-roll\Dice N' Roll\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.651 seconds
+Refreshing native plugins compatible for Editor in 3.91 ms, found 4 plugins.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.541 seconds
+Domain Reload Profiling: 2192ms
+	BeginReloadAssembly (176ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (73ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (389ms)
+		LoadAssemblies (89ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (352ms)
+			TypeCache.Refresh (0ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (332ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (1542ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (531ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (347ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Refreshing native plugins compatible for Editor in 2.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6195 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.6 MB). Loaded Objects now: 7021.
+Memory consumption went from 0.96 GB to 0.96 GB.
+Total: 4.286400 ms (FindLiveObjects: 0.505400 ms CreateObjectMapping: 0.320900 ms MarkObjects: 3.095800 ms  DeleteObjects: 0.362800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/WebRpcImplementationExample.cs: 7bff59c7defddf73a4ceae1090065bd1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/ButtonInsideScrollList.cs: 663db374c5f487d95198d2dce6dd1ce7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListCell.cs: f6a1e00ce33d3dec4b7e2cfe425726c7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsOpenToggle.cs: 229c6038772c64902eb501df39020417 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PhotonTeamsManager.cs: ed14ceec94e7d1247f794ca4f7f3aa2e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/AppSettings.cs: d20c247df910115cd4c5ae83482475ef -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/CullAreaEditor.cs: ac85e81dd9fb835b90f15d14c78d253a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TabViewManager.cs: c81ca007819349d449e274d4aee48331 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/DocLinkButton.cs: 551275f4066ad419ab79864501010643 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/TurnBased/PunTurnManager.cs: c24499e0acfb9782133d39c092b0366b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Cluster.cs: 5ff22076c2cc06a01d1cc1c38d08f712 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyTopPanel.cs: 830e03b228bff7a95bbb092a2d6b29d2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs: 14a4a0ef5a0cd03510e15ba3f76fc05a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs: 6b192d91218207b95c2b171719310343 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/LineInspector.cs: b46fbdbe979ee95575b26620e8af2791 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs: 7182be285ca897b882f7b04a97b5001a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs: 2267adb7e9f60414ecc2e4d9d62bc418 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatChannel.cs: 052e931f7bf91536d9bda80d682b6368 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/OnlineDocButton.cs: e8bceb35def1f2c21aeb107b10e7c020 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerNameInputField.cs: 27839abf4289ab34aa2cc2967033966d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Noise.cs: dc35aa19dae9f4b9d9d351205aaba1c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/PlayerControl.cs: 6df8b26511518ec75eac4160d12ac3bc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PointedAtGameObjectInfo.cs: 0f220a9d7e421f59db30fb04c90d6c0e -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChannelWellKnownProperties.cs: 7e2dabda8907dc60fb63ae9c28cb0b10 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs: ea668b9d3ca2e512312f4d0840810b14 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ScoreHelper.cs: 7e2091fcb90bdab85f4be0c18d586eba -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities.Culling.Editor: efb3149e1c8aa7490c016b61a2bfa17d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonAnimatorViewEditor.cs: fd89a9c520118567d7b47e39070bcd39 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunPlayerScores.cs: eee61e21995464ded106b44bf2f6edd4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/ServerSettings.cs: 8fa55e8857e3ebd201455fd70a9f157d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/SetRoomCustomPropertyUIForm.cs: 0374bd76cb4dfec0e35e6dd53ea11537 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierCurve.cs: 6855a37c0f6b23766e2a15354899a784 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatClient.cs: d3eb880194f03abd869e259e1e9fd5f0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierSpline.cs: fdb9ccdef0d3985b914118aec7c411f2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Bezier.cs: b8534c761c3f32134ac0822189e167cc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PingProperty.cs: 9f24d087d77c62d9ddcbab43ed4cd5fe -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers/PlayerDetailsController.cs: 4a8b583bcd181f124e040cd407eab3b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomNameProperty.cs: 72010acf97fe1f3e9ff0b8c322c93e83 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersInRoomProperty.cs: 22a26994633102695250e14533d8bd88 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOfflineProperty.cs: a3b570f54686008ce7d1ddf281dfdde2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnStartDelete.cs: 020107d689eae9ab4a37b46ac589b3dd -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs: 81caf01d84a9fa08671565d87776010b -> 
+  custom:scripting/precompiled-assembly-types:PhotonRealtime: 0fc5ed69217157f91bf8f24242a17aa5 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs: 5b0494b39b9a262c0ad29b1931262023 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PropertyCell.cs: caa15b0e3299de64e13d6f1d4cf295aa -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PunTeamsInspector.cs: 4df913dbc11ac67364301ce3915ea909 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/RegionHandler.cs: 0a3dea041d0831d59d52725568de5bb2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/SupportLogger.cs: 6226925e792eee84b718aee3baaa82a7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/BestRegionInPrefsProperty.cs: f81195994c87654890233836f627cd69 -> 
+  custom:scripting/precompiled-assembly-types:PunDemos.DemoSlotcarEditor: a473daaa92cc9a5058aa0dd79581e61b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewClassicEditor.cs: 174be401c238aa6e741f961399731929 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs: d6a17dc119cdc0b4a5b92f4135a56268 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbody2DViewEditor.cs: 1bbd8586933ea3b91d286e3a03ef0b15 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickInstantiate.cs: 3929e8581c0458b4fa6c3ecec790414e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/ConnectToRegionUIForm.cs: a6e8642f85fd743ce727d84bdc0a0df9 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatAppSettings.cs: db433ce9dc535a56c6c28a3183328622 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs: 6d0f0651107e8b978d50eb5d8ca63cd3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonStatsGui.cs: d8361e63c4cf02d1cc41570adb7e9d85 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/EventSystemSpawner.cs: f408a55e814f245f8bc8085441fbe94b -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Room.cs: f509531380bf8f44be3c84421df8f27b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/WorldGenerator.cs: dca0ae82b72e05480b823fc7043006c0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatPeer.cs: ab4cb6a09b2bd7026434274768d75701 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomEmptyRoomTtlProperty.cs: ba459c40e550063227b6dbef6f2e12d7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/GameVersionField.cs: e1aaf98c257ad1044f09a430176c1d25 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedAndReadyProperty.cs: af06b6e7ee3f25798787bf32cafcb247 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs: a7d34eb870b3ee44c83d5db31316a095 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs: 70e641dd7ce55eb351f633fc29fb5f7f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/OfflineModeProperty.cs: 142619a08af07c654a2536f2386c9c6c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/DemoHubManager.cs: c700a23ba5ca557dc5d026557a0fe195 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/AppVersionProperty.cs: a4b4daafa219f35ecce40e74ac804003 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/LayoutElementMatchSize.cs: 325cd6d9cb44d01cc8cfa43a5413de8f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs: cfabe07ff5658dc80bf23a32c3f3d3ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/GameVersionProperty.cs: 212cdb5858947bda9a55c4e8f58ef2c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonUserControl.cs: 1e36b4529ca7c2f8667ed6449c3722b9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PlayerNumberingInspector.cs: e277bf463a09eaa6bcf2868a0f243e5c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/NickNameField.cs: 4566439151a528588c6e77fbea15ef25 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonCharacter.cs: d37a384ef7557636dd0499ecb4e48640 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/RoomListEntry.cs: c7ba9dd428a6b8b410fe51075bfba1e1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/IChatClientListener.cs: e6ec1b8d09bf11f3791c0bd18ae45880 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs: 924b35bf318a963fcd6174beadd0d792 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewInspector.cs: da72c707197b3a14a9e4fc031131a7bc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs: 98e5143501c303d7d5973c718d302233 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Unity/Editor/AccountService.cs: 80b748556379aab9364d8ef00499f1a9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/MonoBehaviourPunEditor.cs: a420633076e18e6ded9ee7ff41e5161d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedProperty.cs: 981ecf71603e1baa6ce21b0fd1acc020 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewEditor.cs: d59344a8429d1e1c91f78e42f728790a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CloudRegionProperty.cs: a98a80d4740fc4627fa07cd0d1b937f1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs: 515bb293728f907f134591646985b9ce -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullArea.cs: 75f7e0f84478d7778555f1e1e66d50b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOpenProperty.cs: 401af34d1219dc5c3b2d226ce3b12b08 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomAutoCleanupProperty.cs: a92fec09d98c752e495341af83135d64 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsInspector.cs: da5c9fdcd684cd1c669e2f5c5f40d373 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs: 64d312faa4ce8272425b85e56f7f3f74 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PropertyListenerBase.cs: f9338b1da94c09d1d4dc5b01f854e0e3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs: 3e45da2cb510baa5765664ee499455b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Extensions.cs: 3f8618856b92f72822431fd67127e289 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs: 95da0bc9ecca5735a6f497f524ce7e54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/AutoSyncSceneToggle.cs: f5a0c8cb6428054959052eda2623401a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateOnSerializeField.cs: 8559ed016d3004cf7fa75b6b51babcf0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/PhotonPing.cs: 3f140d1df899c474f22230f66cc59a41 -> 
+  custom:scripting/precompiled-assembly-types:PunDemos.DemoHubEditor: 2b3285c443bc7902bd67df97d06dfa1e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs: 8f5df586ee2f27c138a2408c8f0f182a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit.cs: 534cb157a89724d3ca07a36bb2005880 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs: 77d86dcddcb47a6cc18163eb292fa20b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs: bee85956556c66d6096a3300e7923c77 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickRpc.cs: a4c1c482691ed3f8764f3736c0d692ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunTeams.cs: 97cdf6951e96c2643337cf5fb8f69c0b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfRoomsProperty.cs: c0688910145f665105cec6c6eaf4f03c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersProperty.cs: 92593170cc4984fa211f8cfbd69ac9a3 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/OnPointerOverTooltip.cs: b9abe1fce28033712ba423247874af86 -> 
+  custom:scripting/precompiled-assembly-types:PhotonChat: 887ee0d65baee12e99fc2bae3059281d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs: 9beee3a7ca2bc764b51880f31127a0ea -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotLanes.cs: 97949fb7cbc49a87a0e9a949a270c39f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomExpectedUsersProperty.cs: 15c7823a1b55465c741092cad452b5e4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ThirdParty/PunCockpitEmbed.cs: 2240c92b97535c6672465e83f1e36036 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplinePosition.cs: b39b2fa35faaacaf63f8929368e2e5de -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListView.cs: d1509ce3c1dcf26ebb758f8eb59e1c54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Region.cs: a0331a07d2a132f6cd24585218741838 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs: 033fd91b849b48295ab920beaf62446d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Room/CountdownTimer.cs: 29151b8b1909dcb5f8770e606e1b626a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/AsteroidsGameManager.cs: 12a51843b5b71df994a62f28231ff7ef -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListView.cs: c29d6d4888a48c4f1582d9884301955b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/InfosPanelPlaceholder.cs: fef54b122412d96995fae2ad440bb18b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/ToggleExpand.cs: 8df2d7619ad2c56cf93b2f0cedc9c9a4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMaxPlayersProperty.cs: f8d2a9d7157be1b82e5db9695b63da90 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatOperationCode.cs: dac444e0d5bbc5c837c33663c8b2cefb -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs: 595ad01ed190d0e43c1c35f8849e02bf -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CrcCheckToggle.cs: a236d00910b93ad4ae792080fb07508e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerCountProperty.cs: 2e3a71196f608331c351de9edf7166b4 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonTeamsManagerInspector.cs: 55bea48a55e757c56d53ded3ae32c48e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs: 72621123551f8416d26a631e33786da7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/WebRpc.cs: ee2bfdfdd166ac7a426061037e23ee8f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/UserIdUiForm.cs: 6825637a96b48acfc8eb9a62be50d82f -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotRacerSplashScreen.cs: 76e2c64393d61c31f26e20612278ec67 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Demos: d47b35652980a96f2ea98e1222e71fbd -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierCurveInspector.cs: cd033eb785ec71c240751fc164fcbff1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/IngameControlPanel.cs: e8e78297d18e08fd0d6ef99a75e376c2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersOnMasterProperty.cs: aa74237d4beb81bd33ceee77917bae47 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPropertiesListedInLobbyProperty.cs: c8880d240fca5295b2028661629631dc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsVisibleToggle.cs: 47a99e70dc7fd5d059dfbf899c22bbdb -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/PlayerListEntry.cs: 3811c0a731ead3815771e470aaca8954 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs: ce6d1f08b3d2d23009596a69c08b221d -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking: deca45e466396fbccdd58cee586a1a3a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerAddressProperty.cs: 284ddbe40a77584c9c8835a0d4d63859 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/ConnectionHandler.cs: 33c1e29051dc60b1fb7e8675cafa9a54 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerProperty.cs: d53bc3d40dee4679a13aa7a9ff58706e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatEventCode.cs: 764a52cdc3a575d4587f1a0939ee2b6d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettings.cs: 91ded15e638c075e189911af7f870d60 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/PropertyFields/UserIdField.cs: 889d45ebefa87613726b801d1e5e80c8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs: a21528a46272f1d315f76aa8c009d10e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Unity/Editor/PhotonEditorUtils.cs: 4456563b945cca498f5f71d9eb2059b9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs: d9dd9ca955de7f0a553b219d39f29621 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListCell.cs: 8dfedb1e000853780b714ad0651f22a9 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/RoomInfo.cs: 86776ad49e4deb535029b369c45e7f36 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/Player.cs: b6aef835b43cb69bef999bd5136f7c21 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities: 3a89df88b12f815371ee4e040341ac4c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Line.cs: 5e23c11e3450a3cc94ccc16c37b15685 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Block.cs: 4912a9664024ee7276656eb28373609a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/ProceduralController.cs: 294ae00e975ca4fe85822d6f85fe658a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/BoolInputField.cs: 0a674c3f564a1751cf8868030bbe1a97 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/FriendInfo.cs: be836ba41ecfa4c9dca4b510bdfea5c8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs: b0631ad5c9d567edbfc4fb2b742f00d0 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs: 5be65352f0f07fbe7665dfb31e99644d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateField.cs: 5786bd6806651c5e23c7d4a511e3dfaa -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerTtlProperty.cs: 5737d382a26e8898e597b19ab06904c5 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/CustomTypes.cs: 32fb10f0e1ae6f1f4c5b8deb3c8e83c3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatUserStatus.cs: 70a3ef1ac77c9464b5af9f3f7bba93e1 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Utilities.PhotonPlayer.Editor: f5d7993a1365a8a1029785117284eb96 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/StringInputField.cs: 2050e81c4bb867aa716494cd04d5af4a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMasterClientIdProperty.cs: 8a7f2b18c7369cf86e69820d5f0602fe -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListCell.cs: 76799f985e8a3951e5d132618c3350d8 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonRealtime/Code/CustomTypesUnity.cs: 013c37589fb09e7f77b2d495dfa13043 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/LoadLevelUIForm.cs: e7fdb0a9185f3aba43c9dbfded999dae -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs: 3e6f5222485426413e0ef0889782359b -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunStartup.cs: 961ddc858b2c0426ca5019c7e78c4fbf -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnEscapeQuit.cs: be21f25ae17e13db5ee6619d0c4d06e1 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/CreateRoomUiForm.cs: 6124ee0d28eb38de6cc89591d60054c6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListView.cs: 60e6f2e41401ae176dea7b70bab3c390 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChannelCreationOptions.cs: 4231621e658bee43f79b42f64c894f83 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/ToDemoHubButton.cs: 76a2afa2c645f73081ead15c9512dae8 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewHandler.cs: 7c6c7799f7e9296388067c605d1dc27c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/LoaderAnime.cs: 95ab941fc8d4427c4fa6c07cf9af1057 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListCell.cs: 8d1543bdc9816b8a578d6cd2eebe48be -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickDestroy.cs: 84deb4bc685f090f86133752922a945d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/IntInputField.cs: 423bd3fa49d91a3528e54cbe9d1ba776 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs: 5d5e55e8eb60f78e116626969ed0311e -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsVisibleProperty.cs: be95d33e9289a548289bfd3ab9507d59 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/BackgroundTimeOutField.cs: 301f4bb8d6480b188021ecf99ba8be6c -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbodyViewEditor.cs: ab7e34153fa9a3c646e0316fa6fc5600 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs: e6fcd481d2d6dd67f5b18fb26017d8ba -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonLagSimulationGui.cs: de60acfca25c9c245519382776ad2f82 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs: b13582f7122692c3dc0b0b58565603b7 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/AsteroidsGame.cs: 39019f3fa92643372bcb4670a7434593 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs: 4d64fa5e9e8828968d6cc191a132718d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonView/SmoothSyncMovement.cs: 31ee6a992a574c4e665f73e48482d3fc -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Bullet.cs: 77c411c50d821352e611a16c30f40226 -> 
+  custom:scripting/precompiled-assembly-types:PhotonUnityNetworking.Editor: 6db8fa5c46a3e2c43da7a35b73e8fe26 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonChat/Code/ChatParameterCode.cs: a0fd6a090c21b2fc7ca69a867e9c27c2 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/MoveByKeys.cs: 0be06a6581575752c58847799d9932e6 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullingHandler.cs: ff4506351c41ac4ce471635b6b12ceb3 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/ConnectAndJoinRandom.cs: 00d6f17fa442bd592f9dfb4622a40a5d -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs: f6b453c3dd57cf47fa35b8156daece9a -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Asteroid.cs: 8382d1ead570177214081c1ec12affef -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonGUI.cs: a5571c3104cbd100c9135419869f9e73 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/DocLinks.cs: 22fc6e62d47c65fdd35bd32f57891e69 -> 
+  custom:scripting/monoscript/filePath//Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/GraphicToggleIsOnTransition.cs: 7e3768d2f1167a9a7dc7f801820c67a5 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 92089.559612 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
+  artifactKey: Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset using Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ab8a668b43d1e7545f68de513fd9bc0') in 0.303614 seconds 
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 17.653961 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Dark to Light Green - Vertical.asset
+  artifactKey: Guid(4c86a3366cd840348ebe8dc438570ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Dark to Light Green - Vertical.asset using Guid(4c86a3366cd840348ebe8dc438570ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a34734294cb049b4ae8e82c1b2f1c60') in 0.003589 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.004070 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset
+  artifactKey: Guid(69a525efa7e6472eab268f6ea605f06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset using Guid(69a525efa7e6472eab268f6ea605f06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a576c31a9a7ec5720e7ca165d88adcd') in 0.005181 seconds 
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Operazione di I/O terminata a causa dell'uscita dal thread oppure della richiesta di un'applicazione.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

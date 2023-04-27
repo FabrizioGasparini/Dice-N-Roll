@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 1f227a0ea312b27468c3b0eef74b9763
+  - enabled: 1
+    path: Assets/Multiplayer Lobby/Scenes/OnlineLobby.unity
+    guid: 584f3c689368d6a4090460d6319c2578
   - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: db3cf7f2bbb179b4fa7d0349e1f9a905
