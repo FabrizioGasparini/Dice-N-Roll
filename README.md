@@ -1,5 +1,7 @@
-<h1 align="center"> 🎲 Dice N'Roll 🎲</h1>
-<h2 align="center"> Dice N' Roll - GMTK 2022 (Roll Of The Dice)</h2>
+ㅤㅤㅤㅤ<img src='https://i.postimg.cc/9fJ7WbJ2/Dice-N-Roll-Logo-No-Shadow.png' align="center"></img>
+
+<h1 align="center"> 🎲 Dice N'Roll 🎲 <br> Dice N' Roll - GMTK 2022 (Roll Of The Dice)</h1>
+
 ## Description
 
 Are you ready for a **STRATEGY 🧠** and **PUZZLE 🧩** adventure like you've never seen before? Introducing Dice N' Roll, the game created during the **GMTK Game Jam 2023 🫙** that puts your critical thinking skills and puzzle abilities to the test.
@@ -14,7 +16,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 #
   
-### Levels
+## Levels
 
 **<p align="center">Tutorial ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ Level 1</p>**
 
