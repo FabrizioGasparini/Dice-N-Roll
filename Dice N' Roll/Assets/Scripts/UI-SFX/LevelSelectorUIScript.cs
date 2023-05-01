@@ -42,7 +42,7 @@ public class LevelSelectorUIScript : MonoBehaviour
                         var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
                         newLevel.SetLevelInfo(level.LevelSprite, level.name);
 
-                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<LobbyManager>().PlayLevel(level.name));
+                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
                     }
                 }
             }
@@ -57,7 +57,7 @@ public class LevelSelectorUIScript : MonoBehaviour
                         var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
                         newLevel.SetLevelInfo(level.LevelSprite, level.name);
 
-                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
+                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<LobbyManager>().PlayLevel(level.name));
                     }
                 }
             }
