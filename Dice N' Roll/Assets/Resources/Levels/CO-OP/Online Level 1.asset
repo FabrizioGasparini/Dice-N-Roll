@@ -46,4 +46,5 @@ MonoBehaviour:
     GhostBlockTiles:
     - Coordinates: {x: 2, y: 0}
       Object: {fileID: 0}
+  OnlineLevel: 1
   LevelSprite: {fileID: 21300000, guid: 008209589caf86746ae4a2c9d86a093d, type: 3}
