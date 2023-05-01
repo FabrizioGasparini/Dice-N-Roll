@@ -34,7 +34,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<h3 align="center">About the Competition</h3>**
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![competition](https://img.shields.io/badge/Competition-GMTK%202022-red)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![competition](https://img.shields.io/badge/Competition-GMTK%202022-red)
 ![time](https://img.shields.io/badge/Time-48h-blueviolet)
 ![competitors](https://img.shields.io/badge/Competitors-6.1k-informational)
 ![ratings](https://img.shields.io/badge/Ratings-20-lightblue)
@@ -45,7 +45,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<h3 align="center">Final Score</h3>**
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![overallscore](https://img.shields.io/badge/Overall-%231388-success)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![overallscore](https://img.shields.io/badge/Overall-%231388-success)
 ![enjoymentscore](https://img.shields.io/badge/Enjoyment-%23359-yellow)
 ![presentationscore](https://img.shields.io/badge/Presentation-%231663-orange)
 ![creativityscore](https://img.shields.io/badge/Creativity-%232805-red)
