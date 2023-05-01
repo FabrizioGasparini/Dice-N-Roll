@@ -31,20 +31,34 @@ public class LevelSelectorUIScript : MonoBehaviour
         }
         else
         {
-            coopLevels = Resources.LoadAll<COOPLevelData>("Levels/CO-OP");
-
-            foreach (COOPLevelData level in coopLevels)
+            if(!isOnline)
             {
-                if(level.LevelSprite != null)
-                {
-                    if(level.OnlineLevel && !isOnline) return;
-                    if(!level.OnlineLevel && isOnline) return;
-                    
-                    var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
-                    newLevel.SetLevelInfo(level.LevelSprite, level.name);
+                coopLevels = Resources.LoadAll<COOPLevelData>("Levels/CO-OP/Local");
 
-                    if(isOnline) newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<LobbyManager>().PlayLevel(level.name));
-                    else newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
+                foreach (COOPLevelData level in coopLevels)
+                {
+                    if(level.LevelSprite != null)
+                    {                        
+                        var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
+                        newLevel.SetLevelInfo(level.LevelSprite, level.name);
+
+                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<LobbyManager>().PlayLevel(level.name));
+                    }
+                }
+            }
+            else
+            {
+                coopLevels = Resources.LoadAll<COOPLevelData>("Levels/CO-OP/Online");
+
+                foreach (COOPLevelData level in coopLevels)
+                {
+                    if(level.LevelSprite != null)
+                    {                        
+                        var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
+                        newLevel.SetLevelInfo(level.LevelSprite, level.name);
+
+                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
+                    }
                 }
             }
 

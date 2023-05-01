@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
 using ExitGames.Client.Photon;
@@ -55,7 +56,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RoomOptions roomOptions = new RoomOptions();
             roomOptions.MaxPlayers = 2;
 
-            PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName + "-" + roomCodeInput.text, roomOptions);
+            PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName + "ㅤ" + roomCodeInput.text, roomOptions);
         }
     }
 
@@ -75,7 +76,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         lobbyPanel.SetActive(false);
         roomPanel.SetActive(true);
-        roomCodeLabel.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name.Split("-")[1];
+        roomCodeLabel.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name.Split("ㅤ")[1];
 
         UpdatePlayerList();
     }
@@ -103,7 +104,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             if (!room.Name.Contains("Refresh"))
             {
                 RoomItem newRoom = Instantiate(roomItemPrefab, roomItemParent);
-                newRoom.UpdateRoomItem(room.Name.Split("-")[0], room.Name.Split("-")[1]);
+                newRoom.UpdateRoomItem(room.Name.Split("ㅤ")[0], room.Name.Split("ㅤ")[1]);
                 roomItemsList.Add(newRoom);
             }
         }
@@ -157,14 +158,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
                 if(player.Value.IsMasterClient) 
                 {
-                    newPlayer.gameObject.name = "Player1";
+                    newPlayer.gameObject.name = "Player 1";
                     newPlayer.SetPlayerInfo(player.Value.NickName, 1);
 
                     newPlayer.transform.SetAsFirstSibling();
                 }
                 else
                 {
-                    newPlayer.gameObject.name = "Player2";
+                    newPlayer.gameObject.name = "Player 2";
                     newPlayer.SetPlayerInfo(player.Value.NickName, 2);
                 }
 
@@ -176,7 +177,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     void Update()
     {
         if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount > 1) playButton.SetActive(true);
-        else playButton.SetActive(false);
+        else
+        {
+            playButton.SetActive(false);
+            levelSelectorPanel.SetActive(false);
+        } 
     }
 
     public void OpenLevelSelector(bool value)
@@ -204,6 +209,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftLobby()
     {
-        PhotonNetwork.LoadLevel("Loading");
+        SceneManager.LoadScene("Main Menu");
     }
 }
