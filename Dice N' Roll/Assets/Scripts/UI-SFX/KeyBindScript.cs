@@ -58,26 +58,31 @@ public class KeyBindScript : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Up"))
         {
+            if(PlayerPrefs.GetString("Up") == "") return;
             KeyCode up = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up"));
             keys["Up"] = up;
         }
         if (PlayerPrefs.HasKey("Down"))
         {
+            if(PlayerPrefs.GetString("Down") == "") return;
             KeyCode down = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down"));
             keys["Down"] = down;
         }
         if (PlayerPrefs.HasKey("Left"))
         {
+            if(PlayerPrefs.GetString("Left") == "") return;
             KeyCode left = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left"));
             keys["Left"] = left;
         }
         if (PlayerPrefs.HasKey("Right"))
         {
+            if(PlayerPrefs.GetString("Right") == "") return;
             KeyCode right = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right"));
             keys["Right"] = right;
         }
         if (PlayerPrefs.HasKey("Pause"))
         {
+            if(PlayerPrefs.GetString("Pause") == "") return;
             KeyCode pause = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Pause"));
             keys["Pause"] = pause;
         }
