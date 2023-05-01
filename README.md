@@ -34,7 +34,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<h3 align="center">About the Competition</h3>**
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![competition](https://img.shields.io/badge/Competition-GMTK%202022-red)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![competition](https://img.shields.io/badge/Competition-GMTK%202022-red)
 ![time](https://img.shields.io/badge/Time-48h-blueviolet)
 ![competitors](https://img.shields.io/badge/Competitors-6.1k-informational)
 ![ratings](https://img.shields.io/badge/Ratings-20-lightblue)
@@ -45,7 +45,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<h3 align="center">Final Score</h3>**
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![overallscore](https://img.shields.io/badge/Overall-%231388-success)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![overallscore](https://img.shields.io/badge/Overall-%231388-success)
 ![enjoymentscore](https://img.shields.io/badge/Enjoyment-%23359-yellow)
 ![presentationscore](https://img.shields.io/badge/Presentation-%231663-orange)
 ![creativityscore](https://img.shields.io/badge/Creativity-%232805-red)
@@ -56,12 +56,12 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<h3 align="center">Game Info</h3>**
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![engine](https://img.shields.io/badge/Game%20Engine-Unity-blueviolet)
+ㅤㅤㅤㅤㅤㅤㅤㅤ![engine](https://img.shields.io/badge/Game%20Engine-Unity-blueviolet)
 ![language](https://img.shields.io/badge/Programming%20Language-C%23-red)
 ![languages](https://img.shields.io/badge/Translations-English%20/%20Italian-informational)
 ![editor](https://img.shields.io/badge/Level%20Editor-✔-green)
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![single](https://img.shields.io/badge/Singleplayer-✔-green)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![single](https://img.shields.io/badge/Singleplayer-✔-green)
 ![coop](https://img.shields.io/badge/Local/Online%20Coop-✔-green)
 ![levels](https://img.shields.io/badge/Level%20Count-5-lightblue)
 
