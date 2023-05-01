@@ -16,7 +16,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 #
   
-## Levels
+<!--- ## Levels
 
 **<p align="center">Tutorial ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ Level 1</p>**
 
@@ -28,7 +28,7 @@ Dice N' Roll was developed in just **48 HOURS** during the GMTK Game Jam 2023, i
 
 **<p align="center">Level 4 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ Level 5</p>**
 
-<img style="width: 500px" src="https://img.itch.zone/aW1hZ2UvMTYxNDgxMi85NTI5OTgwLnBuZw==/250x600/nCiZsb.png">
+<img style="width: 500px" src="https://img.itch.zone/aW1hZ2UvMTYxNDgxMi85NTI5OTgwLnBuZw==/250x600/nCiZsb.png"> --->
 
 #
 
