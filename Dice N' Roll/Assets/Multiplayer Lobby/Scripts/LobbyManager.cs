@@ -56,7 +56,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RoomOptions roomOptions = new RoomOptions();
             roomOptions.MaxPlayers = 2;
 
-            PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName + "ㅤ" + roomCodeInput.text, roomOptions);
+            PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName + "-" + roomCodeInput.text, roomOptions);
         }
     }
 
@@ -76,7 +76,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         lobbyPanel.SetActive(false);
         roomPanel.SetActive(true);
-        roomCodeLabel.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name.Split("ㅤ")[1];
+        roomCodeLabel.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name.Split("-")[1];
 
         UpdatePlayerList();
     }
@@ -104,7 +104,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             if (!room.Name.Contains("Refresh"))
             {
                 RoomItem newRoom = Instantiate(roomItemPrefab, roomItemParent);
-                newRoom.UpdateRoomItem(room.Name.Split("ㅤ")[0], room.Name.Split("ㅤ")[1]);
+                newRoom.UpdateRoomItem(room.Name.Split("-")[0], room.Name.Split("-")[1]);
                 roomItemsList.Add(newRoom);
             }
         }
