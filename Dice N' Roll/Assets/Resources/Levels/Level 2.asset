@@ -17,42 +17,10 @@ MonoBehaviour:
   DiceCoordinates: {x: 0, y: 0}
   DiceValue: 6
   FlagCoordinates: {x: 6, y: 0}
-  Blocks:
-  - {x: 5, y: 0}
-  - {x: 4, y: 0}
-  - {x: 3, y: 0}
-  - {x: 2, y: 0}
-  - {x: 1, y: 0}
-  - {x: 1, y: 1}
-  - {x: 1, y: 2}
-  - {x: 6, y: 2}
-  - {x: 5, y: 2}
-  - {x: 4, y: 2}
-  - {x: 3, y: 2}
-  - {x: 3, y: 4}
-  - {x: 2, y: 4}
-  - {x: 1, y: 4}
-  - {x: 1, y: 5}
-  - {x: 3, y: 6}
-  Powers:
-  - Coordinates: {x: 4, y: 1}
-    PowerType: 0
-    Value: 2
-    Object: {fileID: 0}
-  - Coordinates: {x: 4, y: 5}
-    PowerType: 0
-    Value: 2
-    Object: {fileID: 0}
-  - Coordinates: {x: 4, y: 3}
-    PowerType: 0
-    Value: 5
-    Object: {fileID: 0}
-  - Coordinates: {x: 2, y: 2}
-    PowerType: 0
-    Value: 1
-    Object: {fileID: 0}
-  - Coordinates: {x: 0, y: 6}
-    PowerType: 0
-    Value: 6
-    Object: {fileID: 0}
-  Teleports: []
+  TilesList:
+    BlockTiles: []
+    PowerTiles: []
+    TeleportTiles: []
+    ButtonTiles: []
+    GhostBlockTiles: []
+  LevelSprite: {fileID: 21300000, guid: 4ddd36af055664d47a2bd815d40260b7, type: 3}

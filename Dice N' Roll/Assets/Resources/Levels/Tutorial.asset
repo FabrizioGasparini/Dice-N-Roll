@@ -19,10 +19,11 @@ MonoBehaviour:
   FlagCoordinates: {x: 2, y: 3}
   TilesList:
     BlockTiles:
-    - Coordinates: {x: 2, y: 0}
-    - Coordinates: {x: 2, y: 2}
+    - Coordinates: {x: 0, y: 2}
+    - Coordinates: {x: 1, y: 2}
     - Coordinates: {x: 2, y: 2}
     PowerTiles: []
     TeleportTiles: []
     ButtonTiles: []
     GhostBlockTiles: []
+  LevelSprite: {fileID: 21300000, guid: c9b637ce0c7086a48904013298a8d61c, type: 3}

@@ -6,107 +6,63 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("General")]
-    private GameObject menusPanel;
+    [Header("Panels")]
+    [SerializeField] private List<MenuPanel> menuPanels = new List<MenuPanel>();
 
-    private GameObject openMenusButton;
-    private GameObject closeMenusButton;
+    [Header("References")]
+    [SerializeField] GameObject openMenusButton;
+    [SerializeField] GameObject closeMenusButton;
 
-    private GameObject mainMenu;
-    private GameObject playMenu;
-    private GameObject settingsMenu;
-    private GameObject levelMenu;
-    private GameObject controlsMenu;
-    private GameObject connectMenu;
 
-    private GameObject volumeSlider;
-    private GameObject volumeValue;
+    [Header("Volume References")]
+    [SerializeField] Slider volumeSlider;
+    [SerializeField] TMPro.TextMeshProUGUI volumeValueLabel;
 
     private float gameVolume = 0.85f;
 
     void Start() 
     {
-        menusPanel = GameObject.Find("Menus");
-        openMenusButton = menusPanel.transform.Find("OpenMain").gameObject;
-
-        mainMenu = menusPanel.transform.Find("Main").gameObject;
-        closeMenusButton = mainMenu.transform.Find("CloseMenu").gameObject;
-
-        playMenu = menusPanel.transform.Find("PlayMenu").gameObject;
-        settingsMenu = menusPanel.transform.Find("SettingsMenu").gameObject;
-        levelMenu = menusPanel.transform.Find("LevelSelectorMenu").gameObject;
-        controlsMenu = menusPanel.transform.Find("ControlsMenu").gameObject;
-        connectMenu = menusPanel.transform.Find("ConnectMenu").gameObject;
-
-        volumeSlider = settingsMenu.transform.Find("Volume").Find("VolumeSlider").gameObject;
-        volumeValue = settingsMenu.transform.Find("Volume").Find("VolumeValue").gameObject;
-
         LoadVolume();
 
-        Open("Main");
-        //OpenMenus(true);
+        Open("MainMenu");
     }
 
-    public void Open(string menu){
-        AudioSource audio = gameObject.AddComponent<AudioSource>();
-        audio.PlayOneShot((AudioClip)Resources.Load("Sounds/ButtonSound"));
-        DestroyImmediate(audio, true);
+    public void Open(string menu)
+    {
+        PlayAudio();
 
         ResetMenus();
-        switch(menu)
-        {
-            case "Main":
-                mainMenu.SetActive(true);
-                break;
 
-            case "Play":
-                playMenu.SetActive(true);
-                break;
-
-            case "Settings":
-                settingsMenu.SetActive(true);
-                break;
-
-            case "Levels":
-                levelMenu.SetActive(true);
-                break;
-
-            case "Controls":
-                controlsMenu.SetActive(true);
-                break;
-
-            case "Connect":
-                connectMenu.SetActive(true);
-                break;
-        }
+        foreach (MenuPanel panel in menuPanels) if(panel.PanelName == menu) panel.Panel.SetActive(true);
     }
 
-    public void Quit(){
-        AudioSource audio = gameObject.AddComponent<AudioSource>();
-        audio.PlayOneShot((AudioClip)Resources.Load("Sounds/ButtonSound"));
-        DestroyImmediate(audio, true);
+    public void Quit()
+    {
+        PlayAudio();
 
         Application.Quit();
     }
 
-    public void PlayLevel(string levelName){
-        AudioSource audio = gameObject.AddComponent<AudioSource>();
-        audio.PlayOneShot((AudioClip)Resources.Load("Sounds/ButtonSound"));
-        DestroyImmediate(audio, true);
+    public void PlayLevel(string levelName)
+    {
+        PlayAudio();
 
         LoadingScreen.LoadLevel.Invoke(levelName);
     }
 
-    public void LoadVolume(){
+    public void LoadVolume()
+    {
         gameVolume = PlayerPrefs.GetFloat("Volume");
-        volumeValue.GetComponent<TMPro.TextMeshProUGUI>().text = (gameVolume * 100).ToString("0.0");
-        volumeSlider.GetComponent<Slider>().value = gameVolume;
+
+        volumeValueLabel.text = (gameVolume * 100).ToString("0.0");
+        volumeSlider.value = gameVolume;
+        
         AudioListener.volume = gameVolume;
     }
 
     public void SetVolume(float volume)
     {
-        volumeValue.GetComponent<TMPro.TextMeshProUGUI>().text = (volume * 100).ToString("0.0");
+        volumeValueLabel.GetComponent<TMPro.TextMeshProUGUI>().text = (volume * 100).ToString("0.0");
         gameVolume = volume;
     }
 
@@ -116,33 +72,19 @@ public class MainMenu : MonoBehaviour
         AudioListener.volume = gameVolume;
     }
 
-    private void ResetMenus()
+    private void PlayAudio()
     {
-        mainMenu.SetActive(false);
-        playMenu.SetActive(false);
-        settingsMenu.SetActive(false);
-        levelMenu.SetActive(false);
-        controlsMenu.SetActive(false);
-        connectMenu.SetActive(false);
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load("Sounds/ButtonSound"));
+        DestroyImmediate(audio, true);
     }
 
-    public void OpenMenus(bool value)
+    private void ResetMenus()
     {
-        if(value)
+        foreach (MenuPanel panel in menuPanels)
         {
-            if(!Camera.main.GetComponent<MenuCameraScript>().canMove) return;
-
-            menusPanel.GetComponent<Animator>().Play("OpenMenusPanel");
-            closeMenusButton.SetActive(true);
-            openMenusButton.SetActive(false);
-        } 
-        else
-        {
-            menusPanel.GetComponent<Animator>().Play("CloseMenusPanel");
-            closeMenusButton.SetActive(false);
-            openMenusButton.SetActive(true);
+            panel.Panel.SetActive(false);
         }
-            
     }
 
     IEnumerator RemoveSound(AudioSource sound)
@@ -150,4 +92,11 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(1);
         DestroyImmediate(sound, true);
     }
+}
+
+[System.Serializable]
+public class MenuPanel
+{
+    public string PanelName;
+    public GameObject Panel;
 }

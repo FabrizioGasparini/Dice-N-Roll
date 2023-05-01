@@ -43,3 +43,4 @@ MonoBehaviour:
     GhostBlockTiles:
     - Coordinates: {x: 4, y: 3}
       Object: {fileID: 0}
+  LevelSprite: {fileID: 0}

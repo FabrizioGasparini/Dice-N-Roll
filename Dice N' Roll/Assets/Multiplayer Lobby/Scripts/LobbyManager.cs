@@ -14,6 +14,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [Header("")]
     [SerializeField] GameObject lobbyPanel;
     [SerializeField] GameObject roomPanel;
+    [SerializeField] GameObject levelSelectorPanel;
 
     [Header("")]
     [SerializeField] TMPro.TextMeshProUGUI roomCodeLabel;
@@ -52,7 +53,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         if (roomCodeInput.text.Length >= 1)
         {
             RoomOptions roomOptions = new RoomOptions();
-            roomOptions.MaxPlayers = 4;
+            roomOptions.MaxPlayers = 2;
 
             PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName + "-" + roomCodeInput.text, roomOptions);
         }
@@ -153,7 +154,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             foreach (KeyValuePair<int, Player> player in PhotonNetwork.CurrentRoom.Players)
             {
                 PlayerItem newPlayer = Instantiate(playerItemPrefab, playerItemParents);
-                newPlayer.SetPlayerInfo(player.Value.NickName, "Yellow", new Color32(255, 255, 0, 255));
+
+                if(player.Value.IsMasterClient) 
+                {
+                    newPlayer.gameObject.name = "Player1";
+                    newPlayer.SetPlayerInfo(player.Value.NickName, 1);
+
+                    newPlayer.transform.SetAsFirstSibling();
+                }
+                else
+                {
+                    newPlayer.gameObject.name = "Player2";
+                    newPlayer.SetPlayerInfo(player.Value.NickName, 2);
+                }
 
                 playerItemsList.Add(newPlayer);
             }
@@ -162,13 +175,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >= 1) playButton.SetActive(true);
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount > 1) playButton.SetActive(true);
         else playButton.SetActive(false);
     }
 
-    public void PlayGame()
+    public void OpenLevelSelector(bool value)
     {
-        PhotonNetwork.LoadLevel("Game");
+        levelSelectorPanel.SetActive(value);
+        roomPanel.SetActive(!value);
+    }
+
+    public void PlayLevel(string levelName)
+    {
+        PhotonNetwork.LoadLevel(levelName);
     }
 
     public void RefreshRooms()

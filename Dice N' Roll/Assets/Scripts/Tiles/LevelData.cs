@@ -14,6 +14,9 @@ public class LevelData : ScriptableObject
     public int DiceValue;
     public Vector2 FlagCoordinates;
     public TilesList TilesList;
+    
+    [Header("Menu Settings")]
+    public Sprite LevelSprite;
 
     public void Override(LevelData levelData)
     {

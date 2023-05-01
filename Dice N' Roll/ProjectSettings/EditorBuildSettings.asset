@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1f227a0ea312b27468c3b0eef74b9763
   - enabled: 1
+    path: Assets/Scenes/Level Editor.unity
+    guid: cd8ad3d21b2d27d4aafb1fc9e25daaa1
+  - enabled: 1
     path: Assets/Multiplayer Lobby/Scenes/OnlineLobby.unity
     guid: 584f3c689368d6a4090460d6319c2578
-  - enabled: 0
-    path: Assets/Scenes/Test Scene.unity
-    guid: db3cf7f2bbb179b4fa7d0349e1f9a905
   - enabled: 1
     path: Assets/Scenes/Tutorials/Tutorial.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorials/Tutorial 2.unity
     guid: 355b973910b3e0e48baf3bd18ca70b73
   - enabled: 1
-    path: Assets/Scenes/Level Editor.unity
-    guid: cd8ad3d21b2d27d4aafb1fc9e25daaa1
+    path: Assets/Scenes/CO-OP/Local/CO-OP Tutorial 1.unity
+    guid: a30e03d2a5598ef428ef717b8ce4cd42
+  - enabled: 1
+    path: Assets/Scenes/CO-OP/Online/Online Level 1.unity
+    guid: a8fa14297e9220741b9a4f22a1309300
+  - enabled: 0
+    path: Assets/Scenes/Test Scene.unity
+    guid: db3cf7f2bbb179b4fa7d0349e1f9a905
   m_configObjects: {}

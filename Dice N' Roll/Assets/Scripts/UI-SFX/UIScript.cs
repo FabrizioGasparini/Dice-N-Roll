@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class UIScript : MonoBehaviour
 {
     private DiceScript dice;
-
     [SerializeField] private TMPro.TextMeshProUGUI rollsLabel;
     [SerializeField] private TMPro.TextMeshProUGUI levelLabel;
     [SerializeField] private GameObject pauseMenu;
@@ -24,9 +23,7 @@ public class UIScript : MonoBehaviour
 
     void Update()
     {
-        if(dice == null) dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<DiceScript>();
-
-        rollsLabel.text = ("ROLLS - " + dice.DiceValue);
+        if(dice != null) rollsLabel.text = ("ROLLS - " + dice.DiceValue);
 
         KeyCode pause = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Pause"));
         if(Input.GetKeyDown(pause))
@@ -65,7 +62,8 @@ public class UIScript : MonoBehaviour
         Sound();
         isPaused = false;
         pauseMenu.SetActive(false);
-        dice.SetGameStatus(true);
+
+        if (dice != null) dice.SetGameStatus(true);
     }
 
     public void Pause()
@@ -73,15 +71,16 @@ public class UIScript : MonoBehaviour
         if(canPause)
         {
             Sound();
-            if (dice.GetGameStatus() && !isPaused)
+            if(dice != null)
             {
-                isPaused = true;
-                pauseMenu.SetActive(true);
-                dice.SetGameStatus(false);
-            } 
-            else 
-            {
-                Back();
+                if (dice.GetGameStatus() && !isPaused)
+                {
+                    isPaused = true;
+                    pauseMenu.SetActive(true);
+                    dice.SetGameStatus(false);
+                } 
+                else Back();
+                
             }
         }
     }
@@ -89,7 +88,8 @@ public class UIScript : MonoBehaviour
     public void CompleteLevel()
     {
         Back();
-        dice.SetGameStatus(false);
+        if(dice != null) dice.SetGameStatus(false);
+
         canPause = false;
         completedLevelMenu.SetActive(true);
     }
@@ -97,7 +97,8 @@ public class UIScript : MonoBehaviour
     public void FailLevel()
     {
         Back();
-        dice.SetGameStatus(false);
+        if (dice != null) dice.SetGameStatus(false);
+
         canPause = false;
         failedLevelMenu.SetActive(true);
     }

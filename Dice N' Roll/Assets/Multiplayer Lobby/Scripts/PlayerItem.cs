@@ -7,29 +7,13 @@ using Photon.Realtime;
 public class PlayerItem : MonoBehaviour
 {
     [SerializeField] TMPro.TextMeshProUGUI playerNameLabel;
-    [SerializeField] Image playerCharacterImage;
-    [SerializeField] TMPro.TextMeshProUGUI playerColorLabel;
-
-    private Color32 playerColor;
+    [SerializeField] TMPro.TextMeshProUGUI playerNumberLabel;
     
-    public void SetPlayerInfo(string playerName, string playerColor, Color32 color)
+    public void SetPlayerInfo(string playerName, int playerNumber)
     {
         playerNameLabel.text = playerName;
-        playerColorLabel.text = playerColor;
+        playerNumberLabel.text = "PLAYER " + playerNumber.ToString();
 
-        this.playerColor = color;
-        GetComponent<Image>().color = this.playerColor; 
-    }
-
-    public void ChangeCharacter(bool changeRight)
-    {
-        if(changeRight)
-        {
-            // CHANGE CHARACTER ID += 1
-        }
-        else
-        {
-            // CHANGE CHARACTER ID -= 1
-        }
+        if(playerNumber == 2) GetComponent<Image>().color = Color.yellow; 
     }
 }

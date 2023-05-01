@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05207f4a6ca4099409d13f3241aa1952, type: 3}
+  m_Name: OnlineDice
+  m_EditorClassIdentifier: 
+  Name: Online Dice
+  Tile: {fileID: 8740197555554027174, guid: 48733dabbc0b8984ca67580cdd5e916f, type: 3}
+  Preview: {fileID: 2629303908801638809, guid: bea5cde38046a01459c35000df19675f, type: 3}
+  GizmoSize: {x: 1, y: 1, z: 1}
+  GizmoVerticalPosition: 0
+  GizmoColor: {r: 0.9019608, g: 1, b: 0, a: 1}

@@ -56,6 +56,7 @@ public class DiceScript : MonoBehaviour
     void Update()
     {
         ChangeNumber();
+        if(grid.InMenu) if(!GameObject.FindObjectOfType<MenuCameraScript>().canMove) return;
 
         if (DiceValue > 0){
             if(inGame)
@@ -252,11 +253,12 @@ public class DiceScript : MonoBehaviour
                         ButtonTile buttonTile = grid.GetButtonTile(x, y);
                         if(buttonTile.ButtonType == ButtonType.Press)
                         {
-                            GhostBlockTile ghostBlockTile = grid.GetGhostBlockTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.Coordinates.y);
+                            GhostBlockTile ghostBlockTile = grid.GetGhostBlockTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.DestinationCoordinates.y);
                             Destroy(buttonTile.Object);
+
                             Destroy(ghostBlockTile.Object);
 
-                            grid.GetTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.Coordinates.y).TileType = TileType.None;
+                            grid.GetTile((int)buttonTile.DestinationCoordinates.x, (int)buttonTile.DestinationCoordinates.y).TileType = TileType.None;
                             grid.GetTile(x, y).TileType = TileType.None;
                         }
 

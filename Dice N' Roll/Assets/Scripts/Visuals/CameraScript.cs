@@ -9,6 +9,8 @@ public class CameraScript : MonoBehaviour
     private float maxFOV = 50;
 
     private Grid grid;
+    private COOPGrid coopGrid;
+
 
     private Vector3 maxPoint;
     private Vector3 minPoint;
@@ -16,6 +18,9 @@ public class CameraScript : MonoBehaviour
     private Vector3 camStartingPos;
     private Vector2 mouseStartingPos;
     private Vector2 mouseCurrentPos;
+
+    private int gridRows;
+    private int gridColumns;
 
 
     void OnDrawGizmos()
@@ -28,14 +33,15 @@ public class CameraScript : MonoBehaviour
     {
         AudioListener.volume = PlayerPrefs.GetFloat("Volume");
 
-        grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
+        grid = GameObject.FindObjectOfType<Grid>();
+        if(grid == null) coopGrid = GameObject.FindObjectOfType<COOPGrid>();
 
         ResetCamera();
     }
 
     void Update()
-    {    
-        maxPoint = new Vector3(minPoint.x + grid.LevelData.GridRows, camStartingPos.y, minPoint.z + grid.LevelData.GridColumns);
+    {   
+        maxPoint = new Vector3(minPoint.x + gridRows, camStartingPos.y, minPoint.z + gridColumns);
         
         if(Input.mouseScrollDelta.y != 0) Camera.main.fieldOfView -= Input.mouseScrollDelta.y;
 
@@ -54,7 +60,7 @@ public class CameraScript : MonoBehaviour
                 float xMovement = mouseCurrentPos.y - mouseStartingPos.y;
                 float zMovement = mouseCurrentPos.x - mouseStartingPos.x;
 
-                transform.position = new Vector3(transform.position.x + xMovement / speed * grid.LevelData.GridColumns, transform.position.y, transform.position.z - zMovement / speed * grid.LevelData.GridColumns);
+                transform.position = new Vector3(transform.position.x + xMovement / speed * gridColumns, transform.position.y, transform.position.z - zMovement / speed * gridColumns);
 
                 mouseStartingPos = mouseCurrentPos;
             }
@@ -69,15 +75,28 @@ public class CameraScript : MonoBehaviour
 
     public void ResetCamera()
     {
-        float midRow = (grid.LevelData.GridRows - 1) / 2 + grid.startPosition.x;
-        float midColumns = (grid.LevelData.GridColumns - 1) / 2 + grid.startPosition.z;
+        if(grid)
+        {
+            gridRows = grid.LevelData.GridRows; 
+            gridColumns = grid.LevelData.GridColumns;
+        }
+        else
+        {
+            gridRows = coopGrid.LevelData.GridRows;
+            gridColumns = coopGrid.LevelData.GridColumns;
+        }
 
-        camStartingPos = new Vector3(midRow, (grid.LevelData.GridRows + grid.LevelData.GridColumns) - 2, midColumns);
+       
+        float midRow = (gridRows - 1) / 2 + 0; //grid.startPosition.x;
+        float midColumns = (gridColumns - 1) / 2 + 0; //grid.startPosition.z;
+
+        camStartingPos = new Vector3(midRow, (gridRows + gridColumns) - 2, midColumns);
         transform.position = camStartingPos;
 
-        minPoint = new Vector3(grid.startPosition.x, camStartingPos.y, grid.startPosition.z);
-        maxPoint = new Vector3((grid.LevelData.GridRows - 1) + grid.startPosition.x, camStartingPos.y, (grid.LevelData.GridColumns - 1) + grid.startPosition.z);
+        minPoint = new Vector3(0 /*grid.startPosition.x*/, camStartingPos.y, 0 /*grid.startPosition.z*/);
+        maxPoint = new Vector3((gridRows - 1) + 0 /*grid.startPosition.x*/, camStartingPos.y, (gridColumns - 1) + 0/*grid.startPosition.z*/);
 
         Camera.main.fieldOfView = maxFOV;
+
     }
 }

@@ -10,7 +10,7 @@ public class ConnectToLobby : MonoBehaviourPunCallbacks
 
     public void JoinLobby()
     {
-        if (usernameInput.text.Length >= 3)
+        if (usernameInput.text.Length > 0)
         {
             PhotonNetwork.NickName = usernameInput.text;
             PhotonNetwork.AutomaticallySyncScene = true;
