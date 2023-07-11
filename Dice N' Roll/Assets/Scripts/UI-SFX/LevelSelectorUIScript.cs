@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +23,7 @@ public class LevelSelectorUIScript : MonoBehaviour
                 {
                     var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
                     newLevel.SetLevelInfo(level.LevelSprite, level.name);
-                    newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
+                    newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenuTest>().PlayLevel(level.name));
                 }
             }
         }
@@ -42,7 +40,7 @@ public class LevelSelectorUIScript : MonoBehaviour
                         var newLevel = Instantiate(menuLevelPrefab, levelsTransform);
                         newLevel.SetLevelInfo(level.LevelSprite, level.name);
 
-                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenu>().PlayLevel(level.name));
+                        newLevel.GetComponent<Button>().onClick.AddListener(() => GameObject.FindObjectOfType<MainMenuTest>().PlayLevel(level.name));
                     }
                 }
             }

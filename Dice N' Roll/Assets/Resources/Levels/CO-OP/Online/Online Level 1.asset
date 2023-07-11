@@ -23,20 +23,11 @@ MonoBehaviour:
   TilesList:
     BlockTiles:
     - Coordinates: {x: 2, y: 2}
-    PowerTiles:
-    - Coordinates: {x: 3, y: 2}
-      PowerType: 0
-      Value: 3
-      Object: {fileID: 0}
-    TeleportTiles:
+    - Coordinates: {x: 2, y: 1}
+    - Coordinates: {x: 1, y: 2}
     - Coordinates: {x: 0, y: 2}
-      DestinationCoordinates: {x: 4, y: 2}
-      Object: {fileID: 0}
-      PreviewObject: {fileID: 0}
-    - Coordinates: {x: 4, y: 2}
-      DestinationCoordinates: {x: 0, y: 2}
-      Object: {fileID: 0}
-      PreviewObject: {fileID: 0}
+    PowerTiles: []
+    TeleportTiles: []
     ButtonTiles:
     - Coordinates: {x: 2, y: 4}
       DestinationCoordinates: {x: 2, y: 0}

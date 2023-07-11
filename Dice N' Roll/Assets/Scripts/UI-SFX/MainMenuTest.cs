@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenuTest : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private List<MenuPanel> menuPanels = new List<MenuPanel>();

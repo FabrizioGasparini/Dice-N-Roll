@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +31,6 @@ public class KeyBindScript : MonoBehaviour
         pause.text = "pause [" + keys["Pause"].ToString() + "]";
 
         label.text = "- MOVE [" + keys["Up"].ToString() + keys["Left"].ToString() + keys["Down"].ToString() + keys["Right"].ToString() + " / ARROWS]                   - PAUSE [" + keys["Pause"].ToString() + "]";
-
     }
 
     public void SetSelectedKey(GameObject pressedKey)

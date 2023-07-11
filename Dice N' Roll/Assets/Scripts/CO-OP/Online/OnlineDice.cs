@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using Photon.Realtime;
 
 public class OnlineDice : MonoBehaviour
 {
@@ -126,31 +125,33 @@ public class OnlineDice : MonoBehaviour
         }
         else
         {
-            if (Player == 1)
+            if (inGame)
             {
-                if (Row == grid.LevelData.P1FlagCoordinates.x && Column == grid.LevelData.P1FlagCoordinates.y)
+                if (Player == 1)
                 {
-                    CompleteLevel();
+                    if (Row == grid.LevelData.P1FlagCoordinates.x && Column == grid.LevelData.P1FlagCoordinates.y)
+                    {
+                        CompleteLevel();
+                    }
+                    else
+                    {
+                        Fail();
+                        OnlineGameManager.Instance.FailLevel();
+                    }
                 }
                 else
                 {
-                    Fail();
-                    OnlineGameManager.Instance.FailLevel();
+                    if (Row == grid.LevelData.P2FlagCoordinates.x && Column == grid.LevelData.P2FlagCoordinates.y)
+                    {
+                        CompleteLevel();
+                    }
+                    else
+                    {
+                        Fail();
+                        OnlineGameManager.Instance.FailLevel();
+                    }
                 }
             }
-            else
-            {
-                if (Row == grid.LevelData.P2FlagCoordinates.x && Column == grid.LevelData.P2FlagCoordinates.y)
-                {
-                    CompleteLevel();
-                }
-                else
-                {
-                    Fail();
-                    OnlineGameManager.Instance.FailLevel();
-                }
-            }
-
         }
     }
 

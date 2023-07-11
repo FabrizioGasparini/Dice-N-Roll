@@ -972,7 +972,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1274685709}
-  - component: {fileID: 1274685710}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -996,18 +995,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1274685710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274685708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a103e32cdb841c42918350794e98a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1277782062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,10 +1805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d32cb1119b54e8488a56bb8ceb57788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: b5e66ee85a482714682ad4a7cfc37054, type: 2}
+  LevelData: {fileID: 11400000, guid: bc34b90aee531e844988b3e98a5ebdfb, type: 2}
   tilesList: {fileID: 11400000, guid: cbc98809dc9d0c048939ec23067439ae, type: 2}
   flagMaterial: {fileID: 2100000, guid: 7fa33c7bd72ff31418823fd701e7b12b, type: 2}
-  tilesParent: {fileID: 0}
+  tilesParent: {fileID: 425395550144688037}
   showGrid: 1
   showTiles: 1
   drawSolid: 1

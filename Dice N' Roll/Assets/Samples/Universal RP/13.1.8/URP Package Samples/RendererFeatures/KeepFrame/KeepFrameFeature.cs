@@ -1,7 +1,4 @@
-using System;
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+
 
 //This renderer feature will replicate a "don't clear" behaviour by injecting two passes into the pipeline:
 //One pass that copies color at the end of a frame

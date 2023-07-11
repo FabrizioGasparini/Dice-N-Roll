@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
-using Photon.Realtime;
 
 public class OnlineGameManager : MonoBehaviour
 {
@@ -30,6 +27,16 @@ public class OnlineGameManager : MonoBehaviour
         levelLabel.text = SceneManager.GetActiveScene().name;
         waitingPanel.SetActive(true);
     }
+
+    void Update()
+    {
+        if(PhotonNetwork.CurrentRoom.PlayerCount < 2)
+        {
+            PhotonNetwork.LeaveRoom();
+            SceneManager.LoadScene("OnlineLobby");
+        } 
+    }
+
 
     public void StartGame()
     {
