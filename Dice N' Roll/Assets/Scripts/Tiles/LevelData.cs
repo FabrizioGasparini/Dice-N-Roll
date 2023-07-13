@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Tiles/Level"), System.Serializable]
+[CreateAssetMenu(menuName = "Levels/Level Data"), System.Serializable]
 public class LevelData : ScriptableObject
 {
     [Header("Grid Settings")]

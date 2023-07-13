@@ -16,31 +16,24 @@ MonoBehaviour:
   GridColumns: 5
   DiceCoordinates: {x: 0, y: 0}
   DiceValue: 6
-  FlagCoordinates: {x: 4, y: 4}
+  FlagCoordinates: {x: 4, y: 3}
   TilesList:
     BlockTiles:
-    - Coordinates: {x: 2, y: 2}
+    - Coordinates: {x: 4, y: 2}
+    - Coordinates: {x: 3, y: 2}
+    - Coordinates: {x: 3, y: 3}
+    - Coordinates: {x: 0, y: 1}
+    - Coordinates: {x: 1, y: 3}
     PowerTiles:
-    - Coordinates: {x: 0, y: 2}
+    - Coordinates: {x: 1, y: 4}
       PowerType: 0
-      Value: 1
+      Value: 3
       Object: {fileID: 0}
-    TeleportTiles:
-    - Coordinates: {x: 4, y: 0}
-      DestinationCoordinates: {x: 0, y: 4}
+    - Coordinates: {x: 2, y: 1}
+      PowerType: 0
+      Value: 2
       Object: {fileID: 0}
-      PreviewObject: {fileID: 0}
-    - Coordinates: {x: 0, y: 4}
-      DestinationCoordinates: {x: 4, y: 0}
-      Object: {fileID: 0}
-      PreviewObject: {fileID: 0}
-    ButtonTiles:
-    - Coordinates: {x: 2, y: 0}
-      DestinationCoordinates: {x: 4, y: 3}
-      ButtonType: 0
-      Activated: 0
-      Object: {fileID: 0}
-    GhostBlockTiles:
-    - Coordinates: {x: 4, y: 3}
-      Object: {fileID: 0}
+    TeleportTiles: []
+    ButtonTiles: []
+    GhostBlockTiles: []
   LevelSprite: {fileID: 0}

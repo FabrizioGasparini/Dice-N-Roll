@@ -26,4 +26,4 @@ MonoBehaviour:
     TeleportTiles: []
     ButtonTiles: []
     GhostBlockTiles: []
-  LevelSprite: {fileID: 21300000, guid: c9b637ce0c7086a48904013298a8d61c, type: 3}
+  LevelSprite: {fileID: 21300000, guid: 128e959b19e4a0943b81c8a5c1e053c5, type: 3}

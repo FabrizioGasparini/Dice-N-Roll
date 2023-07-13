@@ -49,4 +49,4 @@ MonoBehaviour:
       PreviewObject: {fileID: 0}
     ButtonTiles: []
     GhostBlockTiles: []
-  LevelSprite: {fileID: 21300000, guid: 996447dde21387f40a967d6c710f20c7, type: 3}
+  LevelSprite: {fileID: 21300000, guid: 04e7f22274545e54293b1e8cb0d390db, type: 3}

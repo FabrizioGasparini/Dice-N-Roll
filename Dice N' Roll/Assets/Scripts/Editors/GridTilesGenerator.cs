@@ -416,7 +416,7 @@ public class GridTilesGenerator : EditorWindow
     public LevelData GenerateLevelData()
     {
         var levelData = (LevelData)level;
-        levelData.Override(gridRows, gridColumns, diceCoordinates, diceValue, flagCoordinates, blockTiles, powerTiles, teleportTiles, buttonTiles, ghostBlockTiles);
+        //levelData.Override(gridRows, gridColumns, diceCoordinates, diceValue, flagCoordinates, blockTiles, powerTiles, teleportTiles, buttonTiles, ghostBlockTiles);
         
         return levelData;
     }

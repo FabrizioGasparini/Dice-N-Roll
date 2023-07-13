@@ -9,7 +9,7 @@ public class MenuPageUI : MonoBehaviour
     public string PageName;
     public bool isFadeInverted;
     public Color BackgroundColor;
-    
+
     private CanvasGroup MenuPage;
     
     private bool isFadingIn;
