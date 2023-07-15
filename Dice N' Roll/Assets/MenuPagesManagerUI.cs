@@ -34,21 +34,9 @@ public class MenuPagesManagerUI : MonoBehaviour
                 currentMenuPage.FadeOut(inverted);
             }
             menuPageToOpen.FadeIn(inverted);
+            menuPageToOpen.FadeBackground(Background, currentMenuPage.BackgroundColor);
 
             currentMenuPage = menuPageToOpen;
-        }
-    }
-
-    private void Update()
-    {
-        UpdateBackgroundColor();
-    }
-
-    private void UpdateBackgroundColor()
-    {
-        if(currentMenuPage.IsFading())
-        {
-            //Background.color = Color.Lerp(currentColor, finalColor);
         }
     }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class MenuPageUI : MonoBehaviour
@@ -23,6 +24,9 @@ public class MenuPageUI : MonoBehaviour
 
     private bool currentfadeInverted; //This variable can be changed if another page has inverted fading (it's not the same as isFadeInverted)
 
+    private Image backgroundToFade;
+    private Color currentBackgroundColor;
+    private bool isFadingBackground;
     
     private void Start()
     {
@@ -96,5 +100,27 @@ public class MenuPageUI : MonoBehaviour
             }
             else isFadingOut = false;
         }
+
+        if (isFadingBackground)
+        {
+            float t = Time.deltaTime * MenuPagesManagerUI.FadeDuration;
+            if (t < 1)
+            {
+                backgroundToFade.color = Color.Lerp(currentBackgroundColor, BackgroundColor, t);
+                if (t >= 1)
+                {
+                    isFadingBackground = false;
+                }
+            }
+            else isFadingIn = false;
+        }
+    }
+
+    public void FadeBackground(Image background, Color color) //ONLY CALL IF THIS PAGE IS FADING IN
+    {
+        backgroundToFade = background;
+        currentBackgroundColor = color;
+
+        isFadingBackground = true;
     }
 }
